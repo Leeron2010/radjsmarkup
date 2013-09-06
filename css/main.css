@@ -90,6 +90,12 @@ body {
 .main-menu a {
     display: block;
 }
+
+.main-menu ul {
+    margin: 0;
+    overflow: hidden;
+}
+
 .submenu-hider {
     overflow: hidden;
     height: 0;
