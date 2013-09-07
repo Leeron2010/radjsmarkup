@@ -1,0 +1,165 @@
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+html,
+body {
+    height: 100%;
+
+}
+
+body {
+    font: 16px/22px 'Arial', 'Helvetica';
+    color: #444c4f;
+}
+
+.wrapper {
+    min-width: 960px;
+    margin: 0 auto;
+    -moz-box-shadow: border-box;
+    box-sizing: border-box;
+    padding-left: 350px;
+    height: 100%;
+    position: relative;
+}
+
+.sidebar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 320px;
+}
+
+.sidebar {
+    position: absolute;
+    top: 75px;
+    bottom: 75px;
+    width: 100%;
+}
+
+.main-menu a {
+    display: block;
+}
+
+.main-menu ul {
+    margin: 0;
+    overflow: hidden;
+}
+
+.submenu-hider {
+    overflow: hidden;
+    height: 0;
+}
+
+.side-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    background: #444c4f;
+    text-align: center;
+}
+.side-logo img{
+    max-height: 65px;
+    margin: 5px 0;
+}
+
+.side-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 75px;
+    width: 100%;
+    background: #444c4f;
+    text-align: center;
+}
+
+.content-wrapper {
+    overflow: hidden;
+    height: 100%;
+    outline: none;
+}
+
+.content {
+    min-width: 500px;
+    max-width: 800px;
+}
+
+.language{
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.language a {
+    float: right;
+    padding: 30px 15px 5px 15px;
+    line-height: 1em;
+    color: #444c4f;
+    text-decoration: none;
+}
+.language .select {
+    background: #444c4f;
+    cursor: default;
+}
+
+.language span{
+    border-bottom: 1px solid #444c4f;
+    padding-bottom: 3px;
+    color:#444c4f ;
+    display: block;
+}
+.language .select span{
+    color: #fff;
+}
+

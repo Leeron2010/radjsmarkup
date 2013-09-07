@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" > <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" > <!--<![endif]-->
+<head >
+	<meta charset="utf-8" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
+	<title ></title >
+	<meta name="description" content="" >
+	<meta name="viewport" content="width=device-width" >
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+	<link rel="stylesheet" href="css/jquery.jscrollpane.css" >
+	<link rel="stylesheet" href="css/normalize.css" >
+	<link rel="stylesheet" href="css/main.css" >
+</head >
+<body >
+<div class="wrapper" >
+<div class="sidebar-wrapper" >
+	<a href="#" class="side-logo" ><img src="image/logo.png" alt="" /></a >
+
+	<div class="sidebar" >
+		<div class="main-menu">
+			<a class="section_title" href="#about">Главная</a>
+			<a class="section_title" href="#about">Докуминтация</a>
+			<div class="submenu-hider">
+				<ul>
+					<li>
+						<a class="section_title" href="#application">Application</a>
+					</li>
+					<li>
+						<a class="section_title" href="#core">Core</a>
+						<div class="submenu-hider">
+							<ul>
+								<li>
+									<a class="subsection_title" href="#core_methods">методы</a>
+									<div class="submenu-hider">
+										<ul class="section_body">
+											<li><a class="section_subject" href="#subscribe">subscribe</a></li>
+											<li><a class="section_subject" href="#publish">publish</a></li>
+											<li><a class="section_subject" href="#unsubscribe">unsubscribe</a></li>
+											<li><a class="section_subject" href="#channels">channels</a></li>
+											<li><a class="section_subject" href="#register">register</a></li>
+											<li><a class="section_subject" href="#registerAll">registerAll</a></li>
+											<li><a class="section_subject" href="#startViewOrService">startViewOrService</a></li>
+											<li><a class="section_subject" href="#startPlugin">startPlugin</a></li>
+											<li><a class="section_subject" href="#stop">stop</a></li>
+											<li><a class="section_subject" href="#startAll">startAll</a></li>
+											<li><a class="section_subject" href="#getView">getView</a></li>
+											<li><a class="section_subject" href="#getService">getService</a></li>
+											<li><a class="section_subject" href="#initialize">initialize</a></li>
+											<li><a class="section_subject" href="#getStartedView">getStartedView</a></li>
+										</ul>
+									</div>
+
+								</li>
+
+							<a class="subsection_title" href="#core_properties">свойства</a>
+							<div class="submenu-hider">
+								<ul class="section_body">
+									<li><a class="section_subject" href="#plugins_list">plugins</a></li>
+									<li><a class="section_subject" href="#defaultBackstack">defaultBackstack</a></li>
+									<li><a class="section_subject" href="#backstackType">backstackType</a></li>
+									<li><a class="section_subject" href="#defaultAnimation">defaultAnimation</a></li>
+									<li><a class="section_subject" href="#animationTimeout">animationTimeout</a></li>
+									<li><a class="section_subject" href="#debug">debug</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<a class="section_title" href="#plugins">Плагины ядра</a>
+				<div class="submenu-hider">
+					<ul>
+						<li>
+							<a class="subsection_title" href="#navigation_plugin">navigation</a>
+							<div class="submenu-hider">
+								<ul class="section_body">
+									<li><a class="section_subject" href="#navigation_show">show</a></li>
+									<li><a class="section_subject" href="#navigation_back">back</a></li>
+									<li><a class="section_subject" href="#navigation_dialog_show">dialog.show</a></li>
+									<li><a class="section_subject" href="#navigation_dialog_close">dialog.close</a></li>
+									<li><a class="section_subject" href="#navigation_toast_show">toast.show</a></li>
+									<li><a class="section_subject" href="#navigation_toast_close">toast.close</a></li>
+									<li><a class="section_subject" href="#navigation_popup_show">popup.show</a></li>
+									<li><a class="section_subject" href="#navigation_popup_close">popup.close</a></li>
+								</ul>
+							</div>
+							<a class="subsection_title" href="#fastclick_plugin">fastclick</a>
+							<a class="subsection_title" href="#router_plugin">router</a>
+							<div class="submenu-hider">
+								<ul class="section_body">
+									<li><a class="section_subject" href="#router_backstack">backstack</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<a class="section_title" href="#view">View</a>
+				<div class="submenu-hider">
+					<ul>
+						<li><a class="subsection_title" href="#view_declaration">объявление</a></li>
+						<li>
+							<a class="subsection_title" href="#view_methods">methods</a>
+							<div>
+								<ul class="section_body">
+									<li><a class="section_subject" href="#view_subscribe">subscribe</a></li>
+									<li><a class="section_subject" href="#view_unsubscribe">unsubscribe</a></li>
+									<li><a class="section_subject" href="#view_publish">publish</a></li>
+									<li><a class="section_subject" href="#view_$">$</a></li>
+									<li><a class="section_subject" href="#finish">finish</a></li>
+									<li><a class="section_subject" href="#getChildren">getChildren</a></li>
+									<li><a class="section_subject" href="#bindModel">bindModel</a></li>
+									<li><a class="section_subject" href="#changeModel">changeModel</a></li>
+									<li><a class="section_subject" href="#unbindModel">unbindModel</a></li>
+									<li><a class="section_subject" href="#render">render</a></li>
+									<li><a class="section_subject" href="#refreshScroll">refreshScroll</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a class="subsection_title" href="#callbacks">callbacks</a>
+							<div>
+								<ul class="section_body">
+									<li><a class="section_subject" href="#onInitialize">onInitialize</a></li>
+									<li><a class="section_subject" href="#onStartRender">onStartRender</a></li>
+									<li><a class="section_subject" href="#onEndRender">onEndRender</a></li>
+									<li><a class="section_subject" href="#onNewExtras">onNewExtras</a></li>
+									<li><a class="section_subject" href="#onStartAttach">onStartAttach</a></li>
+									<li><a class="section_subject" href="#onEndAttach">onEndAttach</a></li>
+									<li><a class="section_subject" href="#onEndDetach">onEndDetach</a></li>
+									<li><a class="section_subject" href="#onDestroy">onDestroy</a></li>
+									<li><a class="section_subject" href="#onReceiveMsg">onReceiveMsg</a></li>
+									<li><a class="section_subject" href="#loader_done">loader.done</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a class="subsection_title" href="#view_properties">свойства</a>
+							<div>
+								<ul class="section_body">
+									<li><a class="section_subject" href="#url">url</a></li>
+									<li><a class="section_subject" href="#tagNameClassName">tagName/ClassName</a></li>
+									<li><a class="section_subject" href="#children">children</a></li>
+									<li><a class="section_subject" href="#events">events</a></li>
+									<li><a class="section_subject" href="#view_model">model</a></li>
+									<li><a class="section_subject" href="#custom_properties">произвольные свойства</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a class="subsection_title" href="#animation">анимация</a>
+						</li>
+						<li>
+							<a class="subsection_title" href="#templates">шаблоны</a>
+						</li>
+					</ul>
+
+				</div>
+				<a class="section_title" href="#toast">Toast</a>
+				<a class="section_title" href="#popup">Popup</a>
+				<a class="section_title" href="#scrollable">Scrollable</a>
+				<a class="section_title" href="#model">Model</a>
+				<div class="submenu-hider">
+					<ul>
+						<li>
+							<a class="subsection_title" href="#share_model">модель уровня приложения</a>
+						</li>
+					</ul>
+				</div>
+				<a class="section_title" href="#service">Service</a>
+				<div class="submenu-hider">
+					<ul>
+						<li><a class="subsection_title" href="#service_declaration">объявление</a></li>
+						<li>
+							<a class="subsection_title" href="#service_callbacks">callbacks</a>
+							<div class="submenu-hider">
+								<ul class="section_body">
+									<li><a class="section_subject" href="#service_onInitialize">onInitialize</a></li>
+									<li><a class="section_subject" href="#service_onDestroy">onDestroy</a></li>
+									<li><a class="section_subject" href="#service_onReceiveMsg">onReceiveMsg</a></li>
+								</ul>
+							</div>
+
+						</li>
+
+					</ul>
+				</div>
+				<a class="section_title" href="#namespace">Namespace</a>
+				<a class="section_title" href="#faq">FAQ</a>
+			</div>
+</div>
+</div>
+
+
+
+	<div class="side-footer" >
+		<a href="#">mobidev</a >
+		<ul>
+			<li></li>
+		</ul>
+	</div >
+</div >
+<div class="content-wrapper" >
+	<div class="content">
+	<div class="language">
+		<a href="#en"><span>En</span></a >
+		<a href="#ru" class="select"><span>Ру</span></a >
+	</div>
+<h2 id="about">О проекте</h2>
+
+<p> Фреймворк для быстрого построения мобильных приложений. Оптимизирован для iOS, Android; также поддерживаются Chrome, Firefox, Opera, Safari, IE 10, Windows Phone 8.</p>
+
+<h2 id="common">Общие положения</h2>
+
+<h3>Чем является RAD.js:</h3>
+
+<p>Это фреймворк системного уровня. Он позволяет разрабатывать single-page-приложение, как классическое многостраничное, и берет на себя задачи системного уровня - шину сообщений, создание и уничтожение экземпляров частей приложения, транзакции между views и т.д.</p>
+
+<h3>Чем не является RAD.js:</h3>
+
+<ul>
+	<li>
+		<p>MV* фреймворком. MV* в нем реализована на базе BackboneJS.</p>
+	</li>
+	<li>
+		<p>Фремворком уровня приложения. Приложением может выступать любой JavaScript-объект. Фреймворк не диктует условия, как должен быть построен объект приложения.</p>
+	</li>
+	<li>
+		<p>Layout-движком. Layout-движок реализован как плагин navigation к ядру фреймворка.</p>
+	</li>
+	<li>
+		<p>UI-фреймворком. Нет смысла писать очередной UI-фреймворк, так как от проекта к проекту в реальной жизни паттерны UI и оформление приложения меняются. В качестве расширения к базовой View, реализованы ScrollableView, PopupView и ToastView, то есть те, которые имеют расширенное и часто встречающееся поведение в разных проектах. Вы сами спокойно можете писать новые View, которые часто встречаются в Ваших проектах, например ListView, и т.д.</p>
+	</li>
+</ul>
+
+<h3>Достоинства:</h3>
+
+<ul>
+	<li>
+		<p>Оптимизирован для PhoneGap и мобильных браузеров;</p>
+	</li>
+	<li>
+		<p>Возможность динамически управлять экземплярами модулей приложения (создавать, уничтожать), как на уровне приложения через функциональность ядра, так и на уровне view;</p>
+	</li>
+	<li>
+		<p>Возможность составить приложение из слабо связанных модулей: моделей, views, сервисов (часть приложения без визуального представления) и объекта приложения;</p>
+	</li>
+	<li>
+		<p>Древовидная структура сообщений;</p>
+	</li>
+	<li>
+		<p>Debug-режим ядра и сообщений;</p>
+	</li>
+	<li>
+		<p>Гибкая слабосвязанная архитектура - практически любой сторонний код может быть обернут в модуль несколькими строчками кода. Падение одного из модулей не ведет к падению всего приложения;</p>
+	</li>
+	<li>
+		<p>Возможность отслеживания жизненого цикла view и сервисов. Наличие callback методов на все события жизненого цикла;</p>
+	</li>
+	<li>
+		<p>Шаблонизация. Шаблоном выступает отдельный HTML-файл, который может быть наверстан отдельно;</p>
+	</li>
+	<li>
+		<p>Частичная шаблонизация view. Возможность указать части шаблона view, которые будут / не будут меняться (rerender) при изменении модели;</p>
+	</li>
+	<li>
+		<p>Объектом приложения может выступать любой объект JavaScript;</p>
+	</li>
+	<li>
+		<p>Возможность расширения функциональности ядра за счет плагинов;</p>
+	</li>
+	<li>
+		<p>Сложные вложенные views и декларируемые анимации перехода между ними;</p>
+	</li>
+	<li>
+		<p>Возможности наследованная views, сервисов и моделей;</p>
+	</li>
+	<li>
+		<p>Модальные и немодальные самопозиционируемые окна;</p>
+	</li>
+	<li>
+		<p>Динамическая маршрутизация. Достаточно указать параметр backstack: true, и транзакция между views (новое расположение views на экране) будет занесена в history браузера.</p>
+	</li>
+	<li>
+		<p>Повторное использование модулей в других проектах;</p>
+	</li>
+	<li>
+		<p>Возможность модульного тестирования внешними фреймворками.</p>
+	</li>
+</ul>
+
+<h2 id="application">Объект приложения</h2>
+
+<p>В качестве объекта application может выступать любой JS-объект. Он будет доступен в любом модуле (views и сервисах) через this.application.<br />
+	Например: this.application.logout(); в любом модуле вызовет метод logout у объекта application.<br />
+	Методы у приложения могут быть любыми - просто желательно, чтобы они отображали функциональность приложения (к примеру - залогиниться, вылогиниться, выйти из приложения и т.д.). То есть, принадлежали к уровню абстракции &quot;приложение&quot;, а не к другим уровням, напрмер, &quot;сеть&quot; или &quot;модели&quot;.</p>
+
+<p>Пример объявления конструктора объекта приложения с использованием методов ядра:</p>
+
+<pre>
+    RAD.application(function (core) {
+        &#39;use strict&#39;;
+
+        var app = this;
+
+        app.start = function () {
+            var options = {
+                container_id: &#39;#screen&#39;,
+                content: &quot;view.parent_widget&quot;,
+                animation: &#39;none&#39;
+            };
+            core.publish(&#39;navigation.show&#39;, options);
+        };
+
+        return app;
+    });
+</pre>
+
+<p>Обратите внимание, что вторым параметром в RAD.application передается булевое значение, которое определяет, создавать или нет экземпляр приложения.</p>
+
+<p>Стоит заметить, что вызов регистрации приложения можно выполнить только один раз, т.к. это самоопределяющаяся функция. И после этого вызова в пространстве имен RAD.application будет доступен экземпляр Вашего приложения.</p>
+
+<h2>Core</h2>
+
+<ul>
+	<li>
+		<p>Управление жизненым циклом частей приложения (позволяет добавлять и удалять модули; фактически контролируют загрузку памяти JavaScript-машины);</p>
+	</li>
+	<li>
+		<p>Коммуникационный интерфейс (позволяет частям приложения общаться между собой);</p>
+	</li>
+	<li>
+		<p>Возможность дальнейшего расширения функциональности за счет плагинов.</p>
+	</li>
+</ul>
+
+<h2>Методы ядра</h2>
+
+<p>К примеру, методы ядра могут вызываться так:</p>
+
+<pre>
+    // если ядро доступно(из плагина или на уровне application)
+    core.publish(&#39;navigation.show&#39;, options);
+    // для модуля
+    this.publish(&#39;navigation.show&#39;, options);
+</pre>
+
+<p><strong>subscribe</strong></p>
+
+<pre>
+    subscribe(channel, fn, context);
+</pre>
+
+<p>Подписывает callback-функцию fn на выполнение в контексте context при получении сообщения по каналу channel.</p>
+
+<p>Модуль автоматически подписывается на сообщения, начинающиеся с &quot;view.&quot; и его ID. Например, модуль, зарегистрированный как &quot;view.myModule&quot; при создании автоматически подпишется как на канал &quot;view.myModule&quot;, так и на &quot;view.myModule.doSomeAction&quot;.<br />
+	Обрабатывать такие сообщения можно в коллбэке <a href="file:///C:/Users/Миша/site/index.html#onReceiveMsg">onReceiveMsg</a>.</p>
+
+<p><strong>publish</strong></p>
+
+<pre>
+    publish(channel, data)
+</pre>
+
+<p>Публикует сообщение на канале channel, передавая подписчикам объект data.</p>
+
+<p>В случае, если сообщение публикуется на канал &quot;view_ID&quot; некоторого модуля, под которым он зарегистрирован, и если вы не уверены, что этот модуль существует в момент отправки сообщения, то возможно указать autocreate: true как одно из полей в данных, передаваемых в канал. В случае необходимости, экземпляр модуля будет создан автоматически.</p>
+
+<p><strong>unsubscribe</strong></p>
+
+<pre>
+    unsubscribe([channel,] context)
+</pre>
+
+<p>Отменяет подписку на канал channel в контексте объекта context, в котором выполнялся коллбэк. Если в качестве channel передан null, то данный метод отменяет все подписки объекта.</p>
+
+<p><strong>channels</strong></p>
+
+<pre>
+    channels()
+</pre>
+
+<p>Возвращает существующие каналы сообщений.</p>
+
+<p><strong>register</strong></p>
+
+<pre>
+    register(viewID/serviceID, fabric)
+</pre>
+
+<p>Регистрирует в ядре модуль с именем viewID/serviceID и конструктором fabric. Если модуль зарегистрирован автоматически, этот метод не требуется (см. <a href="file:///C:/Users/Миша/site/index.html#view">объявление модуля</a>).</p>
+
+<p>Экземпляр модуля при этом не создается.</p>
+
+<p><strong>registerAll</strong></p>
+
+<pre>
+    registerAll(arrayOfViews)
+</pre>
+
+<p>Вызывает <a href="file:///C:/Users/Миша/site/index.html#register">register</a> для каждого модуля из перечисленных в массиве arrayOfViews. Пример массива:</p>
+
+<pre>
+    views = [
+        {&quot;view.start_page&quot;: view.StartPage},
+        {&quot;view.second_page&quot;: view.SecondPage},
+    ],
+</pre>
+
+<p>Обратите внимание, что имена модулей начинаются с &quot;view.&quot;, сервисов (модулей без визуального представления) - с &quot;service.&quot;.</p>
+
+<p><strong>startViewOrService</strong></p>
+
+<pre>
+    startViewOrService(viewID, [extras])
+</pre>
+
+<p>Создает экземпляр модуля с именем viewID; использует объект extras в коллбэке самого модуля <a href="file:///C:/Users/Миша/site/index.html#onNewExtras">onNewExtras</a>.</p>
+
+<p><strong>startPlugin</strong></p>
+
+<pre>
+    startPlugin(pluginID)
+</pre>
+
+<p>Создает экземпляр плагина с именем pluginID из списка зарегистрированных плагинов ядра <a href="file:///C:/Users/Миша/site/index.html#plugins_list">plugins</a>.</p>
+
+<p><strong>stop</strong></p>
+
+<pre>
+    stop(viewID, callback, context)
+</pre>
+
+<p>Останавливает работу модуля с именем viewID, после чего выполняет callback в контексте объекта context.</p>
+
+<p><strong>startAll</strong></p>
+
+<pre>
+    startAll()
+</pre>
+
+<p>Создает экземпляры и запускает все модули.</p>
+
+<p><strong>getView</strong></p>
+
+<pre>
+    getView(viewID, [extras])
+</pre>
+
+<p>Возращает экземпляр модуля с именем viewID, передавая ему объект extras (см. <a href="file:///C:/Users/Миша/site/index.html#onNewExtras">onNewExtras</a>). Если экземпляр не создан, инстанциирует его.</p>
+
+<p><strong>getStartedView</strong></p>
+
+<pre>
+    getStartedView()
+</pre>
+
+<p>Возвращает массив всех инстанциированных модулей, при этом их видимость на экране не обязательна.</p>
+
+<p><strong>initialize</strong></p>
+
+<pre>
+    initialize(application, options)
+</pre>
+
+<p>Инициализирует ядро параметрами options и сохраняет ссылку на объект application для последующего внедрения во все модули непосредственной ссылки на приложение.</p>
+
+<p><strong>getService</strong></p>
+
+<pre>
+    getService(serviceID, [extras])
+</pre>
+
+<p>Полностью аналогичен методу <a href="file:///C:/Users/Миша/site/index.html#getView">getView</a>.</p>
+
+<h2>Свойства ядра</h2>
+
+<p>Настройки ядра задаются объектом свойств, например:</p>
+
+<pre>
+    coreOptions = {
+            plugins: [
+                {&quot;plugin.navigator&quot;: plugin.navigation},
+                {&quot;plugin.fastclick&quot;: plugin.fastClick},
+                {&quot;plugin.router&quot;: plugin.router}
+            ],
+            defaultBackstack: false,
+            backstackType: &#39;native&#39;,
+            defaultAnimation: &#39;slide&#39;,
+            animationTimeout: 3000,
+            debug: false
+        };
+
+    //initialize core by new application object
+    core.initialize(application, coreOptions);
+</pre>
+
+<p><strong>plugins</strong></p>
+
+<pre>
+    plugins: [
+        {&quot;plugin.navigator&quot;: plugin.navigation},
+        {&quot;plugin.fastclick&quot;: plugin.fastClick},
+        {&quot;plugin.router&quot;: plugin.router}
+    ],
+
+</pre>
+
+<p>Массив подключаемых плагинов. На данный момент плагинами реализованы роутер, layout manager и кроссбраузерные события для touch-устройств (&quot;tap&quot;, &quot;swipe&quot; и др.). Подробнее об этом в разделе <a href="file:///C:/Users/Миша/site/index.html#plugins">plugins</a>.</p>
+
+<p>Обратите внимание, что плагины &quot;plugin.navigator&quot;, &quot;plugin.fastclick&quot;, &quot;plugin.router&quot; уже зарегистрированы, и специально передавать их через список нет необходимости.</p>
+
+<p><strong>defaultBackstack</strong></p>
+
+<pre>
+    // no backstack
+    defaultBackstack: false,
+    // backstack enabled
+    defaultBackstack: true,
+</pre>
+
+<p>Бэкстек по умолчанию для всех транзакций. При установке false история изменений содержимого экрана (смены расположения views) запоминаться не будет. Чтобы внести в историю отдельную транзакцию, нужно использовать опцию backstack: true при использовании <a href="file:///C:/Users/Миша/site/index.html#navigation_plugin">navigation</a>.<br />
+	Подробнее о бэкстеке в разделе <a href="file:///C:/Users/Миша/site/index.html#router_backstack">Backstack</a>.</p>
+
+<p><strong>backstackType</strong></p>
+
+<pre>
+    //backstack с использованием history API
+    backstackType: &#39;native&#39;
+    //backstack с использованием hash-ссылок для history API
+    backstackType: &#39;hashbang&#39;
+    //внутренняя реализация backstack
+    backstackType: &#39;custom&#39;
+</pre>
+
+<p>Тип бэкстека для всех транзакций. Если значение этого свойства не определено, тип бэкстека будет выбран автоматически (&#39;native&#39; либо &#39;hashbang&#39;, в зависимости от браузера). Подробнее о типах бэкстека в разделе <a href="file:///C:/Users/Миша/site/index.html#router_backstack">Backstack</a>.</p>
+
+<p><strong>defaultAnimation</strong></p>
+
+<pre>
+    defaultAnimation: &#39;slide&#39;,
+</pre>
+
+<p>Анимация смены модулей по умолчанию. Может принимать значения &#39;slide&#39; (сдвиг), &#39;fade&#39; (затухание) и &#39;none&#39; (мгновенное замещение). Подробнее - <a href="file:///C:/Users/Миша/site/index.html#animation">анимация модулей</a>.</p>
+
+<p><strong>animationTimeout</strong></p>
+
+<pre>
+    animationTimeout: 3000,
+</pre>
+
+<p>Время, через которое будет снята блокировка интерфейса (включается при начале анимации) в случае непредвиденных ошибок.</p>
+
+<p><strong>debug</strong></p>
+
+<pre>
+    debug: false
+</pre>
+
+<p>Режим отладки. При установке true пишет в консоль браузера информацию о событиях, объектах ядра и каналах.</p>
+
+<h2>Плагины ядра</h2>
+
+<p>Плагины реализуют дополнительный функционал ядра, необходимый для работы системы и не зависящий от конкретной реализации логики приложения. Если нужно реализовать функциональный модуль без визуального представления в конкретном приложении, рекомендуется использовать сервисы.</p>
+
+<h2>Navigation</h2>
+
+<p>Плагин navigation обрабатывает все сообщения с корневым узлом &#39;navigation.&#39; и занимается управлением views (отображение, скрытие, обеспечение бэкстека и нотификация об изменении состояния).</p>
+
+<p><strong>show</strong></p>
+
+<pre>
+    var options = {
+        container_id: &#39;#screen&#39;,
+        content: &quot;view.start_page&quot;,
+        animation: &quot;none&quot;,
+        backstack: false,
+        callback: null,
+        context: null,
+        extras: null
+
+    }
+    this.publish(&#39;navigation.show&#39;, options);
+</pre>
+
+<p>Отображает указанный в options.content модуль в контейнере options.container_id (CSS-селектор).<br />
+	<br />
+	Параметры options:</p>
+
+<ul>
+	<li>
+		<p>content - зарегистрированное имя модуля (viewID), который будет отображен;</p>
+	</li>
+	<li>
+		<p>container_id - селектор элемента-контейнера для отображения модуля;</p>
+	</li>
+	<li>
+		<p>animation - <a href="file:///C:/Users/Миша/site/index.html#animation">анимация</a>, используемая при смене view в указанном контейнере;</p>
+	</li>
+	<li>
+		<p>backstack - сохранить историю изменения положения модулей (true или false);</p>
+	</li>
+	<li>
+		<p>callback - функция, которая будет выполнена по завершении отображения модуля content;</p>
+	</li>
+	<li>
+		<p>context - контекст выполнения для callback;</p>
+	</li>
+	<li>
+		<p>extras - см. <a href="file:///C:/Users/Миша/site/index.html#onNewExtras">OnNewExtras</a>.</p>
+	</li>
+</ul>
+
+<p>Обязательные параметры - content и container_id (последний для toast.show и dialog.show не обязателен). Остальные параметры не обязательны.</p>
+
+<p><strong>back</strong></p>
+
+<pre>
+    this.publish(&#39;navigation.back&#39;, options);
+</pre>
+
+<p>Аналогичен navigation.show. При этом по умолчанию используется обратная анимация.</p>
+
+<p><strong>dialog.show</strong></p>
+
+<pre>
+    this.publish(&#39;navigation.dialog.show&#39;, options);
+</pre>
+
+<p>Аналогичен navigation.show, но показывает модуль, как модальное окно. Может быть закрыт при помощи <a href="file:///C:/Users/Миша/site/index.html#navigation_dialog_close">dialog.close</a>.</p>
+
+<p><strong>dialog.close</strong></p>
+
+<pre>
+    this.publish(&#39;navigation.dialog.close&#39;, options);
+</pre>
+
+<p>Закрывает модальное окно.</p>
+
+<p><strong>toast.show</strong></p>
+
+<pre>
+    options = {
+        content: &quot;view.toast&quot;,
+        gravity: &#39;left&#39;,
+    };
+
+    this.publish(&#39;navigation.toast.show&#39;, options);
+ </pre>
+
+<p>Показывает модуль как оповещение, закрывающееся автоматически (по умолчанию - через 3 секунды) или по клику.<br />
+	Параметр options.gravity - положение, принимает значения center (в центре экрана), left (прижат к левому краю), right (прижат к правому краю), top (низ экрана) и bottom (верх).</p>
+
+<p>Обязательное условие - view должно быть унаследовано от RAD.Blanks.Toast.</p>
+
+<p><strong>toast.close</strong></p>
+
+<pre>
+    this.publish(&#39;navigation.toast.close&#39;, options);
+</pre>
+
+<p>Закрывает оповещение.</p>
+
+<p><strong>popup.show</strong></p>
+
+<pre>
+    options = {
+            content: &quot;view.popup&quot;,
+
+            target: document.getElementById(targetID),
+            width: 180,
+            height: 200,
+            gravity: &#39;right&#39;,
+
+        };
+
+    this.publish(&#39;navigation.popup.show&#39;, options);
+</pre>
+
+<p>Показывает модуль как неблокирующее всплывающее окно, которое может закрываться автоматически по клику вне его.<br />
+	Свойства options:</p>
+
+<ul>
+	<li>
+		<p>target: элемент, относительно которого позиционируется popup;</p>
+	</li>
+	<li>
+		<p>gravity: положение относительно target; принимает значения none (направление выбирается автоматически), center (в центре экрана), left, right, top и bottom</p>
+
+			</li>
+</ul>
+
+<p>Обязательное условие - view должен быть унаследован от RAD.Blanks.Popup.</p>
+
+<p><strong>popup.close</strong></p>
+
+<pre>
+    this.publish(&#39;navigation.popup.close&#39;, options);
+</pre>
+
+<p>Закрывает всплывающее окно.</p>
+
+<h2>Fastclick</h2>
+
+<p>Плагин ядра, реализующий кроссбраузерные события &laquo;swipe&raquo;, &laquo;tap&raquo;, &laquo;tapdown&raquo;, &laquo;tapup&raquo;, &laquo;tapmove&raquo;, &laquo;tapcancel&raquo;</p>
+
+<h2>Router</h2>
+
+<p>Используется ядром для навигации, реализует backstack.</p>
+
+<p><strong>backstack</strong></p>
+
+<pre>
+    options = {
+        backstack: true,
+    }
+</pre>
+
+<p>Компонент плагина router, позволяющий динамически запоминать расположение (т.е. layout) views на экране для конкретной сессии, используя history API браузера, либо внутреннюю реализацию, и таким образом позволяющий возвращаться к предыдущим расположениям модулей. backstack не является аналогом Routers в Backbone.js или Angular.js.<br />
+	<br />
+	В плагине реализованы три типа бэкстека (backstackType):</p>
+
+<ul>
+	<li>
+		<p>native - бэкстек с использованием history API браузера;</p>
+	</li>
+	<li>
+		<p>hashbang - бэкстек с использованием генерации hash-ссылки (для браузеров, не поддерживающих history.pushState);</p>
+	</li>
+	<li>
+		<p>custom - внутренняя реализация (без использования history API).</p>
+	</li>
+</ul>
+
+<p><br />
+	&nbsp;</p>
+
+<p>Если параметр defaultBackstack в настройках Core установлен как false, то для использования бэкстека достаточно указать параметр backstack: true в <a href="file:///C:/Users/Миша/site/index.html#navigation_show">запросе на смену views</a>; таким образом, следующее расположение views на экране сохранится.<br />
+	<br />
+	Перемещение назад по стеку осуществляется:</p>
+
+<ul>
+	<li>
+		<p>кнопками браузера &quot;Back&quot; и &quot;Forward&quot;, либо вызовом history.back() (для типов бэкстека &#39;native&#39; и &#39;hashbang&#39;);</p>
+	</li>
+	<li>
+		<p>публикацией сообщения &#39;router.back&#39; (для всех типов)</p>
+	</li>
+</ul>
+
+<pre>
+    history.back(); // backstackType: &#39;native&#39; или &#39;hashbang&#39;
+
+    this.publish(&#39;router.back&#39;, null); // любой backstackType
+</pre>
+
+<p>Router подписан на следующие сообщения:</p>
+
+<ul>
+	<li>
+		<p>&#39;router.clear&#39; - при получении сообщения удаляет всю историю навигации данной сессии (опустошает бэкстек);</p>
+	</li>
+	<li>
+		<p>&#39;router.back&#39; - при получении сообщения вызывает возврат на один шаг назад по бэкстеку;</p>
+	</li>
+	<li>
+		<p>&#39;router.beginTransition&#39; - сообщение публикуется плагином navigation перед началом анимации (transition) смены view;</p>
+	</li>
+	<li>
+		<p>&#39;router.endTransition&#39; - сообщение публикуется плагином navigation, когда анимация смены view завершена. При этом происходит добавление URL предыдущего положения модулей в history (бэкстек-типы &#39;native&#39;, &#39;hashbang&#39;), либо внутренний стек (&#39;custom&#39;)</p>
+	</li>
+</ul>
+
+<pre>
+    this.publish(&#39;router.clear&#39;, null); //обнуление существующего backstack
+
+    this.publish(&#39;router.back&#39;, null); //возврат назад по backstack
+</pre>
+
+<p>Router публикует следующие сообщения:</p>
+
+<ul>
+	<li>
+		<p>&#39;backstack.pop&#39; - сообщение публикуется в момент, когда происходит возврат назад по бэкстеку;</p>
+	</li>
+	<li>
+		<p>&#39;backstack.empty&#39; - сообщение публикуется в момент опустошения бэкстека.</p>
+	</li>
+</ul>
+
+<p>Пример использования backstack:</p>
+
+<pre>
+    RAD.view(&quot;view.screen_1&quot;, RAD.Blanks.View.extend({
+        url: &#39;source/views/screen_1/screen_1.html&#39;,
+        events: {
+            &#39;tap button.next-scr&#39;: &#39;open&#39;
+        }
+        open: function () {
+            this.publish(&#39;navigation.show&#39;, {
+                content: &#39;view.screen_2&#39;,
+                container_id: &#39;#content&#39;,
+                backstack: true
+                //по завершению смены view будет сохранен URL, соответствующий их текущему расположению
+            });
+        }
+    }));
+
+    RAD.view(&quot;view.screen_2&quot;, RAD.Blanks.View.extend({
+        url: &#39;source/views/screen_2/screen_2.html&#39;,
+        events: {
+            &#39;tap button.next-scr&#39;: &#39;open&#39;
+        }
+        open: function () {
+            this.publish(&#39;navigation.show&#39;, {
+                content: &#39;view.screen_3&#39;,
+                container_id: &#39;#content&#39;,
+                backstack: true
+                //по завершению смены view будет сохранен URL, соответствующий их текущему расположению
+            });
+        }
+    }));
+
+    RAD.view(&quot;view.top_widget&quot;, RAD.Blanks.View.extend({
+        className: &#39;block&#39;,
+        url: &#39;source/views/top_widget/top_widget.html&#39;,
+        events: {
+            &#39;tap button.go-back&#39;: &#39;goBack&#39;
+        },
+        goBack: function () {
+            &quot;use strict&quot;;
+            this.publish(&#39;router.back&#39;, null); //возврат к последнему сохраненному расположению модулей
+        }
+    }));
+</pre>
+
+<h2>View</h2>
+
+<p>Основа для конструктора view в приложении; представляет собой расширенный backbone.view.</p>
+
+<h2>Объявление модуля</h2>
+
+<p>Пример файла модуля start_page.js, объявление view через шаблон &#39;namespace&#39;:</p>
+
+<pre>
+    RAD.views.StartPage = RAD.Blanks.View.extend({
+        url: &#39;source/views/start_page.html&#39;
+    })
+</pre>
+
+<p>Обратите внимание, что при таком объявлении необходимо использовать регистрацию view <a href="file:///C:/Users/Миша/site/index.html#register">register</a>, чтобы модуль был доступен ядру. Рекомендуется использовать способ объявления модулей, представленный ниже.</p>
+
+<pre>
+    RAD.view(&quot;view.start_page&quot;, RAD.Blanks.View.extend({
+        url: &#39;source/views/start_page.html&#39;
+    }));
+</pre>
+
+<h2>Methods</h2>
+
+<p><strong>subscribe</strong></p>
+
+<pre>
+    this.subscribe(channel, function, context);
+</pre>
+
+<p>Подписывает данный экземпляр модуля на указанный канал; является прямой ссылкой на метод ядра <a href="file:///C:/Users/Миша/site/index.html#subscribe">subscribe</a>.</p>
+
+<p><strong>unsubscribe</strong></p>
+
+<pre>
+    this.unsubscribe([channel,] context);
+</pre>
+
+<p>Отписывает данный экземпляр модуля от указанного канала; является прямой ссылкой на метод ядра <a href="file:///C:/Users/Миша/site/index.html#unsubscribe">unsubscribe</a>.</p>
+
+<p><strong>publish</strong></p>
+
+<pre>
+    this.publish(channel, data);
+</pre>
+
+<p>Публикует сообщение, содержащее данные data, в указанный канал channel; является прямой ссылкой на метод ядра <a href="file:///C:/Users/Миша/site/index.html#publish">publish</a>.</p>
+
+<p>$</p>
+
+<pre>
+    this.$(&#39;css_selector&#39;);
+ </pre>
+
+<p>Ищет указанный CSS-селектор в данном модуле и оборачивает найденный елемент в JQuery.<br />
+	Аналог:</p>
+
+<pre>
+    this.$el.find(&#39;css_selector&#39;);
+</pre>
+
+<p><strong>finish</strong></p>
+
+<pre>
+    this.finish();
+</pre>
+
+<p>Уничтожает данный экземпляр модуля.</p>
+
+<p><strong>getChildren</strong></p>
+
+<pre>
+    this.getChildren();
+</pre>
+
+<p>Возвращает массив дочерних модулей, заданных при объявлении в <a href="file:///C:/Users/Миша/site/index.html#children">children</a>, или находящихся в данный момент в этом view.</p>
+
+<p><strong>bindModel</strong></p>
+
+<pre>
+    this.bindModel(model);
+</pre>
+
+<p>Устанавливает <a href="file:///C:/Users/Миша/site/index.html#model">модель</a> для модуля. При этом будет вызван <a href="file:///C:/Users/Миша/site/index.html#render">render()</a> для перерисовки модуля. Модуль будет автоматически подписан на события модели.</p>
+
+<p><strong>changeModel</strong></p>
+
+<pre>
+    this.changeModel(model);
+</pre>
+
+<p>Заменяет <a href="file:///C:/Users/Миша/site/index.html#model">модель</a> модуля на переданную в model. При этом будет вызван <a href="file:///C:/Users/Миша/site/index.html#render">render()</a> для перерисовки модуля.</p>
+
+<p><strong>unbindModel</strong></p>
+
+<pre>
+    this.unbindModel(forceRender);
+</pre>
+
+<p>Удаляет <a href="file:///C:/Users/Миша/site/index.html#model">модель</a> модуля. Если параметр равен true, то при этом будет вызван <a href="file:///C:/Users/Миша/site/index.html#render">render()</a> для перерисовки модуля.</p>
+
+<p>Обратите внимание, что если в шаблоне не проверяется наличие модели, вызов метода может вызвать ошибку. Рекомендуется использовать только в крайнем случае, если задача иначе не решаема.</p>
+
+<p><strong>render</strong></p>
+
+<pre>
+    this.render();
+</pre>
+
+<p>Перерисовывает содержимое модуля.</p>
+
+<p>Обычно вызов этого метода вручную не требуется.</p>
+
+<p><strong>refreshScroll</strong></p>
+
+<pre>
+    this.refreshScroll();
+</pre>
+
+<p>Обновляет границы скроллящегося контента для правильного отображения прокрутки.</p>
+
+<p>Обычно вызов этого метода вручную не требуется. Может понадобиться только в случае ручной вставки контента в элемент модуля, что не рекомедуется.</p>
+
+<h2>Callbacks</h2>
+
+<p>Коллбэки описываются при объявлении view, например:</p>
+
+<pre>
+    RAD.view(&quot;view.start_page&quot;, RAD.Blanks.View.extend({
+        url: &#39;source/views/start_page.html&#39;,
+        onEndRender: function () {
+            &quot;use strict&quot;;
+            console.log(&#39;page rendered!&#39;);
+        }
+    }));
+</pre>
+
+<p>Представляют собой функции, вызываемые при событиях жизненого цикла view:</p>
+
+<pre>
+     // выполняется во время создания экземпляра
+    onInitialize: function () {},
+
+    // выполняется при получении view данных через navigator
+    onNewExtras: function () {},
+
+    // выполняется при получении сообщения на канал, совпадающий с viewID
+    onReceiveMsg: function () {},
+
+    // выполняется перед началом шаблонизации(создания html view)
+    onStartRender: function () {},
+
+    // выполняется после создания html содержимого из шаблона,
+    // iScroll в наследниках RAD.Blanks.ScrollableView при первом отображении еще не существует
+    onEndRender: function () {},
+
+    // выполняется пред началом анимации присоединения view,
+    // iScroll в наследниках RAD.Blanks.ScrollableView уже существует
+    onStartAttach: function () {},
+
+    // выполняется после окончания анимации присоединения view
+    onEndAttach: function () {},
+
+    // выполняется после удаления view из DOM
+    onEndDetach: function () {},
+
+    // выполняется при уничтожении модуля
+    onDestroy: function () {}
+</pre>
+
+<p><strong>onInitialize</strong></p>
+
+<pre>
+    onInitialize: function(){ };
+</pre>
+
+<p>Выполняется первым из коллбэков в конце конструктора при создании экземпляра view. Это последний момент, когда можно напрямую задать модулю <a href="file:///C:/Users/Миша/site/index.html#model">модель</a>. В дальнейшем необходимо использовать такие методы view, как bindModel и unbindModel.</p>
+
+<p><strong>onStartRender</strong></p>
+
+<pre>
+    onStartRender: function(){ };
+</pre>
+
+<p>Выполняется перед render() модуля. На этом этапе HTML-представления модуля еще нет.</p>
+
+<p><strong>onEndRender</strong></p>
+
+<pre>
+    onEndRender: function(){ };
+</pre>
+
+<p>Выполняется в render() модуля, когда HTML-представление сгенерировано из шаблона. Обработка всего, что связано с HTML (например, вставка дочерних модулей или добавление классов), должна происходить в этом методе.</p>
+
+<p>Обратите внимание, что render() модуля вызывается при первом отображении модуля и при каждом изменении модели модуля, на которую он автоматически биндится при создании. Возможно также вручную вызвать render() модуля.</p>
+
+<p><strong>onNewExtras</strong></p>
+
+<pre>
+    var options = {
+
+        extras: {
+            hello : &#39;world&#39;
+        }
+
+    }
+    this.publish(&#39;navigation.show&#39;, options);
+
+    onNewExtras: function(extras){
+        console.log(extras.hello);
+    };
+</pre>
+
+<p>Выполняется при передачи через навигатор новых extras. Идеально подходит для передачи новой модели или параметров отображаемого модуля. Принимает параметр extras.</p>
+
+<p><strong>onStartAttach</strong></p>
+
+<pre>
+    onStartAttach: function(channel, options){ };
+</pre>
+
+<p>Выполняется перед отображением модуля и перед началом анимации (даже если ее нет). В качестве параметров принимает канал, по которому пришло сообщение, и данные от плагина <a href="file:///C:/Users/Миша/site/index.html#navigation_plugin">navigation</a>.</p>
+
+<p><strong>onEndAttach</strong></p>
+
+<pre>
+    onEndAttach: function(channel, options){ };
+</pre>
+
+<p>Выполняется после окончания отображения модуля и после окончания анимации (даже если ее нет). В качестве параметров принимает канал, по которому пришло сообщение, а также данные от плагина <a href="file:///C:/Users/Миша/site/index.html#navigation_plugin">navigation</a>.</p>
+
+<p><strong>onEndDetach</strong></p>
+
+<pre>
+    onEndDetach: function(channel, options){ };
+</pre>
+
+<p>Выполняется после окончательного отсоединения модуля из текущего DOM. В качестве параметров принимает канал, по которому пришло сообщение, и данные от плагина <a href="file:///C:/Users/Миша/site/index.html#navigation_plugin">navigation</a>.</p>
+
+<p><strong>onDestroy</strong></p>
+
+<pre>
+    onDestroy: function(){ };
+</pre>
+
+<p>Вызывается перед уничтожением экземпляра модуля (деструктор). Нет входных параметров.</p>
+
+<p><strong>onReceiveMsg</strong></p>
+
+<pre>
+    onReceiveMsg: function(msg, data){ };
+</pre>
+
+<p>Модуль при создании автоматически подписывается на сообщения, начинающиеся с &quot;view.&quot; и его имени, например, модуль myModule подпишется как на сообщения &quot;view.myModule&quot;, так и на &quot;view.myModule.doSomeAction&quot;.<br />
+	Параметры:<br />
+	msg - канал сообщения, строка;<br />
+	data - объект переданных данных (см. публикацию сообщений <a href="file:///C:/Users/Миша/site/index.html#publish">publish</a>).</p>
+
+<p>Сервисы аналогично подписываются на сообщения, начинающиеся с &quot;service.&quot; + &quot;имя_модуля&quot;</p>
+
+<p><strong>loader.done</strong></p>
+
+<pre>
+    onNewExtras: function (extras) {
+        var self = this;
+        self.loader.done(function () {
+            self.$(&quot;#options&quot;).html(extras.data);
+        });
+    },
+</pre>
+
+<p>Это не совсем коллбэк-метод. Каждый модуль имеет deferred-объект loader, которому возможно передать функцию, которая выполнится после загрузки HTML-представления модуля. В случае, если HTML или HTML-шаблон были загружены, функция выполнится сразу. Например, можно использовать этот метод тогда, когда переданные через <a href="file:///C:/Users/Миша/site/index.html#onNewExtras">extras</a> данные необходимо вставить в готовый HTML.</p>
+
+<h2>Свойства View</h2>
+
+<p>Модули унаследованы от <a href="http://backbonejs.org/#View" target="_blank">backbone.view</a>, здесь описаны только некоторые свойства.</p>
+
+<p><strong>url</strong></p>
+
+<pre>
+    url: &#39;source/views/inner/third_widget/third_widget.html&#39;
+</pre>
+
+<p>Ссылка на файл HTML, используемый модулем в качестве шаблона.</p>
+
+<p><strong>tagName и ClassName</strong></p>
+
+<pre>
+    tagName: &#39;li&#39;,
+    className: &#39;my_list_item&#39;
+</pre>
+
+<p>Определяют, каким элементом будет представлен контейнер модуля и его класс(ы).</p>
+
+<p><strong>children</strong></p>
+
+<pre>
+    children:[
+        {
+            container_id: &#39;.sidebar&#39;,
+            content: &#39;view.sidebar_menu&#39;,
+        },
+        {
+            container_id: &#39;.content&#39;,
+            content: &#39;view.default_content&#39;,
+        }
+    ]
+</pre>
+
+<p>Массив дочерних модулей, которые будут загружены и показаны вместе с родительским. Атрибуты аналогичны &#39;navigation.show&#39;.</p>
+
+<p><strong>events</strong></p>
+
+<pre>
+    events:{
+        &#39;focus .search-by-name&#39;: &#39;showAutocomplete&#39;,
+        &#39;click .my_button&#39;:&#39;buttonAction&#39;
+    },
+    buttonAction: function(e){
+        console.log(e.currentTarget + &#39; clicked&#39;);
+    },
+    showAutocomplete: function(){}
+</pre>
+
+<p>Подписка элементов модуля на события.</p>
+
+<p><strong>model</strong></p>
+
+<pre>
+    //декларативный способ
+    model: RAD.models.noteList;
+    ...
+    //задание модели при инициализации
+    ...
+    onInitialize: function () {
+        &quot;use strict&quot;;
+
+        this.model = RAD.models.noteList;
+        this.model.add([
+            {title:&#39;test note 1&#39;, &#39;description&#39;:&#39;test note description 1&#39;},
+            {title:&#39;test note 2&#39;, &#39;description&#39;:&#39;test note description 2&#39;},
+            {title:&#39;test note 3&#39;, &#39;description&#39;:&#39;test note description 3&#39;}
+        ]);
+    },
+</pre>
+
+<p>Задает модель данных для модуля. Подробнее о моделях в разделе <a href="file:///C:/Users/Миша/site/index.html#model">model</a>. View автоматически подписывается на события модели.</p>
+
+<p><strong>произвольные свойства</strong></p>
+
+<pre>
+    currentPageDisplay: 2,
+    showMyCustomWidget: false
+</pre>
+
+<p>Для хранения состояний модуля можно создавать и использовать любые свойства.</p>
+
+<p>Следите за тем, чтобы создаваемые свойства не переопределяли имена уже существующих - это может привести к ошибкам.</p>
+
+<h2>Toast</h2>
+
+<p>Модуль для оповещений, автоматически закрывающийся через определенное время (по умолчанию - 3 секунды). См. <a href="file:///C:/Users/Миша/site/index.html#navigation_toast_show">navigation.toast.show</a>.</p>
+
+<pre>
+    RAD.view(&quot;view.CompleteToast&quot;, RAD.Blanks.Toast.extend({
+        //шаблон
+        url: &#39;source/views/start_page.html&#39;,
+        //время показа
+        showTime: 5000
+    }));
+</pre>
+
+<p>Обратите внимание: элемент модуля toast помещается в body, игнорируя container_id в опциях <a href="file:///C:/Users/Миша/site/index.html#navigation_plugin">navigation</a>.</p>
+
+<h2>Popup</h2>
+
+<p>Модуль реализует самопозиционирующийся popup. Способы позиционирования задаются в опциях <a href="file:///C:/Users/Миша/site/index.html#navigation_popup_show">navigation.popup.show</a>.</p>
+
+<pre>
+    RAD.view(&quot;view.PopupOverview&quot;, RAD.Blanks.Popup.extend({
+        url: &#39;source/views/popup_dashboard_overview/popup_dashboard_overview.html&#39;,
+
+        onInitialize: function (){
+            var Model = Backbone.Model.extend();
+
+            this.model = new Model();
+        },
+        onNewExtras: function (extras) {
+            &#39;use strict&#39;;
+
+            this.model.set({msg: extras});
+        },
+        // будет ли popup закрываться по клику вне модуля
+        outSideClose: true,
+        // будет ли уничтожаться инстанс модуля при закрытии (по умолчанию - уничтожается)
+        // если не надо уничтожать - прописать следующую строку
+        onCloseDestroy: false
+    });
+</pre>
+
+<p>Обратите внимание: элемент модуля popup помещается в body, игнорируя container_id в опциях <a href="file:///C:/Users/Миша/site/index.html#navigation_plugin">navigation</a>.</p>
+
+<h2>Scrollable view</h2>
+
+<p>Модуль со скроллящимся контентом, использует доработанную версию <a href="http://cubiq.org/iscroll-4">iScroll-lite</a>.</p>
+
+<pre>
+    RAD.view(&quot;view.start_page&quot;, RAD.Blanks.ScrollableView.extend({
+        url: &#39;source/views/start_page.html&#39;
+    }));
+</pre>
+
+<p>Обратите внимание, что для работы iScroll&#39;а необходимо наличие в HTML класса &quot;scroll-view&quot; для контейнера, в котором скролится контент (при наследовании от ScrollableView он автоматически вешается на весь view).<br />
+	Для правильной работы скролла при изменении размера скроллящегося контента, для его контейнера необходим установленный атрибут data-template.</p>
+
+<h2>Animation</h2>
+
+<p>Вид анимации, используемой при отображении модулей. Возможны следующие значения:</p>
+
+<ul>
+	<li>
+		<p>&#39;slide&#39; или &#39;slide-in&#39; (абсолютно аналогично) - новый модуль выезжает справа, старый заезжает влево;</p>
+	</li>
+	<li>
+		<p>&#39;slide-out&#39; - анимация, противоположная &#39;slide-in&#39;;</p>
+	</li>
+	<li>
+		<p>&#39;fade&#39; - альфа-анимация; старый модуль затухает, а новый проявляется;</p>
+	</li>
+	<li>
+		<p>&#39;none&#39; - без анимации, новый модуль просто вставляется вместо старого;</p>
+	</li>
+	<li>
+		<p>не определено - выставляется по умолчанию &#39;slide&#39;.</p>
+	</li>
+</ul>
+
+<pre>
+/* Возможно использование кастомной анимации, */
+/* для этого необходимо описать в CSS анимацию, подобную следующей */
+/* суффиксы -in и -out говорят о направлении */
+.new-page.fade-in,
+.new-page.fade-out {
+    opacity: 0;
+
+    -webkit-transition: opacity 350ms ease;
+    -moz-transition: opacity 350ms ease;
+    -ms-transition: opacity 350ms ease;
+    -o-transition: opacity 350ms ease;
+    transition: opacity 350ms ease;
+}
+
+.old-page.fade-in,
+.old-page.fade-out {
+    opacity: 1;
+
+    -webkit-transition: opacity 175ms 175ms ease;
+    -moz-transition: opacity 175ms 175ms ease;
+    -ms-transition: opacity 175ms 175ms ease;
+    -o-transition: opacity 175ms 175ms ease;
+    transition: opacity 175ms 175ms ease;
+}
+
+.animate &gt; .new-page.fade-in,
+.animate &gt; .new-page.fade-out {
+    opacity: 1;
+}
+
+.animate &gt; .old-page.fade-in,
+.animate &gt; .old-page.fade-out {
+    opacity: 0;
+}
+</pre>
+
+<h2>Шаблоны</h2>
+
+<p>Шаблоны полезны при рендеринге объемных и сложных частей HTML-разметки из JSON-данных. Для осуществления шаблонизации используется метод из библиотеки <a href="http://underscorejs.org/#template" target="_blank">Underscore.js</a>, который компилирует шаблоны в функции, которые могут быть вызваны для рендеринга этого шаблона. Путь к HTML-шаблону передается в качестве свойства <a href="file:///C:/Users/Миша/site/index.html#url">url</a> при обьявлении модуля <a href="file:///C:/Users/Миша/site/index.html#view">View</a>. При рендеринге HTML-представления модуля в функцию-шаблонизатор передается <a href="file:///C:/Users/Миша/site/index.html#view_model">view.model</a> этого модуля, преобразованная в JSON-объект.</p>
+
+<p>Пример разметки с шаблонами:</p>
+
+<pre>
+    &lt;div class=&quot;scroll-view-body&quot;&gt;
+        &lt;div class=&quot;block&quot;&gt;
+            &lt;div class=&quot;block-title&quot;&gt;
+                &lt;h2&gt;All Action Items&lt;/h2&gt;
+            &lt;/div&gt;
+            &lt;ul class=&quot;list-items-view&quot;&gt;
+                {{# _(model).each(function(action) { }}
+                &lt;li &gt;
+                    &lt;span class=&quot;priority-indicator {{ action.priority }}&quot;&gt;&lt;/span&gt;
+                    &lt;div class=&quot;list-item-row row-title&quot;&gt;
+                        &lt;div class=&quot;info&quot;&gt;{{ action.title }}&lt;/div&gt;
+                        &lt;div class=&quot;details&quot;&gt;Due: {{ action.due }}&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;list-item-row&quot;&gt;
+                        &lt;div class=&quot;info&quot;&gt;Patient: {{ action.patient }} (DOB: {{ action.dob }} )&lt;/div&gt;
+                        &lt;div class=&quot;details&quot;&gt;CM Program: {{ action.cm_program }}&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                {{# }); }}
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</pre>
+
+<p>Синтаксис внутри шаблона:</p>
+
+<ul>
+	<li>
+		<p>{{ ... }} - для интерполяции переменных;</p>
+	</li>
+	<li>
+		<p>{{# ... }} - для выполнения вычислений (JavaScript-код внутри шаблона);</p>
+	</li>
+	<li>
+		<p>{{{ ... }}} - для экранирования спец-символов (HTML-escaped);</p>
+	</li>
+	<li>
+		<p>model - преобразованная в JSON-объект <a href="file:///C:/Users/Миша/site/index.html#view_model">view.model</a>.</p>
+	</li>
+</ul>
+
+<p>У переданного в шаблон объекта model отсутствуют свойства и методы <a href="http://backbonejs.org/#Model" target="_blank">Backbone.Model</a> и <a href="http://backbonejs.org/#Collection" target="_blank">Backbone.Collection</a>. Если необходимо получить доступ непосредственно к <a href="file:///C:/Users/Миша/site/index.html#view_model">view.model</a>, либо к другим свойствам и методам, можно использовать прямую ссылку this на текущий view внутри шаблона.</p>
+
+<p>Для построения HTML из большого массива данных удобно использовать <a href="http://backbonejs.ru/#Collection-Underscore-Methods" target="_blank">методы</a> библиотеки Underscore, такие как each(), sortBy(), filter() и т.д.</p>
+
+<p>Пример использования методов Underscore.js в шаблоне</p>
+
+<pre>
+    RAD.view(&quot;view.persons_list&quot;, RAD.Blanks.View.extend({
+        url: &quot;source/views/persons_list.html&quot;,
+        onInitialize: function () {
+            this.model = RAD.model(&#39;persons&#39;, Backbone.Collection, true);
+            this.model.add([
+                {&quot;firstName&quot;: &quot;John&quot;, &quot;lastName&quot;: &quot;Doe&quot;},
+                {&quot;firstName&quot;: &quot;Homer&quot;, &quot;lastName&quot;: &quot;Simpson&quot;},
+                ...
+                ...
+                {&quot;firstName&quot;: &quot;Fox&quot;, &quot;lastName&quot;: &quot;Mulder&quot;}
+            ]);
+        }
+    }));
+                
+    &lt;!-- Шаблон persons_list.html: --&gt;
+    &lt;ul class=&quot;persons_list&quot;&gt;
+        {{# _(model).each(function (person) { }}
+        &lt;li&gt;{{ person.firstName }} &lt;b&gt;{{ person.lastName }}&lt;/b&gt;&lt;/li&gt;
+        {{# }); }}
+    &lt;/ul&gt;
+
+    &lt;!-- После шаблонизации: --&gt;
+    &lt;ul class=&quot;persons_list&quot;&gt;
+        &lt;li&gt;John &lt;b&gt;Doe&lt;/b&gt;&lt;/li&gt;
+        &lt;li&gt;Homer &lt;b&gt;Simpson&lt;/b&gt;&lt;/li&gt;
+        ...
+        ...
+        &lt;li&gt;Fox &lt;b&gt;Mulder&lt;/b&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+</pre>
+
+<p>Для того, чтобы при изменении model была перерисована лишь часть модуля, контейнеру, содержащему шаблон, необходимо присвоить атрибут data-template.</p>
+
+<p>Пример использования атрибута data-template:</p>
+
+<pre>
+    &lt;div id=&quot;my_module&quot;&gt;
+        &lt;!-- содержимое &lt;div&gt; не будет перерисовано (радиокнопка не будет сброшена в положение по умолчанию) --&gt;
+        &lt;div class=&quot;controls&quot;&gt;
+            &lt;p&gt;Sort by:&lt;/p&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sort_by&quot; value=&quot;first_name&quot; /&gt;First Name&lt;/label&gt;
+            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sort_by&quot; value=&quot;last_name&quot; checked /&gt;Last Name&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;!-- содержимое &lt;ul&gt; будет перерисовано --&gt;
+        &lt;ul class=&quot;persons_list&quot; data-template&gt;
+            {{# _(model).each(function (person) { }}
+            &lt;li&gt;{{ person.firstName }} &lt;b&gt;{{ person.lastName }}&lt;/b&gt;&lt;/li&gt;
+            {{# }); }}
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</pre>
+
+<h2>Model</h2>
+
+<p>В качестве модели данных используется <a href="http://backbonejs.org/#Model" target="_blank">backbone.model</a>.</p>
+
+<pre>
+    //создание модели
+    RAD.model(&#39;name&#39;, &lt;backbone.model&gt;, [instantiate]);
+
+    //получение модели (вернет undefined, если модели нет)
+    RAD.model(&#39;name&#39;);
+</pre>
+
+<p>Для работы с моделями вызывается метод RAD.model(...), где используются следующие параметры:</p>
+
+<ul>
+	<li>
+		<p>name - имя модели, под которым в RAD.models будет создана модель. Может быть задано в виде:<br />
+			&lt;namespace&gt;.&lt;subnamespace&gt;.name</p>
+	</li>
+	<li>
+		<p>backbone.model - модель backbone (пример ниже);</p>
+	</li>
+	<li>
+		<p>instantiate - параметр создания модели. true (или не передан) - создать экземпляр, false - сохранить как конструктор.</p>
+	</li>
+</ul>
+
+<p>Создание конструктора модели:</p>
+
+<pre>
+    RAD.model(&#39;note&#39;, Backbone.Model.extend({defaults: {
+            title: &quot;-&quot;,
+            description: &quot;-&quot;
+        }
+    }), false);
+</pre>
+
+<p>Создание модели в модуле:</p>
+
+<pre>
+    onInitialize: function () {
+        &quot;use strict&quot;;
+        var md = RAD.model(&#39;note&#39;);
+        this.model = new md();
+        this.model.set({title:&#39;test note 1&#39;, &#39;description&#39;:&#39;test note description 1&#39;})
+    },
+</pre>
+
+<p>Использование модели в шаблоне:</p>
+
+<pre>
+    &lt;div class=&quot;my page&quot;&gt;
+        &lt;h3&gt;Use models, Luke!&lt;/h3&gt;
+        &lt;div id=&quot;title&quot;&gt;{{ model.title }}&lt;/div&gt;
+        &lt;div id=&quot;description&quot;&gt;{{ model.description }}&lt;/div&gt;
+    &lt;/div&gt;
+</pre>
+
+<p>При изменении модели будет вызван метод render() модуля и автоматически обновится ВСЕ его содержимое. Для того, чтобы при изменении модели была перерисована лишь часть модуля, контейнеру, содержащему шаблон, необходимо присвоить атрибут data-template (см. примеры в разделе <a href="file:///C:/Users/Миша/site/index.html#templates">&quot;Шаблоны&quot;</a>).</p>
+
+<h2>Модель уровня приложения</h2>
+
+<p>Если необходимо, чтобы модель была доступна нескольким модулям, можно создать экземпляр модели на уровне приложения, передав последним параметром true.</p>
+
+<p>Создание экземпляра модели:</p>
+
+<pre>
+    RAD.model(&#39;message&#39;, Backbone.Model.extend({
+            defaults: {
+                title: &quot;-&quot;,
+                description: &quot;-&quot;
+            }
+    }), true);
+</pre>
+
+<p>Изменение данных модели:</p>
+
+<pre>
+    RAD.model(&#39;message&#39;).set({title: &#39;new note&#39;, description: &#39;lorem ipsum dolor&#39;});
+</pre>
+
+<h2>Service</h2>
+
+<p>Сервисы не имеют визуального представления, и могут быть использованы для обработки внутренней логики приложения. Имеют некоторые callback-методы, аналогичные view; также могут иметь <a href="file:///C:/Users/Миша/site/index.html#custom_properties">произвольные свойства</a>.</p>
+
+<h2>Объявление</h2>
+
+<p>Сервисы объявляются аналогично модулям, и тоже инстанциируются при получении первого сообщения.</p>
+
+<pre>
+    RAD.service(&quot;service.my_service&quot;, RAD.Blanks.Service.extend({
+        onReceiveMsg: function (channel, data) {
+            &quot;use strict&quot;;
+            var backway = data.split(&quot;&quot;).reverse().join(&quot;&quot;);
+            this.publish(&#39;view.widget2&#39;, backway);
+        }
+    }));
+</pre>
+
+<h2>Callbacks</h2>
+
+<p>Коллбэки сервисов аналогичны <a href="file:///C:/Users/Миша/site/index.html#callbacks">view callbacks</a>, но из-за отсутствия визуального представления применимы не все.</p>
+
+<p><strong>onInitialize</strong></p>
+
+<pre>
+    onInitialize: function(){ };
+</pre>
+
+<p>Выполняется первым из коллбэков в конце конструктора при создании экземпляра service. Это последний момент, когда можно напрямую задать модулю <a href="file:///C:/Users/Миша/site/index.html#model">модель</a>. В дальнейшем необходимо использовать такие методы view, как bindModel и unbindModel.</p>
+
+<p><strong>onDestroy</strong></p>
+
+<pre>
+    onDestroy: function(){ };
+</pre>
+
+<p>Вызывается перед уничтожением экземпляра сервиса (деструктор). Нет входных параметров.</p>
+
+<p><strong>onReceiveMsg</strong></p>
+
+<pre>
+    onReceiveMsg: function(msg, data){ };
+</pre>
+
+<p>Сервис при создании автоматически подписывается на сообщения, начинающиеся с &quot;service.&quot; и его имени. Аналогично <a href="file:///C:/Users/Миша/site/index.html#onReceiveMsg">module.onReceiveMsg</a><br />
+	Параметры:<br />
+	msg - канал сообщения, строка;<br />
+	data - объект переданных данных (см. публикацию сообщений <a href="file:///C:/Users/Миша/site/index.html#publish">publish</a>).</p>
+
+<h2>Namespace</h2>
+
+<p>Фреймворк позволяет использовать шаблон &#39;namespace&#39; (пространства имен) для структурированного хранения собственных конструкторов models, views, services и т.д., или наследования от существующих.</p>
+
+<pre>
+    RAD.namespace(destination, [obj]);
+</pre>
+
+<ul>
+	<li>
+		<p>destination - местонахождение namespace</p>
+	</li>
+	<li>
+		<p>obj - объект, который будет определен в этом namespace</p>
+	</li>
+</ul>
+
+<pre>
+    //Создание объекта authServer в пространстве имен RAD.network.nodes
+    RAD.namespace(&#39;network.nodes.authServer&#39;, {name: &#39;AuthServer&#39;, baseUrl: &#39;http://192.168.1.1/&#39;});
+
+    //Создаст в пространстве RAD.utils метод getRndInt
+    RAD.namespace(&#39;RAD.utils.getRndInt&#39;, function (min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    });
+
+    RAD.namespace(&#39;RAD.models.toDoList&#39;, Backbone.Collection.extend({
+        comparator: function (task) {
+          return task.get(&quot;name&quot;);
+        }
+    }));
+
+    //Пример наследования view от RAD.Blanks.ScrollableView и последующего его объявления.
+    RAD.namespace(&#39;RAD.views.ListView&#39;, RAD.Blanks.ScrollableView.extend({
+        model: new RAD.models.toDoList
+    }));
+    RAD.view(&#39;view.todo_list&#39;, RAD.views.ListView);
+</pre>
+
+<p>Обратите внимание: если при наследовании view в качестве прототипа выступает не RAD.Blanks.View, а Backbone.View, то view-наследник не будет иметь <a href="file:///C:/Users/Миша/site/index.html#callbacks">callback-методов</a> RAD.Blanks.View.</p>
+
+<p>Фреймворком предоставляются для использования готовые namespace:</p>
+
+<ul>
+	<li>
+		<p>RAD.Class - для собственных классов;</p>
+	</li>
+	<li>
+		<p>RAD.models - для моделей и коллекций;</p>
+	</li>
+	<li>
+		<p>RAD.views - для конструкторов View;</p>
+	</li>
+	<li>
+		<p>RAD.services - для сервисов;</p>
+	</li>
+	<li>
+		<p>RAD.plugins - для плагинов;</p>
+	</li>
+	<li>
+		<p>RAD.utils - для полезных методов-утилит.</p>
+	</li>
+</ul>
+
+<h2>FAQ</h2>
+
+<p>Часто задаваемые вопросы.</p>
+
+<ul>
+	<li>
+		<p>Как узнать, какие view видны на экране?</p>
+
+<pre>
+    querySelectorAll(&laquo;[view]&raquo;);
+</pre>
+	</li>
+	<li>
+		<p>Как получить ссылку на HTML-элемент-контейнер, в котором находится view?</p>
+
+<pre>
+    querySelector(&laquo;[view=&#39;viewID&#39;]&raquo;);
+</pre>
+	</li>
+	<li>
+		<p>Как получить список всех view, экземпляры которых созданы?</p>
+
+<pre>
+    RAD.core.getStartedViews();
+</pre>
+
+		<p>К счастью (или к сожалению), у нас пока не было не одного реально необходимого случая для вызова данного метода.</p>
+
+			</li>
+	<li>
+		<p>Получение экземпляра любого модуля приложения.</p>
+
+		<p>В любой части приложения возможно получить непосредственную ссылку на любой зарегистрированный модуль приложения (view или сервис) через прямую ссылку на ядро:</p>
+
+<pre>
+    RAD.core.getView(viewID, extras);
+                                
+    RAD.core.getService(viewID);
+</pre>
+
+		<p>Учтите, что архитектура приложения на RAD.js рассчитана на слабую связанность модулей и динамическое создание/уничтожение частей приложения, поэтому использовать данный механизм не рекомендуется.<br />
+			Связано это с тем, что данные методы вернут вам ссылку на экземпляр уже существующего модуля с указанным ID, или же создадут новый. Если вы сохраните эту ссылку, например, в атрибуте вашего view, какая-нибудь другая часть вашего приложения (опять же, через методы ядра) может удалить экземпляр модуля, а потом создать его уже с другими данными или моделью.<br />
+			Итогом будет наличие сильной связи, наличие ссылки на модуль, который уже уничтожен и нигде больше не используется.   В качестве рекомендации можно предложить использовать методы ядра только в объекте приложения. В этом случае вся работа по созданию и уничтожению модулей будет сосредоточена в одном месте, и найти логическую ошибку будет намного легче.</p>
+
+			</li>
+	<li>
+		<p>Модули являются Backbone.View?</p>
+
+		<p>Нет, но они созданы на основе Backbone.View и имеют почти те же задачи, основная из которых - отображение модуля на странице</p>
+
+			</li>
+	<li>
+		<p>Что такое канал (channel)? У каждого модуля свой channel? Как происходит subscribe и publish в определенный channel? В канал публикуется просто некое сообщение, и модуль, который слушает канал в ожидании этого сообщения, должен на него среагировать?</p>
+
+		<p>Канал является совокупностью публикатора, модуля подписчика и медиатора. Сообщениями, которыми обмениваются эти компоненты, являются события (&ldquo;команды&rdquo;, &ldquo;намерения&rdquo;).</p>
+
+			</li>
+	<li>
+		<p>Что такое extras?</p>
+
+		<p>Дополнительные данные, которые передаются во view при публикации сообщения через navigator.</p>
+
+			</li>
+	<li>
+		<p>На какие сообщения подписываются модули при регистрации?</p>
+
+		<p>На события, имя которых начинается с &quot;view.&quot; + имя модуля. При публикации такого сообщения вызывается <a href="file:///C:/Users/Миша/site/index.html#onReceiveMsg">onReceiveMsg</a> этого модуля.</p>
+
+			</li>
+	<li>
+		<p>Что такое backstack? Как именно работает и какие свойства нужно задать для его правильной работы?</p>
+
+		<p>Это компонент плагина router, позволяющий динамически запоминать расположение (т.е. layout) views на экране для конкретной сессии, используя history API браузера либо внутреннюю реализацию - и таким образом возвращаться к предыдущим расположениям модулей.<br />
+			<br />
+			Для использования бэкстека достаточно указать параметр backstack: true в запросе на смену views. Более подробная информация в разделе <a href="file:///C:/Users/Миша/site/index.html#router_backstack">backstack</a>.</p>
+
+			</li>
+	<li>
+		<p>Будет ли работать анимация дочерних модулей, если задать её таким образом? Например:</p>
+
+<pre>
+    RAD.views.ParentWidget = RAD.Blanks.View.extend({
+        url: &#39;source/views/parent_widget/parent_widget.html&#39;,
+        children: [
+            {
+                container_id: &#39;.content&#39;,
+                content: &quot;view.inner_first_widget&quot;,
+                animation: &#39;slide&#39;
+            },
+            {
+                container_id: &#39;.top&#39;,
+                content: &quot;view.inner_third_widget&quot;,
+                animation: &#39;fade&#39;
+            }
+        ]
+    });
+</pre>
+
+		<p>Да, но использовать не рекомендуется - будет визуально некрасиво.</p>
+
+			</li>
+	<li>
+		<p>Что происходит с дочерними модулями (&#39;&#39;children&#39;&#39;) во время рендеринга родительского модуля?</p>
+
+		<p>Во время самого первого рендеринга родительского модуля происходит следующее:</p>
+
+		<ul>
+			<li>
+				<p>Выполняется коллбэк onStartRender() (если определен);</p>
+			</li>
+			<li>
+				<p>Происходит рендер модуля;</p>
+			</li>
+			<li>
+				<p>Происходит присоединение (attach) дочерних модулей;</p>
+			</li>
+			<li>
+				<p>Выполняется коллбэк onEndRender() (если определен).</p>
+			</li>
+		</ul>
+
+		<p><br />
+			Во время повторного рендеринга в порядок действий добавляется предварительное отсоединение дочерних модулей:</p>
+
+		<ul>
+			<li>
+				<p>Выполняется коллбэк onStartRender() (если определен);</p>
+			</li>
+			<li>
+				<p>Происходит отсоединение (detach) дочерних модулей;</p>
+			</li>
+			<li>
+				<p>Происходит рендер модуля;</p>
+			</li>
+			<li>
+				<p>Происходит присоединение (attach) дочерних модулей;</p>
+			</li>
+			<li>
+				<p>Выполняется коллбэк onEndRender() (если определен).</p>
+			</li>
+		</ul>
+
+		<p><br />
+			Таким образом, заново рендерится только родительский модуль, а &#39;&#39;children&#39;&#39; - нет.</p>
+
+			</li>
+	<li>
+		<p>Можно ли &quot;прикрепить&quot; iScroll к какому либо дочернему HTML-элементу модуля при отображении этого модуля?</p>
+
+		<p>Да, контейнеру для iScroll необходимо указать класс &quot;scroll-view&quot;.</p>
+
+			</li>
+	<li>
+		<p>Какие существуют события iScroll?</p>
+
+		<p>См. события в документации iScroll4.</p>
+	</li>
+</ul>
+
+
+	</div>
+<!--content-wrapper-->    </div >
+
+</div >
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js" ></script >
+<script type="text/javascript" src="js/jquery.mousewheel.js" ></script >
+<script type="text/javascript" src="js/jquery.jscrollpane.min.js" ></script >
+<script src="js/main.js" ></script >
+</body >
+</html >
