@@ -16,7 +16,7 @@
 		</div>
 
 		<a href="index.html" class="logo-link"></a>
-		<a href="documentation.html" class="menu-link documentation">Documentation</a>
+		<span class="menu-link documentation">Documentation</span>
 		<a href="#" class="menu-link demo">Demo</a>
 	  	<a href="#" class="menu-link contact">Contact</a>
 	  	<a href="#" class="menu-link discus">Discus</a>
@@ -59,7 +59,7 @@
 				</li>
 			</ul>
 			</li>
-			<li><a href="#Core">Plugins of the core</a>
+			<li><a href="#Core-Plugins-of-the-core">Plugins of the core</a>
 			<ul>
 				<li><a href="#Core-Navigation">Navigation</a>
 				<ul>
@@ -89,7 +89,7 @@
 					<li><a href="#view-subscribe">subscribe</a></li>
 					<li><a href="#view-unsubscribe">unsubscribe</a></li>
 					<li><a href="#view-publish">publish</a></li>
-					<li><a href="#view-$">$</a></li>
+					<li><a href="#view-s">$</a></li>
 					<li><a href="#view-finish">finish</a></li>
 					<li><a href="#view-getChildren">getChildren</a></li>
 					<li><a href="#view-bindModel">bindModel</a></li>
@@ -110,7 +110,7 @@
 					<li><a href="#view-Callbacks-onEndDetach">onEndDetach</a></li>
 					<li><a href="#view-Callbacks-onDestroy">onDestroy</a></li>
 					<li><a href="#view-Callbacks-onReceiveMsg">onReceiveMsg</a></li>
-					<li><a href="#view-Callbacks-loader.done">loader.done</a></li>
+					<li><a href="#view-Callbacks-loaderdone">loader.done</a></li>
 				</ul>
 				</li>
 				<li><a href="#view-options-of-View">Options of View</a>
@@ -318,7 +318,7 @@ getService(serviceID, [extras])
 
 <p>Identical to the <a href="file:///C:/Users/Миша/Downloads/site/index.html#getView">getView</a> method.</p>
 
-<h2><a name="__RefHeading__3327_40754705"></a>Options of the core</h2>
+<h2 id="Core-Options-of-the-core">Options of the core</h2>
 
 <p>Options of the core are determined by the object of the options. E.g.:</p>
 
@@ -340,7 +340,7 @@ coreOptions = {
 core.initialize(application, coreOptions);
 </pre>
 
-<h3><a name="__RefHeading__3329_40754705"></a>plugins</h3>
+<h3 id="Core-Options-of-the-core-plugins">plugins</h3>
 
 <pre class="prettyprint linenums">
 plugins: [
@@ -355,7 +355,7 @@ plugins: [
 
 <p>Notice: the <strong>&quot;plugin.navigator&quot;, &quot;plugin.fastclick&quot;, &quot;plugin.router&quot;</strong> plugins are registered, and there is no need in declaring them.</p>
 
-<h3><a name="__RefHeading__3331_40754705"></a>defaultBackstack</h3>
+<h3 id="Core-Options-of-the-core-defaultBackstack">defaultBackstack</h3>
 
 <pre class="prettyprint linenums">
 // no backstack
@@ -367,7 +367,7 @@ defaultBackstack: true,
 <p>Default backstack for <strong>all</strong> transactions. When <strong>false</strong> is indicated, history of changes in screen content (layout change of view) will not be saved. To enter a transaction to the history, the <strong>backstack: true</strong> option should be utilized, while using <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a>.<br />
 For further details ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#router_backstack">Backstack</a>.</p>
 
-<h3><a name="__RefHeading__3333_40754705"></a>backstackType</h3>
+<h3 id="Core-Options-of-the-core-backstackType">backstackType</h3>
 
 <pre class="prettyprint linenums">
 //backstack using history API
@@ -382,7 +382,7 @@ backstackType: &#39;custom&#39;
 
 <p>For further details about backstack types ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#router_backstack">Backstack</a>.</p>
 
-<h3><a name="__RefHeading__3335_40754705"></a>defaultAnimation</h3>
+<h3 id="Core-Options-of-the-core-defaultAnimation">defaultAnimation</h3>
 
 <pre class="prettyprint linenums">
 defaultAnimation: &#39;slide&#39;,
@@ -390,7 +390,7 @@ defaultAnimation: &#39;slide&#39;,
 
 <p>Default animation of module interchange. It can gain such values as <strong>&#39;slide&#39;</strong>, <strong>&#39;fade&#39;</strong> and <strong>&#39;none&#39;</strong> (instant substitution). Further details in <a href="file:///C:/Users/Миша/Downloads/site/index.html#animation">module animation</a>.</p>
 
-<h3><a name="__RefHeading__3337_40754705"></a>animationTimeout</h3>
+<h3 id="Core-Options-of-the-core-animationTimeout">animationTimeout</h3>
 
 <pre class="prettyprint linenums">
 animationTimeout: 3000,
@@ -398,7 +398,7 @@ animationTimeout: 3000,
 
 <p>Duration of time, after which interface is unblocked (the block is launched at the beginning of animation) in case of unforeseen errors.</p>
 
-<h3><a name="__RefHeading__3339_40754705"></a>debug</h3>
+<h3 id="Core-Options-of-the-core-debug">debug</h3>
 
 <pre class="prettyprint linenums">
 debug: false
@@ -406,15 +406,15 @@ debug: false
 
 <p>Debug mode. When <strong>true</strong>, it enters information about events, channels and objects of the core into browser console.</p>
 
-<h2><a name="__RefHeading__3341_40754705"></a>Plugins of the core</h2>
+<h2 id="Core-Plugins-of-the-core">Plugins of the core</h2>
 
 <p>Plugins implement additional functionality of the core, which is required for system functioning, and does not depend on actual implementation of application logic. If a functional module must be implemented without visual representation in actual application, it is recommended to use services.</p>
 
-<h3><a name="__RefHeading__3343_40754705"></a>Navigation</h3>
+<h3 id="Core-Navigation">Navigation</h3>
 
 <p>The <strong>navigation</strong> plugin processes all messages with the <strong>&#39;navigation.&#39;</strong> root node and manages views (display, hide, provide backstack, status change notification).</p>
 
-<p><a name="__RefHeading__3345_40754705"></a>show</p>
+<h4 id="Core-Navigation-show">show</h4>
 
 <pre class="prettyprint linenums">
 var options = {
@@ -460,7 +460,7 @@ Parameters of <strong>options</strong>:</p>
 
 <p>Required parameters are <strong>content</strong> and <strong>container_id</strong> (the latter is optional for toast.show and dialog.show). Other parameters are optional.</p>
 
-<p><a name="__RefHeading__3347_40754705"></a>back</p>
+<h4 id="Core-Navigation-showback">back</h4>
 
 <pre class="prettyprint linenums">
 this.publish(&#39;navigation.back&#39;, options);
@@ -468,24 +468,21 @@ this.publish(&#39;navigation.back&#39;, options);
 
 <p>Similar to <strong>navigation.show</strong>. Reverse animation is used by default.</p>
 
-<p><a name="__RefHeading__3349_40754705"></a>dialog.show</p>
-
+<h4 id="Core-Navigation-showdialogshow">dialog.show</h4>
 <pre class="prettyprint linenums">
 this.publish(&#39;navigation.dialog.show&#39;, options);
 </pre>
 
 <p>Similar to <strong>navigation.show</strong> but shows the module as a modal window. Can be closed with <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_dialog_close">dialog.close</a>.</p>
 
-<p><a name="__RefHeading__3351_40754705"></a>dialog.close</p>
-
+<h4 id="Core-Navigation-showdialogclose">dialog.close</h4>
 <pre class="prettyprint linenums">
 this.publish(&#39;navigation.dialog.close&#39;, options);
 </pre>
 
 <p>Closes the modal window.</p>
 
-<p><a name="__RefHeading__3353_40754705"></a>toast.show</p>
-
+<h4 id="Core-Navigation-showtoastshow">toast.show</h4>
 <pre class="prettyprint linenums">
 options = {
     content: &quot;view.toast&quot;,
@@ -500,16 +497,14 @@ The <strong>options.gravity</strong> parameter means position; it can take value
 
 <p>Obligatory condition: view must be inherited from <strong>RAD.Blanks.Toast</strong>.</p>
 
-<p><a name="__RefHeading__3355_40754705"></a>toast.close</p>
-
+<h4 id="Core-Navigation-showtoastclose">toast.close</h4>
 <pre class="prettyprint linenums">
 this.publish(&#39;navigation.toast.close&#39;, options);
 </pre>
 
 <p>Closes the alert.</p>
 
-<p><a name="__RefHeading__3357_40754705"></a>popup.show</p>
-
+<h4 id="Core-Navigation-showpopupshow">popup.show</h4>
 <pre class="prettyprint linenums">
 options = {
         content: &quot;view.popup&quot;,
@@ -539,24 +534,22 @@ this.publish(&#39;navigation.popup.show&#39;, options);
 
 <p>Obligatory condition: view must be inherited from <strong>RAD.Blanks.Popup</strong>.</p>
 
-<p><a name="__RefHeading__3359_40754705"></a>popup.close</p>
-
+<h4 id="Core-Navigation-showpopupclose">popup.close</h4>
 <pre class="prettyprint linenums">
 this.publish(&#39;navigation.popup.close&#39;, options);
 </pre>
 
 <p>Closes the popup window.</p>
 
-<h3><a name="__RefHeading__3361_40754705"></a>Fastclick</h3>
+<h3 id="Core-Fastclick">Fastclick</h3>
 
 <p>This plugin of the core executes such crossbrowser events as &laquo;swipe&raquo;, &laquo;tap&raquo;, &laquo;tapdown&raquo;, &laquo;tapup&raquo;, &laquo;tapmove&raquo;, &laquo;tapcancel&raquo;.</p>
 
-<h3><a name="__RefHeading__3363_40754705"></a>Router</h3>
+<h3 id="Core-Router">Router</h3>
 
 <p>It is used by the core for navigation; realizes backstack.</p>
 
-<p><a name="__RefHeading__3365_40754705"></a>backstack</p>
-
+<h4 id="Core-Router-backstack">backstack</h4>
 <pre class="prettyprint linenums">
 options = {
     backstack: true,
@@ -676,11 +669,11 @@ RAD.view(&quot;view.top_widget&quot;, RAD.Blanks.View.extend({
 }));
 </pre>
 
-<h2><a name="__RefHeading__3367_40754705"></a>View</h2>
+<h2 id="view">View</h2>
 
 <p>Base for view constructor in the application; represents an extended <strong>backbone.view</strong>.</p>
 
-<h3><a name="__RefHeading__3369_40754705"></a>Module declaration</h3>
+<h3 id="moduledeclaration">Module declaration</h3>
 
 <p>Instance of the &#39;start_page.js&#39; module file; view declaration through the &#39;namespace&#39; pattern:</p>
 
@@ -699,9 +692,9 @@ RAD.views.StartPage = RAD.Blanks.View.extend({
 
 </pre>
 
-<h3><a name="__RefHeading__3371_40754705"></a>Methods</h3>
+<h3 id="methods">Methods</h3>
 
-<p><a name="__RefHeading__3373_40754705"></a>subscribe</p>
+<h4 id="view-subscribe">subscribe</h4>
 
 <pre class="prettyprint linenums">
 this.subscribe(channel, function, context);
@@ -709,24 +702,21 @@ this.subscribe(channel, function, context);
 
 <p>Subscribes chosen module instance to chosen channel; represents direct link to the <a href="file:///C:/Users/Миша/Downloads/site/index.html#subscribe">subscribe</a> method of the core.</p>
 
-<p><a name="__RefHeading__3375_40754705"></a>unsubscribe</p>
-
+<h4 id="view-unsubscribe">unsubscribe</h4>
 <pre class="prettyprint linenums">
 this.unsubscribe([channel,] context);
 </pre>
 
 <p>Unsubscribes chosen module instance from chosen channel; represents direct link to the <a href="file:///C:/Users/Миша/Downloads/site/index.html#unsubscribe">unsubscribe</a> method of the core.</p>
 
-<p><a name="__RefHeading__3377_40754705"></a>publish</p>
-
+<h4 id="view-publish">publish</h4>
 <pre class="prettyprint linenums">
 this.publish(channel, data);
 </pre>
 
 <p>Publishes a message that contains <strong>data</strong> to an indicated <strong>channel;</strong> represents direct link to the <a href="file:///C:/Users/Миша/Downloads/site/index.html#publish">publish</a> method of the core.</p>
 
-<p><a name="__RefHeading__3379_40754705"></a>$</p>
-
+<h4 id="view-s">$</h4>
 <pre class="prettyprint linenums">
 this.$(&#39;css_selector&#39;);
 </pre>
@@ -739,40 +729,35 @@ this.$(&#39;css_selector&#39;);
 this.$el.find(&#39;css_selector&#39;);
 </pre>
 
-<p><a name="__RefHeading__3381_40754705"></a>finish</p>
-
+<h4 id="view-finish">finish</h4>
 <pre class="prettyprint linenums">
 this.finish();
 </pre>
 
 <p>Eliminates the module instance.</p>
 
-<p><a name="__RefHeading__3383_40754705"></a>getChildren</p>
-
+<h4 id="view-getChildren">getChildren</h4>
 <pre class="prettyprint linenums">
 this.getChildren();
 </pre>
 
 <p>Brings back the array of child modules, which are indicated during a declaration in <a href="file:///C:/Users/Миша/Downloads/site/index.html#children">children</a>, or which are currently located in this view.</p>
 
-<p><a name="__RefHeading__3385_40754705"></a>bindModel</p>
-
+<h4 id="view-bindModel">bindModel</h4>
 <pre class="prettyprint linenums">
 this.bindModel(model);
 </pre>
 
 <p>Sets a <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a> for the module. Hereby <a href="file:///C:/Users/Миша/Downloads/site/index.html#render">render()</a> will be called to redraw the module. The module will be automatically subscribed to model events.</p>
 
-<p><a name="__RefHeading__3387_40754705"></a>changeModel</p>
-
+<h4 id="view-changeModel">changeModel</h4>
 <pre class="prettyprint linenums">
 this.changeModel(model);
 </pre>
 
 <p>Changes the module <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a> into the one rendered in <strong>model</strong>. Here <a href="file:///C:/Users/Миша/Downloads/site/index.html#render">render()</a> will be called to redraw the module.</p>
 
-<p><a name="__RefHeading__3389_40754705"></a>unbindModel</p>
-
+<h4 id="view-unbindModel">unbindModel</h4>
 <pre class="prettyprint linenums">
 this.unbindModel(forceRender);
 </pre>
@@ -781,8 +766,7 @@ this.unbindModel(forceRender);
 
 <p>Notice: the call of this method may cause an error if presence of the model is not checked in the template. It is recommended to use only if there are no other ways to solve the task.</p>
 
-<p><a name="__RefHeading__3391_40754705"></a>render</p>
-
+<h4 id="view-render">render</h4>
 <pre class="prettyprint linenums">
 this.render();
 </pre>
@@ -791,8 +775,7 @@ this.render();
 
 <p>There is usually no need in calling this method manually.</p>
 
-<p><a name="__RefHeading__3393_40754705"></a>refreshScroll</p>
-
+<h4 id="view-refreshScroll">refreshScroll</h4>
 <pre class="prettyprint linenums">
 this.refreshScroll();
 </pre>
@@ -801,7 +784,7 @@ this.refreshScroll();
 
 <p>There is usually no need in calling this method manually. It can be used during manual placement of content into the module element, which is not recommended.</p>
 
-<h3><a name="__RefHeading__3395_40754705"></a>Callbacks</h3>
+<h3 id="view-Callbacks">Callbacks</h3>
 
 <p>Callbacks are described by declaration of view, e.g.:</p>
 
@@ -848,24 +831,21 @@ onEndDetach: function () {},
 onDestroy: function () {}
 </pre>
 
-<p><a name="__RefHeading__3397_40754705"></a>onInitialize</p>
-
+<h4 id="view-Callbacks-onInitialize">onInitialize</h4>
 <pre class="prettyprint linenums">
 onInitialize: function(){ };
 </pre>
 
 <p>Executed by the first callback at the end of constructor during a view instantiation. It is the last moment to directly determine a <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a> for the module. Further should be used such view methods as <strong>bindModel</strong> and <strong>unbindModel</strong>.</p>
 
-<p><a name="__RefHeading__3399_40754705"></a>onStartRender</p>
-
+<h4 id="view-Callbacks-onStartRender">onStartRender</h4>
 <pre class="prettyprint linenums">
 onStartRender: function(){ };
 </pre>
 
 <p>Executed before <strong>render()</strong> of the module. There is no HMTL-rendering of the module on this stage.</p>
 
-<p><a name="__RefHeading__3401_40754705"></a>onEndRender</p>
-
+<h4 id="view-Callbacks-onEndRender">onEndRender</h4>
 <pre class="prettyprint linenums">
 onEndRender: function(){ };
 </pre>
@@ -874,8 +854,7 @@ onEndRender: function(){ };
 
 <p>Notice: module&#39;s <strong>render()</strong> is called during the first display of the module and during each change of module model, to which it automatically binds during creation. It is also possible to call module&#39;s <strong>render()</strong> manually.</p>
 
-<p><a name="__RefHeading__3403_40754705"></a>onNewExtras</p>
-
+<h4 id="view-Callbacks-onNewExtras">onNewExtras</h4>
 <pre class="prettyprint linenums">
 var options = {
     extras: {
@@ -891,40 +870,35 @@ onNewExtras: function(extras){
 
 <p>Executed during transmission of new extras through navigator. Perfectly suits for transmission of either a new model or parameters of displayed module. Utilizes the <strong>extras </strong>parameter.</p>
 
-<p><a name="__RefHeading__3405_40754705"></a>onStartAttach</p>
-
+<h4 id="view-Callbacks-onStartAttach">onStartAttach</h4>
 <pre class="prettyprint linenums">
 onStartAttach: function(channel, options){ };
 </pre>
 
 <p>Executed <strong>before</strong> displaying the module and <strong>before</strong> the beginning of animation (even if it does not exist). Takes the channel of the message and data from the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> plugin as parameters.</p>
 
-<p><a name="__RefHeading__3407_40754705"></a>onEndAttach</p>
-
+<h4 id="view-Callbacks-onEndAttach">onEndAttach</h4>
 <pre class="prettyprint linenums">
 onEndAttach: function(channel, options){ };
 </pre>
 
 <p>Executed <strong>after</strong> the display of module is over, or <strong>after</strong> the animation is over (even if it does not exist). Takes the channel of the message and data from the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> plugin as parameters.</p>
 
-<p><a name="__RefHeading__3409_40754705"></a>onEndDetach</p>
-
+<h4 id="view-Callbacks-onEndDetach">onEndDetach</h4>
 <pre class="prettyprint linenums">
 onEndDetach: function(channel, options){ };
 </pre>
 
 <p>Executed after the final disconnection of the module from current DOM. Takes the channel of the message and data from the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> plugin as parameters.</p>
 
-<p><a name="__RefHeading__3411_40754705"></a>onDestroy</p>
-
+<h4 id="view-Callbacks-onDestroy">onDestroy</h4>
 <pre class="prettyprint linenums">
 onDestroy: function(){ };
 </pre>
 
 <p>Called before elimination of module instance (destructor); has no input parameters.</p>
 
-<p><a name="__RefHeading__3413_40754705"></a>onReceiveMsg</p>
-
+<h4 id="view-Callbacks-onReceiveMsg">onReceiveMsg</h4>
 <pre class="prettyprint linenums">
 onReceiveMsg: function(msg, data){ };
 </pre>
@@ -938,8 +912,7 @@ onReceiveMsg: function(msg, data){ };
 
 <p>Services are subscribed in the same way - on messages starting with <strong>&quot;service.&quot; + &quot;module_name&quot;</strong>.</p>
 
-<p><a name="__RefHeading__3415_40754705"></a>loader.done</p>
-
+<h4 id="view-Callbacks-loaderdone">loader.done</h4>
 <pre class="prettyprint linenums">
 onNewExtras: function (extras) {
     var self = this;
@@ -951,20 +924,18 @@ onNewExtras: function (extras) {
 
 <p>It is not exactly a callback method. Each module has a deferred object <strong>loader</strong>, which can be given a function that will be executed after loading the HTML-rendering of the module. In case if HTML or HTML-template are loaded beforehand, the function will be executed at once. This method can be used when it is needed to insert the data transmitted through <a href="file:///C:/Users/Миша/Downloads/site/index.html#onNewExtras">extras</a> into ready HTML.</p>
 
-<h3><a name="__RefHeading__3417_40754705"></a>Options of View</h3>
+<h3 id="view-options-of-View">Options of View</h3>
 
 <p>Modules are inherited from <a href="http://backbonejs.org/#View" target="_blank">backbone.view</a>, here are described several options.</p>
 
-<p><a name="__RefHeading__3419_40754705"></a>url</p>
-
+<h4 id="view-options-of-View-url">url</h4>
 <pre class="prettyprint linenums">
 url: &#39;source/views/inner/third_widget/third_widget.html&#39;
 </pre>
 
 <p>Link to HTML file, used by modules as a template.</p>
 
-<p><a name="__RefHeading__3421_40754705"></a>tagName и ClassName</p>
-
+<h4 id="view-options-of-View-tagName">tagName и ClassName</h4>
 <pre class="prettyprint linenums">
 tagName: &#39;li&#39;,
 className: &#39;my_list_item&#39;
@@ -972,8 +943,7 @@ className: &#39;my_list_item&#39;
 
 <p>Determines the element that will represent module container and its class(es).</p>
 
-<p><a name="__RefHeading__3423_40754705"></a>children</p>
-
+<h4 id="view-options-of-View-children">children</h4>
 <pre class="prettyprint linenums">
 children:[
     {
@@ -989,8 +959,7 @@ children:[
 
 <p>Array of child modules to be loaded and shown along with the parent module. Attributes are identical to <strong>&#39;navigation.show&#39;</strong>.</p>
 
-<p><a name="__RefHeading__3425_40754705"></a>events</p>
-
+<h4 id="view-options-of-View-events">events</h4>
 <pre class="prettyprint linenums">
 events:{
     &#39;focus .search-by-name&#39;: &#39;showAutocomplete&#39;,
@@ -1004,8 +973,7 @@ showAutocomplete: function(){}
 
 <p>Subscribes module elements to events.</p>
 
-<p><a name="__RefHeading__3427_40754705"></a>model</p>
-
+<h4 id="view-options-of-View-model">model</h4>
 <pre class="prettyprint linenums">
 //declarative way
 model: RAD.models.noteList;
@@ -1025,8 +993,7 @@ onInitialize: function () {
 
 <p>Determines data model for the module. Further about models ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a>. View automatically subscribes to model events.</p>
 
-<p><a name="__RefHeading__3429_40754705"></a>custom options</p>
-
+<h4 id="view-options-of-View-custom">custom options</h4>
 <pre class="prettyprint linenums">
 currentPageDisplay: 2,
 showMyCustomWidget: false
@@ -1036,63 +1003,7 @@ showMyCustomWidget: false
 
 <p>Do not allow created options to redefine the names of existing ones - this may cause errors.</p>
 
-<h2><a name="__RefHeading__3431_40754705"></a>Toast</h2>
-
-<p>Module for notifications, which closes automatically after a certain period of time (in 3 seconds by default). Ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_toast_show">navigation.toast.show</a>.</p>
-
-<pre class="prettyprint linenums">
-RAD.view(&quot;view.CompleteToast&quot;, RAD.Blanks.Toast.extend({
-    //шаблон
-    url: &#39;source/views/start_page.html&#39;,
-    //время показа
-    showTime: 5000
-}));
-</pre>
-
-<p>Notice: the <strong>toast</strong> module element is placed in <strong>body</strong>, ignoring <strong>container_id</strong> in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> options.</p>
-
-<h2><a name="__RefHeading__3433_40754705"></a>Popup</h2>
-
-<p>The module realizes a self-positioning popup. Ways of positioning are determined in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_popup_show">navigation.popup.show</a> options.</p>
-
-<pre class="prettyprint linenums">
-RAD.view(&quot;view.PopupOverview&quot;, RAD.Blanks.Popup.extend({
-    url: &#39;source/views/popup_dashboard_overview/popup_dashboard_overview.html&#39;,
-
-    onInitialize: function (){
-        var Model = Backbone.Model.extend();
-
-        this.model = new Model();
-    },
-    onNewExtras: function (extras) {
-        &#39;use strict&#39;;
-
-        this.model.set({msg: extras});
-    },
-    // will the popup close by clicking outside the module?
-    outSideClose: true,
-    // will the module instance be deleted after closing?(Yes by default)
-    // if you do not need to delete, write the following line
-    onCloseDestroy: false
-});
-</pre>
-
-<p>Notice: the <strong>popup</strong> module element is placed in <strong>body</strong>, ignoring <strong>container_id</strong> in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> options.</p>
-
-<h2><a name="__RefHeading__3435_40754705"></a>Scrollable view</h2>
-
-<p>Module with scrolling content, uses improved version of <a href="http://cubiq.org/iscroll-4">iScroll-lite</a>.</p>
-
-<pre class="prettyprint linenums">
-RAD.view(&quot;view.start_page&quot;, RAD.Blanks.View.extend({
-    url: &#39;source/views/start_page.html&#39;
-}));
-</pre>
-
-<p>Notice: for functioning of iScroll&#39;а there must be a<strong>&quot;scroll-view&quot;</strong> class available in HTML for container, in which the content scrolls (if inherited from ScrollableView, it is automatically attached to view).<br />
-When scrolled content changes size, a set-up <strong>data-template</strong> attribute is required for correct functioning of scrolling.</p>
-
-<h2><a name="__RefHeading__3437_40754705"></a> Animation</h2>
+<h2 id="view-Animation">Animation</h2>
 
 <p>Animation, which is used to display modules. Values can be as follows:</p>
 
@@ -1151,7 +1062,7 @@ When scrolled content changes size, a set-up <strong>data-template</strong> attr
 }
 </pre>
 
-<h2><a name="__RefHeading__3439_40754705"></a>Templates</h2>
+<h2 id="view-Templates">Templates</h2>
 
 <p>Templates are useful in rendering extensive and complex parts of HMTL-markup from JSON-data. The <a href="http://underscorejs.org/#template" target="_blank">Underscore.js</a> method from the library is used for templating. This method compiles templates to functions, which can be called for rendering a template. Path to HTML-template is indicated as a <a href="file:///C:/Users/Миша/Downloads/site/index.html#url">url</a> option by declaring the <a href="file:///C:/Users/Миша/Downloads/site/index.html#view">View</a> module. During the rendering of HTML-representation of the module, the <a href="file:///C:/Users/Миша/Downloads/site/index.html#view_model">view.model</a> of this module, which is transformed into JSON-object, is transmitted to template engine function.</p>
 
@@ -1257,7 +1168,63 @@ When scrolled content changes size, a set-up <strong>data-template</strong> attr
     &lt;/div&gt;
 </pre>
 
-<h2><a name="__RefHeading__3441_40754705"></a>Model</h2>
+<h2 id="Toast">Toast</h2>
+
+<p>Module for notifications, which closes automatically after a certain period of time (in 3 seconds by default). Ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_toast_show">navigation.toast.show</a>.</p>
+
+<pre class="prettyprint linenums">
+RAD.view(&quot;view.CompleteToast&quot;, RAD.Blanks.Toast.extend({
+    //шаблон
+    url: &#39;source/views/start_page.html&#39;,
+    //время показа
+    showTime: 5000
+}));
+</pre>
+
+<p>Notice: the <strong>toast</strong> module element is placed in <strong>body</strong>, ignoring <strong>container_id</strong> in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> options.</p>
+
+<h2 id="Popup">Popup</h2>
+
+<p>The module realizes a self-positioning popup. Ways of positioning are determined in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_popup_show">navigation.popup.show</a> options.</p>
+
+<pre class="prettyprint linenums">
+RAD.view(&quot;view.PopupOverview&quot;, RAD.Blanks.Popup.extend({
+    url: &#39;source/views/popup_dashboard_overview/popup_dashboard_overview.html&#39;,
+
+    onInitialize: function (){
+        var Model = Backbone.Model.extend();
+
+        this.model = new Model();
+    },
+    onNewExtras: function (extras) {
+        &#39;use strict&#39;;
+
+        this.model.set({msg: extras});
+    },
+    // will the popup close by clicking outside the module?
+    outSideClose: true,
+    // will the module instance be deleted after closing?(Yes by default)
+    // if you do not need to delete, write the following line
+    onCloseDestroy: false
+});
+</pre>
+
+<p>Notice: the <strong>popup</strong> module element is placed in <strong>body</strong>, ignoring <strong>container_id</strong> in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> options.</p>
+
+<h2 id="Scrollable-view">Scrollable view</h2>
+
+<p>Module with scrolling content, uses improved version of <a href="http://cubiq.org/iscroll-4">iScroll-lite</a>.</p>
+
+<pre class="prettyprint linenums">
+RAD.view(&quot;view.start_page&quot;, RAD.Blanks.View.extend({
+    url: &#39;source/views/start_page.html&#39;
+}));
+</pre>
+
+<p>Notice: for functioning of iScroll&#39;а there must be a<strong>&quot;scroll-view&quot;</strong> class available in HTML for container, in which the content scrolls (if inherited from ScrollableView, it is automatically attached to view).<br />
+When scrolled content changes size, a set-up <strong>data-template</strong> attribute is required for correct functioning of scrolling.</p>
+
+<h2 id="Model">Model</h2>
 
 <p><a href="http://backbonejs.org/#Model" target="_blank">backbone.model</a> is used as a data model.</p>
 
@@ -1320,7 +1287,7 @@ When scrolled content changes size, a set-up <strong>data-template</strong> attr
 
 <p>Upon change of model, the <strong>render()</strong> module method will be called, and ALL its content will be updated automatically. In orded to redraw only a part of the module, the container holding the template must get the <strong>data-template</strong> attribute (for examples ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#templates">&quot;Templates&quot;</a>).</p>
 
-<h3><a name="__RefHeading__3443_40754705"></a>Model of application level</h3>
+<h3 id="Model-of-application-level">Model of application level</h3>
 
 <p>If the model must be available for several modules, one can instantiate a model on application level, and set &#39;true&#39; as the last parameter, to create an instance.</p>
 
@@ -1343,11 +1310,11 @@ description: &quot;-&quot;
 
 </pre>
 
-<h2><a name="__RefHeading__3445_40754705"></a>Service</h2>
+<h2 id="Service">Service</h2>
 
 <p>Services have no visual representation, and can be used to process the internal logic of the application. Services have several callback-methods, similar to <strong>view</strong>, also can have <a href="file:///C:/Users/Миша/Downloads/site/index.html#custom_properties">user-defined attributes and methods</a>.</p>
 
-<h3><a name="__RefHeading__3447_40754705"></a>Declaration</h3>
+<h3 id="Service-Declaration">Declaration</h3>
 
 <p>Services are declared similarly to modules and are also instantiated upon receiving the first message.</p>
 
@@ -1361,42 +1328,36 @@ description: &quot;-&quot;
     }));
 </pre>
 
-<h3><a name="__RefHeading__3449_40754705"></a>Callbacks</h3>
+<h3 id="Service-Callbacks">Callbacks</h3>
 
 <p>Service callbacks are similar to <a href="file:///C:/Users/Миша/Downloads/site/index.html#callbacks">view callbacks</a>, but not all of them are applicable due to absence of visual representation.</p>
 
-<p><a name="__RefHeading__3451_40754705"></a>onInitialize</p>
-
+<h4 id="Service-Callbacks-onInitialize">onInitialize</h4>
 <pre class="prettyprint linenums">
 onInitialize: function(){ };
 </pre>
 
 <p>The first of callbacks to be executed at the end of constructor during instantiation of service. The final moment when a <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a> can be directly specified for the module. Later on must be used such view methods as <strong>bindModel</strong> and <strong>unbindModel</strong>.</p>
 
-<p><a name="__RefHeading__3453_40754705"></a>onDestroy</p>
-
+<h4 id="Service-Callbacks-onDestroy">onDestroy</h4>
 <pre class="prettyprint linenums">
 onDestroy: function(){ };
 </pre>
 
 <p>Called before elimination of a service instance (destructor). No input parameters.</p>
 
-<p><a name="__RefHeading__3455_40754705"></a>onReceiveMsg</p>
-
+<h4 id="Service-Callbacks-onReceiveMsg">onReceiveMsg</h4>
 <pre class="prettyprint linenums">
-
-    onReceiveMsg: function(msg, data){ };
-
-    </pre>
+onReceiveMsg: function(msg, data){ };
+</pre>
 
 <p>Created service is automatically subscribed to messages starting with &quot;service.&quot; and its name. Similar to <a href="file:///C:/Users/Миша/Downloads/site/index.html#onReceiveMsg">module.onReceiveMsg</a>.</p>
 
-<p>Parameters:<br />
-<strong>msg</strong> - message channel, a line;</p>
+<p>Parameters:<strong>msg</strong> - message channel, a line;</p>
 
 <p><strong>data</strong> - object of transmitted data (ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#publish">publish</a>).</p>
 
-<h2><a name="__RefHeading__3457_40754705"></a> Namespace</h2>
+<h2 id="Namespace">Namespace</h2>
 
 <p>The framework allows to use the <strong>&#39;namespace&#39;</strong> template for structured storage of proper constructors, such as <strong>models</strong>, <strong>views</strong>, <strong>services</strong> etc., or inheriting the existing ones.</p>
 
@@ -1460,7 +1421,7 @@ onDestroy: function(){ };
 	</li>
 </ul>
 
-<h2><a name="__RefHeading__3459_40754705"></a> FAQ</h2>
+<h2 id="FAQ">FAQ</h2>
 
 
 
