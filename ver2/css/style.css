@@ -63,7 +63,7 @@ ul {
 
 .main-wrapper{
 	min-height: 100%;
-	padding-bottom: 100px;
+	/*padding-bottom: 100px;*/
 	box-sizing: border-box;
 	overflow: hidden;
 }
@@ -88,6 +88,9 @@ ul {
 .offset1 {
 	margin-left: 90px;
 }
+.offset2 {
+	margin-left: 170px;
+}
 
 .wrapper {
 	width: 960px;
@@ -96,13 +99,6 @@ ul {
 	box-sizing: border-box;
 }
 
-/* .wrapper:after,
-.span:after,
-.cf:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
 .wrapper:before,
 .span:before,
 .cf:before,
@@ -226,11 +222,6 @@ span.menu-link {
 	width: 280px;
 	height: 496px;
 	background: #f0f;
-	opacity: 0.1;
-}
-
-.iphone-screen:hover {
-	opacity: 0.4
 }
 
 .tryRad {
@@ -281,7 +272,6 @@ span.menu-link {
 
 .git {
 	color: #242825;
-	margin-left: 10px;
 	box-shadow: 0 -1px 0px #e3e6ce, 0 1px 0px #6c8771;
 	text-shadow: 0 1px 0 #cacbca;
 	background: #cccccc;
@@ -496,7 +486,6 @@ span.menu-link {
 	width: 280px;
 	height: 498px;
 	background: #fff;
-	opacity: ;
 	overflow: hidden;
 }
 
@@ -520,4 +509,8 @@ span.menu-link {
 .demo-list h2,
 .demo-description h2 {
 	margin-top: 10px;
+}
+
+.contact-wrapper {
+	padding:100px 0;
 }
