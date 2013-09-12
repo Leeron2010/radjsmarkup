@@ -575,18 +575,11 @@ ul.chart-legend {
         line-height: 120%;
         margin: 0 0 10px;
     }
-
+    .btn-hdr.btn-done,
     .btn-hdr.toggle-menu {
         width: 59px;
-        overflow: hidden;
+        text-indent: -9999px;
     }
-
-    .btn-hdr.btn-done {
-        width: 59px;
-        padding: 0 0 0 59px;
-        overflow: hidden;
-    }
-
     .btn-show-answer {
         right: 40px;
     }
