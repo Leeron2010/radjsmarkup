@@ -1,5 +1,7 @@
 RAD.view("view.main_screen", RAD.Blanks.View.extend({
+
     url: 'source/views/main_screen/main_screen.html',
+
     children: [
         {
             container_id: '.menu-container',
@@ -10,9 +12,11 @@ RAD.view("view.main_screen", RAD.Blanks.View.extend({
             content: "view.cards"
         }
     ],
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     tapWidth: 100,
+
     tapHeight: 44,
+
     events: {
         'tapdown .content-container': 'tapDown',
         'tapmove .content-container': 'tapMove',
@@ -25,6 +29,7 @@ RAD.view("view.main_screen", RAD.Blanks.View.extend({
 
         'tap .btn-done': 'onDone'
     },
+
     onEndRender: function () {
         "use strict";
         this.$overlay = this.$('.content-overlay');
@@ -37,6 +42,7 @@ RAD.view("view.main_screen", RAD.Blanks.View.extend({
 
         this.menuWidth = this.$('.menu-container').width();
     },
+
     changePosition: function (position) {
         "use strict";
         var value = "translate3d(" + position + "px, 0, 0)";
@@ -61,6 +67,7 @@ RAD.view("view.main_screen", RAD.Blanks.View.extend({
         });
 
     },
+
     prepareAnimation: function () {
         "use strict";
         var self = this,
@@ -87,6 +94,7 @@ RAD.view("view.main_screen", RAD.Blanks.View.extend({
         $container.on(eventName, onEnd);
         $container.get(0).timeout = setTimeout(onEnd, 5000);
     },
+
     touchBlock: function (e) {
         "use strict";
 
@@ -95,6 +103,7 @@ RAD.view("view.main_screen", RAD.Blanks.View.extend({
             e.preventDefault();
         }
     },
+
     tapDown: function (e) {
         "use strict";
         this.startX = e.originalEvent.tapdown.clientX;

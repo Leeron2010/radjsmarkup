@@ -1,32 +1,82 @@
+RAD.namespace('utils.Query', function (context) {
+    var query = this,
+        stack = [];
+
+    function next(previousResult) {
+        var fn = stack.shift();
+        if (fn && typeof fn === 'function') {
+            fn.apply(context, [previousResult, next]);
+        }
+    }
+
+    query.push = function (fn) {
+        stack.push(fn);
+    };
+
+    query.run = function () {
+        next(null);
+    };
+
+    return query;
+});
+
 RAD.application(function (core) {
     'use strict';
 
     var app = this;
 
-    app.start = function () {
-        var self = this,
-			options = {
-                container_id: '#screen',
-                content: "view.main_screen",
-                animation: 'none',
-                callback: function () {
-                    core.publish('service.json_loader.load', {
-                        filename: 'cards.json',
-                        callback: function (cards) {
-                            RAD.models.cards.resetCards(cards);
-                            self.loadProgress();
-                            core.publish('service.json_loader.load', {
-                                filename: 'categories.json',
-                                callback: function (cats) {
-                                    RAD.models.categories.resetCat(cats);
-                                }
-                            });
-                        }
-                    });
-                }
-            };
+    function showMainScreen(previousResult, nextFn) {
+        core.publish('navigation.show', {
+            container_id: '#screen',
+            content: "view.main_screen",
+            animation: 'fade',
+            callback: nextFn
+        });
+    }
 
-        core.publish('navigation.show', options);
+    function showLoadingScreen(previousResult, nextFn) {
+        core.publish('navigation.show', {
+            container_id: '#screen',
+            content: "view.loading",
+            animation: 'none',
+            callback: nextFn
+        });
+    }
+
+    function loadCards(previousResult, nextFn) {
+        core.publish('service.json_loader.load', {
+            filename: 'cards.json',
+            callback: nextFn
+        });
+    }
+
+    function resetCards(previousResult, nextFn) {
+        RAD.models.cards.resetCards(previousResult);
+        nextFn(null);
+    }
+
+    function loadCategories(previousResult, nextFn) {
+        core.publish('service.json_loader.load', {
+            filename: 'categories.json',
+            callback: nextFn
+        });
+    }
+
+    function resetCategories(previousResult, nextFn) {
+        RAD.models.categories.resetCat(previousResult);
+        nextFn(null);
+    }
+
+    app.start = function () {
+        var query = new RAD.utils.Query(this);
+
+        query.push(showLoadingScreen);
+        query.push(loadCards);
+        query.push(resetCards);
+        query.push(loadCategories);
+        query.push(resetCategories);
+        query.push(showMainScreen);
+        query.run();
     };
 
     app.flags = RAD.model('flags', Backbone.Model.extend({
@@ -48,23 +98,18 @@ RAD.application(function (core) {
                 if (!!loadedObj) {
                     RAD.models.cards.merge(loadedObj);
                     RAD.models.cards.groupCardsByCats();
-                    console.log('progress loading done');
-                } else {
-                    console.log('saved progress in local storage not found, loading empty');
                 }
             }
         });
     };
 
     app.clearProgress = function () {
-        console.log('clear progress!');
         RAD.models.cards.each(function (card) {
             card.set('status', 'unanswered');
         });
+
         core.publish('service.storage.remove', {objectID: "quizCards"});
-        setTimeout(function () {
-            core.publish('view.stats.refresh');
-        }, 0);
+        core.publish('view.stats.refresh');
         this.flags.set('progressSaved', false);
     };
 

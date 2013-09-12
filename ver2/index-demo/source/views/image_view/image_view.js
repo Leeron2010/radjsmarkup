@@ -1,30 +1,30 @@
-RAD.namespace('RAD.views.ImageViewZoom', RAD.Blanks.View.extend({
-// For Hammer JS Pinch Zoom implementation
+RAD.view('view.image_view', RAD.Blanks.View.extend({
 
-}));
-
-RAD.view('view.image_view', RAD.views.ImageViewZoom.extend({
     url: 'source/views/image_view/image_view.html',
+
     model: new (Backbone.Model.extend({
         defaults: {
             "src": ""
         }
     })),
+
     events: {
         'tap .image-block': 'selfClose'
     },
+
     onNewExtras: function (data) {
         var src = data.src;
         this.model.set('src', src);
     },
+
     onStartAttach: function () {
         this.imageAutoZoom();
     },
+
     imageAutoZoom: function () {
         var img = this.$('.src-image').get(0),
             imgHolder = this.$('.zoom-view').get(0);
-        if(img.naturalHeight > (window.innerHeight * 0.75) - 40 || img.naturalWidth > (window.innerWidth) - 20) {
-            console.log('need to scroll');
+        if (img.naturalHeight > (window.innerHeight * 0.75) - 40 || img.naturalWidth > (window.innerWidth) - 20) {
             this.$el.imgIScroll = new window.iScroll(imgHolder, {
                 bounce: false,
                 momentum: false,
@@ -49,16 +49,16 @@ RAD.view('view.image_view', RAD.views.ImageViewZoom.extend({
                 onScrollEnd: function (e) {
                 }
             });
-        } else {
-            console.log('picture is almost on screen');
         }
     },
+
     onEndDetach: function () {
         if (this.$el.imgIScroll) {
             this.$el.imgIScroll.destroy();
             this.$el.imgIScroll = null;
         }
     },
+
     selfClose: function () {
         this.publish('navigation.dialog.close', {content: this.viewID});
     }

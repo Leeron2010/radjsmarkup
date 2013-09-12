@@ -17,9 +17,11 @@
         "source/views/inner/cards/cards.js",
         "source/views/inner/filter/filter.js",
         "source/views/inner/stats/stats.js",
+        "source/views/inner/about/about.js",
         "source/views/alert/alert.js",
         "source/views/dialog/dialog.js",
         "source/views/image_view/image_view.js",
+        "source/views/loading/loading.js",
 
         // Service
         "source/services/localstorage.js",

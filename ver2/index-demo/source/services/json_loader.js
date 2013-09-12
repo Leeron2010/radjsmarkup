@@ -1,5 +1,7 @@
 RAD.service('service.json_loader', RAD.Blanks.Service.extend({
+
     jsonLocation: 'source/json/',
+
     onReceiveMsg: function (channel, data) {
         var parts = channel.split('.'),
             filename = data.filename,
@@ -11,11 +13,11 @@ RAD.service('service.json_loader', RAD.Blanks.Service.extend({
                 break;
         }
     },
+
     loadJSON: function (filename, callback) {
         var uri = this.jsonLocation + filename;
         $.get(uri, function (response) {
             callback(response);
-            console.log(response);
         }, 'json');
     }
 }));

@@ -413,11 +413,7 @@ RAD.view("view.test", RAD.views.SwipeAdapterView.extend({
     onNewExtras: function (data) {
         var self = this;
         if (!!data.cards) {
-            console.log('reseting test cards');
-//            console.log(data.cards);
             self.model.reset(data.cards);
-        } else {
-            console.log('no test cards in extras!');
         }
     },
 
@@ -428,11 +424,7 @@ RAD.view("view.test", RAD.views.SwipeAdapterView.extend({
     onStartAttach: function () {
         var self = this;
 
-//        this.model.trigger('change');
-
-//        console.log(self.$('.variants-holder'));
         if (!self.application.flags.get('testRunning')) {
-            console.log('clearState');
             self.clearState();
         }
         self.$el.find('.variants-holder').on('tap.variant', '.variant', function (e) {
@@ -484,7 +476,6 @@ RAD.view("view.test", RAD.views.SwipeAdapterView.extend({
         this.refreshPageScroll($(html));
         this.model.cardIndex = index;
         this.model.cardStatus = this.model.at(index).get('status');
-        console.log(this.model.cardStatus, this.model.cardIndex);
         this.model.trigger('change');
     },
 

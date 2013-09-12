@@ -37,7 +37,6 @@ RAD.view('view.filter', RAD.Blanks.ScrollableView.extend({
                 case 'unanswered': model.unanswered+=1; break;
             }
         });
-        console.log(model);
     },
     onEndDetach: function () {
         this.clearFilter();
@@ -58,20 +57,17 @@ RAD.view('view.filter', RAD.Blanks.ScrollableView.extend({
         self.$statuses.each(function (i, el) {
             if ($(el).hasClass('checked')) {
                 statusFilter.push($(el).data('value'));
-                console.log(statusFilter);
             }
         });
 
         self.$categories.each(function (i, el) {
             if ($(el).hasClass('checked')) {
                 catFilter.push(parseInt($(el).data('id')));
-                console.log(catFilter);
             }
         });
 
         if (catFilter.length === 0 && statusFilter.length === 0) {
             //alert display
-            console.log('no filter');
         } else if (catFilter.length !== 0) {
             if (statusFilter.length === 0) {
                 _.each(catFilter, function (catID) {

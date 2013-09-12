@@ -7,7 +7,6 @@ RAD.view("view.stats", RAD.Blanks.ScrollableView.extend({
         this.model = new RAD.models.StatsCollection;
     },
     onNewExtras: function (data) {
-        console.log('refreshing stats');
         this.refreshStats();
         this.render();
     },
@@ -37,7 +36,6 @@ RAD.view("view.stats", RAD.Blanks.ScrollableView.extend({
             chrtCanvases = this.$('.pie-chart');
     },
     onResetStat: function (e) {
-        console.log(e)
         var options = {
             content: 'view.confirm_dialog',
             extras: {

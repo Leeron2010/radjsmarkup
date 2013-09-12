@@ -8,8 +8,6 @@ RAD.model('Card', Backbone.Model.extend({
         "answerImg": "",
         "answerImgThumb": "",
         "catRef": 0,
-//        "dateCreated": new Date().toJSON().replace(new RegExp('T|.[0-9]{3}Z', 'g'), function(substr) {return (substr.length === 1 ? ' ' : '')}),
-//        "dateUpdated": new Date().toJSON().replace(new RegExp('T|.[0-9]{3}Z', 'g'), function(substr) {return (substr.length === 1 ? ' ' : '')}),
         "id": 0,
         "question": "",
         "questionImg": "",
@@ -20,8 +18,6 @@ RAD.model('Card', Backbone.Model.extend({
 // Category Model
 RAD.model('Category', Backbone.Model.extend({
     defaults: {
-//        "dateCreated": new Date().toJSON().replace(new RegExp('T|.[0-9]{3}Z', 'g'), function(substr) {return (substr.length === 1 ? ' ' : '')}),
-//        "dateUpdated": new Date().toJSON().replace(new RegExp('T|.[0-9]{3}Z', 'g'), function(substr) {return (substr.length === 1 ? ' ' : '')}),
         "id": 0,
         "name": ""
     }
@@ -43,7 +39,6 @@ RAD.model('CatsCollection', Backbone.Collection.extend({
         });
     },
     resetCat: function (object) {
-//        this.reset(object, {silent: true});
         this.reset(object);
         this.resetCatNames();
     },
@@ -67,20 +62,14 @@ RAD.model('CardsCollection', Backbone.Collection.extend({
         _.each(data, function (mod) {
             if (self.get(mod.id)) {
                 // if question was changed, mean that all other attributes need to be updated and status reseted to "unanswered"
-                if (self.get(mod.id).get('question') !== mod.question) {
-                    console.log('id' + mod.id, 'changes in DB detected!!');
-                } else {
+                if (self.get(mod.id).get('question') === mod.question) {
                     // partially merging from local storage: only status of question
                     self.get(mod.id).set("status", mod.status);
-
-                    // full merging from local storage: all attributes will be old
-                    //self.get(mod.id).set(mod);
                 }
             }
         });
     },
     resetCards: function (object) {
-//        this.reset(object, {silent: true});
         this.reset(object);
         this.groupCardsByCats();
     },
@@ -120,10 +109,18 @@ RAD.model('StatsCollection', Backbone.Collection.extend({
         stats.push({
             "id": -1,
             "name": "All categories",
-            "know": cardsColl.filter(function (card) {return card.get('status') === 'know'}).length / cardsColl.length,
-            "unsure": cardsColl.filter(function (card) {return card.get('status') === 'unsure'}).length / cardsColl.length,
-            "dontKnow": cardsColl.filter(function (card) {return card.get('status') === 'dontknow'}).length / cardsColl.length,
-            "unanswered": cardsColl.filter(function (card) {return card.get('status') === 'unanswered'}).length / cardsColl.length,
+            "know": cardsColl.filter(function (card) {
+                return card.get('status') === 'know'
+            }).length / cardsColl.length,
+            "unsure": cardsColl.filter(function (card) {
+                return card.get('status') === 'unsure'
+            }).length / cardsColl.length,
+            "dontKnow": cardsColl.filter(function (card) {
+                return card.get('status') === 'dontknow'
+            }).length / cardsColl.length,
+            "unanswered": cardsColl.filter(function (card) {
+                return card.get('status') === 'unanswered'
+            }).length / cardsColl.length,
             "cardsCount": cardsColl.length
         });
         catsColl.each(function (cat) {
@@ -132,10 +129,18 @@ RAD.model('StatsCollection', Backbone.Collection.extend({
                     "id": cat.get('id'),
                     "name": cat.get('name'),
                     "cardsCount": cardsByCat[cat.get('id')].length,
-                    "know": (cardsByCat[cat.get('id')].filter(function (card) {return card.get('status') === 'know'}).length / cardsByCat[cat.get('id')].length),
-                    "unsure": (cardsByCat[cat.get('id')].filter(function (card) {return card.get('status') === 'unsure'}).length / cardsByCat[cat.get('id')].length),
-                    "dontKnow": (cardsByCat[cat.get('id')].filter(function (card) {return card.get('status') === 'dontknow'}).length / cardsByCat[cat.get('id')].length),
-                    "unanswered": (cardsByCat[cat.get('id')].filter(function (card) {return card.get('status') === 'unanswered'}).length / cardsByCat[cat.get('id')].length)
+                    "know": (cardsByCat[cat.get('id')].filter(function (card) {
+                        return card.get('status') === 'know'
+                    }).length / cardsByCat[cat.get('id')].length),
+                    "unsure": (cardsByCat[cat.get('id')].filter(function (card) {
+                        return card.get('status') === 'unsure'
+                    }).length / cardsByCat[cat.get('id')].length),
+                    "dontKnow": (cardsByCat[cat.get('id')].filter(function (card) {
+                        return card.get('status') === 'dontknow'
+                    }).length / cardsByCat[cat.get('id')].length),
+                    "unanswered": (cardsByCat[cat.get('id')].filter(function (card) {
+                        return card.get('status') === 'unanswered'
+                    }).length / cardsByCat[cat.get('id')].length)
                 });
             }
         });

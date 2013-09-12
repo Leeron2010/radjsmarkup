@@ -1,12 +1,17 @@
 RAD.view("view.menu", RAD.Blanks.View.extend({
+
     className: 'menu',
+
     url: 'source/views/menu/menu.html',
+
     events: {
         'tap li': 'openView'
     },
+
     onInitialize: function () {
         this.model = this.application.flags;
     },
+
     openView: function (e){
         "use strict";
 
@@ -36,8 +41,7 @@ RAD.view("view.menu", RAD.Blanks.View.extend({
             headerData.title = "choose cards";
         }
 
-        console.log($(e.currentTarget))
-        $(e.currentTarget).addClass('picked')
+        $(e.currentTarget).addClass('picked');
 
         this.publish('navigation.show', options);
         this.publish('view.main_screen.close');

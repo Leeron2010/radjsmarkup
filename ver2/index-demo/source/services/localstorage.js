@@ -1,8 +1,9 @@
 RAD.service('service.storage', RAD.Blanks.Service.extend({
+
     onInitialize: function () {
         var self = this;
 
-        if(window.phonegap){
+        if (window.phonegap) {
 
         }
         this.storage = window.localStorage || window.sessionStorage;
@@ -40,12 +41,8 @@ RAD.service('service.storage', RAD.Blanks.Service.extend({
             self = this,
             callback;
 
-        console.log(channel);
-
         if (!!data) {
             callback = data.callback;
-        } else {
-            console.log(channel + ': no data received');
         }
 
         switch (parts[2]) {
