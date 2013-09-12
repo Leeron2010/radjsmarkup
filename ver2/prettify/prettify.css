@@ -6,8 +6,9 @@ pre.prettyprint {
 	padding: 10px;
 	border-radius: 3px;
 	white-space: pre-wrap;
+	overflow: hidden;
 }
-pre .nocode { background-color: none; color: #000 }
+pre .nocode { background-color: transparent; color: #000 }
 pre .str { color: #ffa0a0 } /* string  - pink */
 pre .kwd { color: #f0e68c; font-weight: bold }
 pre .com { color: #87ceeb } /* comment - skyblue */
@@ -24,12 +25,14 @@ pre .dec { color: #98fb98 } /* decimal         - lightgreen */
 ol.linenums { 
 	margin-top: 0; 
 	margin-bottom: 0; 
-	padding: 0 0 0 10px;
+	padding: 0 0 0 40px;
 	color: #AEAEAE;
-	list-style: decimal inside; 
+	list-style: decimal outside; 
 }
 
 .linenums li {
+	padding-left: 5px;
+	border-left: 1px solid #444;
 	word-break: break-all;
 }
 

@@ -31,7 +31,8 @@ body {
 body {
 	font: 16px/18px 'Arial';
 	color: #162921;
-	background: #f9f9f9
+	background: #f9f9f9;
+	overflow-y: scroll;
 }
 
 a {
@@ -57,13 +58,14 @@ h3 {
 ul {
 	margin:0 0 15px 0;
 	padding: 0 0 0 15px;
-	list-style: circle outside; 
+	list-style: disc outside; 
 }
 
 .main-wrapper{
 	min-height: 100%;
-	padding-bottom: 100px;
+	/*padding-bottom: 100px;*/
 	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .span1,
@@ -86,6 +88,9 @@ ul {
 .offset1 {
 	margin-left: 90px;
 }
+.offset2 {
+	margin-left: 170px;
+}
 
 .wrapper {
 	width: 960px;
@@ -94,12 +99,27 @@ ul {
 	box-sizing: border-box;
 }
 
+.wrapper:before,
+.span:before,
+.cf:before,
+.wrapper:after,
+.span:after,
+.cf:after{
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
 .wrapper:after,
 .span:after,
 .cf:after {
-  content: "";
-  display: table;
-  clear: both;
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
 }
 
 .header {
@@ -182,7 +202,7 @@ span.menu-link {
 }
 
 .banner {
-	margin: 110px 0 100px 0;
+	margin: 110px 0 50px 0;
 	background: url('../img/bg.jpg') 50% 50% no-repeat;
 }
 
@@ -202,11 +222,6 @@ span.menu-link {
 	width: 280px;
 	height: 496px;
 	background: #f0f;
-	opacity: 0.1;
-}
-
-.iphone-screen:hover {
-	opacity: 0.4
 }
 
 .tryRad {
@@ -257,7 +272,6 @@ span.menu-link {
 
 .git {
 	color: #242825;
-	margin-left: 10px;
 	box-shadow: 0 -1px 0px #e3e6ce, 0 1px 0px #6c8771;
 	text-shadow: 0 1px 0 #cacbca;
 	background: #cccccc;
@@ -353,3 +367,150 @@ span.menu-link {
 .side-menu ul ul ul a {
 	font-size: 14px;
 } 
+
+.loading-ico {
+	width: 40px;
+	height: 30px;
+	position: relative;
+}
+
+.l1,
+.l2,
+.l3{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	opacity: 0.9;
+}
+
+.l1{
+	left: 0;
+	top:10px;
+	background: #acb568;
+	animation: l1 1s infinite;
+	-webkit-animation: l1 1s infinite;
+}
+
+.l2 {
+	left: 20px;
+	top: 10px;
+	background: #175e43;
+	animation: l2 1s infinite;
+	-webkit-animation: l2 1s infinite;
+}
+
+.l3 {
+	left: 10px;
+	top: 0;
+	background: #2b3d2c;
+	animation: l3 1s infinite;
+	-webkit-animation: l3 1s infinite;
+}
+
+@keyframes l1
+{
+	0% {top: 10px; left: 0px;}
+	33% {top: 10px; left: 20px;}
+	66% {top: 0px; left: 10px;}
+}
+
+@-webkit-keyframes l1 /* Safari and Chrome */
+{
+	0% {top: 10px; left: 0px;}
+	33% {top: 10px; left: 20px;}
+	66% {top: 0px; left: 10px;}
+}
+
+@keyframes l2
+{
+	
+	0% {top: 10px; left: 20px;}
+	33% {top: 0px; left: 10px;}
+	66% {top: 10px; left: 0px;}
+}
+
+@-webkit-keyframes l2 /* Safari and Chrome */
+{
+	
+	0% {top: 10px; left: 20px;}
+	33% {top: 0px; left: 10px;}
+	66% {top: 10px; left: 0px;}
+}
+
+@keyframes l3
+{
+	0% {top: 0px; left: 10px;}
+	33% {top: 10px; left: 0px;}
+	66% {top: 10px; left: 20px;}
+}
+
+@-webkit-keyframes l3 /* Safari and Chrome */
+{
+	0% {top: 0px; left: 10px;}
+	33% {top: 10px; left: 0px;}
+	66% {top: 10px; left: 20px;}
+}
+.demo-list,
+.demo-phone,
+.demo-description {
+	float: left;
+	margin:0 5px;
+}
+.demo-list {
+	min-height: 1px;
+	width: 290px;
+	margin-right: 14px;
+}
+
+.demo-list ul{
+	list-style-type: decimal;
+}
+
+.demo-list {
+	font:18px/24px 'aleoregular' 'Arial';
+	
+}
+
+.demo-phone {
+	width: 332px;
+	height: 699px;
+	background: url('../img/phone-path.png') 50% 50% no-repeat;
+	margin: -50px 5px;
+	position: relative;
+}
+
+.demo-phone-screen {
+	position: absolute;
+	top: 103px;
+	left: 28px;
+	width: 280px;
+	height: 498px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.demo-phone-screen .loading-ico {
+	position: absolute;
+	top: -100px;
+}
+
+.showLoading .loading-ico {
+	top: 50%;
+	left: 50%;
+	margin: -15px 0 0 -20px;
+}
+
+.demo-description{
+	min-height: 1px;
+	width: 290px;
+	margin-left: 14px;
+}
+
+.demo-list h2,
+.demo-description h2 {
+	margin-top: 10px;
+}
+
+.contact-wrapper {
+	padding:100px 0;
+}

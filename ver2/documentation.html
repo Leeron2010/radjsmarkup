@@ -10,16 +10,16 @@
 
 <div class="header">
 	<div class="wrapper">
-		<div class="language-bar">
-			<span>En</span>
-			<a href="#">Ru</a>
-		</div>
+<!-- 		<div class="language-bar">
+	<span>En</span>
+	<a href="#">Ru</a>
+</div> -->
 
 		<a href="index.html" class="logo-link"></a>
 		<span class="menu-link documentation">Documentation</span>
-		<a href="#" class="menu-link demo">Demo</a>
-	  	<a href="#" class="menu-link contact">Contact</a>
-	  	<a href="#" class="menu-link discus">Discus</a>
+		<!-- <a href="demo.html" class="menu-link demo">Demo</a> -->
+	  	<a href="contact.html" class="menu-link contact">Contact</a>
+	  	<!-- <a href="#" class="menu-link discus">Discus</a> -->
 	</div>
 </div>
 
@@ -1069,28 +1069,28 @@ showMyCustomWidget: false
 <p>Example of markup with templates:</p>
 
 <pre class="prettyprint linenums">
-    &lt;div class=&quot;scroll-view-body&quot;&gt;
-        &lt;div class=&quot;block&quot;&gt;
-            &lt;div class=&quot;block-title&quot;&gt;
-&lt;h2&gt;All Action Items&lt;/h2&gt;
-            &lt;/div&gt;
-            &lt;ul class=&quot;list-items-view&quot;&gt;
-{{# _(model).each(function(action) { }}
-&lt;li &gt;
-    &lt;span class=&quot;priority-indicator {{ action.priority }}&quot;&gt;&lt;/span&gt;
-    &lt;div class=&quot;list-item-row row-title&quot;&gt;
-        &lt;div class=&quot;info&quot;&gt;{{ action.title }}&lt;/div&gt;
-        &lt;div class=&quot;details&quot;&gt;Due: {{ action.due }}&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;list-item-row&quot;&gt;
-        &lt;div class=&quot;info&quot;&gt;Patient: {{ action.patient }} (DOB: {{ action.dob }} )&lt;/div&gt;
-        &lt;div class=&quot;details&quot;&gt;CM Program: {{ action.cm_program }}&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/li&gt;
-{{# }); }}
-            &lt;/ul&gt;
+&lt;div class=&quot;scroll-view-body&quot;&gt;
+    &lt;div class=&quot;block&quot;&gt;
+        &lt;div class=&quot;block-title&quot;&gt;
+            &lt;h2&gt;All Action Items&lt;/h2&gt;
         &lt;/div&gt;
+            &lt;ul class=&quot;list-items-view&quot;&gt;
+                {{# _(model).each(function(action) { }}
+                &lt;li &gt;
+                &lt;span class=&quot;priority-indicator {{ action.priority }}&quot;&gt;&lt;/span&gt;
+                &lt;div class=&quot;list-item-row row-title&quot;&gt;
+                    &lt;div class=&quot;info&quot;&gt;{{ action.title }}&lt;/div&gt;
+                    &lt;div class=&quot;details&quot;&gt;Due: {{ action.due }}&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;list-item-row&quot;&gt;
+                    &lt;div class=&quot;info&quot;&gt;Patient: {{ action.patient }} (DOB: {{ action.dob }} )&lt;/div&gt;
+                    &lt;div class=&quot;details&quot;&gt;CM Program: {{ action.cm_program }}&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;/li&gt;
+                {{# }); }}
+        &lt;/ul&gt;
     &lt;/div&gt;
+&lt;/div&gt;
 </pre>
 
 <p>Syntax within the template:</p>
@@ -1117,34 +1117,33 @@ showMyCustomWidget: false
 <p>Example of use of the Underscore.js methods in a template:</p>
 
 <pre class="prettyprint linenums">
-    RAD.view(&quot;view.persons_list&quot;, RAD.Blanks.View.extend({
-        url: &quot;source/views/persons_list.html&quot;,
-        onInitialize: function () {
-            this.model = RAD.model(&#39;persons&#39;, Backbone.Collection, true);
-            this.model.add([
-{&quot;firstName&quot;: &quot;John&quot;, &quot;lastName&quot;: &quot;Doe&quot;},
-{&quot;firstName&quot;: &quot;Homer&quot;, &quot;lastName&quot;: &quot;Simpson&quot;},
+RAD.view(&quot;view.persons_list&quot;, RAD.Blanks.View.extend({
+    url: &quot;source/views/persons_list.html&quot;,
+    onInitialize: function () {
+        this.model = RAD.model(&#39;persons&#39;, Backbone.Collection, true);
+        this.model.add([
+            {&quot;firstName&quot;: &quot;John&quot;, &quot;lastName&quot;: &quot;Doe&quot;},
+            {&quot;firstName&quot;: &quot;Homer&quot;, &quot;lastName&quot;: &quot;Simpson&quot;},
+            {&quot;firstName&quot;: &quot;Fox&quot;, &quot;lastName&quot;: &quot;Mulder&quot;}
+        ]);
+    }
+}));
 
-{&quot;firstName&quot;: &quot;Fox&quot;, &quot;lastName&quot;: &quot;Mulder&quot;}
-            ]);
-        }
-    }));
+&lt;!-- Template persons_list.html: --&gt;
+&lt;ul class=&quot;persons_list&quot;&gt;
+    {{# _(model).each(function (person) { }}
+    &lt;li&gt;{{ person.firstName }} &lt;b&gt;{{ person.lastName }}&lt;/b&gt;&lt;/li&gt;
+    {{# }); }}
+&lt;/ul&gt;
 
-    &lt;!-- Template persons_list.html: --&gt;
-    &lt;ul class=&quot;persons_list&quot;&gt;
-        {{# _(model).each(function (person) { }}
-        &lt;li&gt;{{ person.firstName }} &lt;b&gt;{{ person.lastName }}&lt;/b&gt;&lt;/li&gt;
-        {{# }); }}
-    &lt;/ul&gt;
+&lt;!-- After templating: --&gt;
+&lt;ul class=&quot;persons_list&quot;&gt;
+    &lt;li&gt;John &lt;b&gt;Doe&lt;/b&gt;&lt;/li&gt;
+    &lt;li&gt;Homer &lt;b&gt;Simpson&lt;/b&gt;&lt;/li&gt;
 
-    &lt;!-- After templating: --&gt;
-    &lt;ul class=&quot;persons_list&quot;&gt;
-        &lt;li&gt;John &lt;b&gt;Doe&lt;/b&gt;&lt;/li&gt;
-        &lt;li&gt;Homer &lt;b&gt;Simpson&lt;/b&gt;&lt;/li&gt;
-    
-    
-        &lt;li&gt;Fox &lt;b&gt;Mulder&lt;/b&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+
+    &lt;li&gt;Fox &lt;b&gt;Mulder&lt;/b&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </pre>
 
 <p>If it is needed to redraw only a part of the module upon a change of <strong>model</strong>, the container holding the template must get the <strong>data-template</strong> attribute.</p>
@@ -1152,20 +1151,20 @@ showMyCustomWidget: false
 <p>Example of use of the <strong>data-template</strong> attribute:</p>
 
 <pre class="prettyprint linenums">
-    &lt;div id=&quot;my_module&quot;&gt;
-        &lt;!-- content &lt;div&gt; will not be redrawn (radiobutton will not be set to default position) --&gt;
-        &lt;div class=&quot;controls&quot;&gt;
-            &lt;p&gt;Sort by:&lt;/p&gt;
-            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sort_by&quot; value=&quot;first_name&quot; /&gt;First Name&lt;/label&gt;
-            &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sort_by&quot; value=&quot;last_name&quot; checked /&gt;Last Name&lt;/label&gt;
-        &lt;/div&gt;
-        &lt;!-- content &lt;ul&gt; will be redrawn --&gt;
-        &lt;ul class=&quot;persons_list&quot; data-template&gt;
-            {{# _(model).each(function (person) { }}
-            &lt;li&gt;{{ person.firstName }} &lt;b&gt;{{ person.lastName }}&lt;/b&gt;&lt;/li&gt;
-            {{# }); }}
-        &lt;/ul&gt;
+&lt;div id=&quot;my_module&quot;&gt;
+&lt;!-- content &lt;div&gt; will not be redrawn (radiobutton will not be set to default position) --&gt;
+    &lt;div class=&quot;controls&quot;&gt;
+        &lt;p&gt;Sort by:&lt;/p&gt;
+        &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sort_by&quot; value=&quot;first_name&quot; /&gt;First Name&lt;/label&gt;
+        &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sort_by&quot; value=&quot;last_name&quot; checked /&gt;Last Name&lt;/label&gt;
     &lt;/div&gt;
+    &lt;!-- content &lt;ul&gt; will be redrawn --&gt;
+    &lt;ul class=&quot;persons_list&quot; data-template&gt;
+        {{# _(model).each(function (person) { }}
+        &lt;li&gt;{{ person.firstName }} &lt;b&gt;{{ person.lastName }}&lt;/b&gt;&lt;/li&gt;
+        {{# }); }}
+    &lt;/ul&gt;
+&lt;/div&gt;
 </pre>
 
 <h2 id="Toast">Toast</h2>
@@ -1229,11 +1228,11 @@ When scrolled content changes size, a set-up <strong>data-template</strong> attr
 <p><a href="http://backbonejs.org/#Model" target="_blank">backbone.model</a> is used as a data model.</p>
 
 <pre class="prettyprint linenums">
-    //creating a model
-    RAD.model(&#39;name&#39;, &lt;backbone.model&gt;, [instantiate]);
+//creating a model
+RAD.model(&#39;name&#39;, &lt;backbone.model&gt;, [instantiate]);
 
-    //receiving the model (will return undefined, if there is no model)
-    RAD.model(&#39;name&#39;);
+//receiving the model (will return undefined, if there is no model)
+RAD.model(&#39;name&#39;);
 </pre>
 
 <p>RAD.model(...) is a method used for working with the model. Here the following parameters are used:</p>
@@ -1253,36 +1252,32 @@ When scrolled content changes size, a set-up <strong>data-template</strong> attr
 <p>Creating a model constructor:</p>
 
 <pre class="prettyprint linenums">
-    RAD.model(&#39;note&#39;, Backbone.Model.extend({defaults: {
-            title: &quot;-&quot;,
-            description: &quot;-&quot;
-        }
-    }), false);
+RAD.model(&#39;note&#39;, Backbone.Model.extend({defaults: {
+        title: &quot;-&quot;,
+        description: &quot;-&quot;
+    }
+}), false);
 </pre>
 
 <p>Creating a model in the module:</p>
 
 <pre class="prettyprint linenums">
-
-    onInitialize: function () {
-        &quot;use strict&quot;;
-        var md = RAD.model(&#39;note&#39;);
-        this.model = new md();
-        this.model.set({title:&#39;test note 1&#39;, &#39;description&#39;:&#39;test note description 1&#39;})
-    },
-
+onInitialize: function () {
+    &quot;use strict&quot;;
+    var md = RAD.model(&#39;note&#39;);
+    this.model = new md();
+    this.model.set({title:&#39;test note 1&#39;, &#39;description&#39;:&#39;test note description 1&#39;})
+},
 </pre>
 
 <p>Use of model in a template:</p>
 
 <pre class="prettyprint linenums">
-
-    &lt;div class=&quot;my page&quot;&gt;
-        &lt;h3&gt;Use models, Luke!&lt;/h3&gt;
-        &lt;div id=&quot;title&quot;&gt;{{ model.title }}&lt;/div&gt;
-        &lt;div id=&quot;description&quot;&gt;{{ model.description }}&lt;/div&gt;
-    &lt;/div&gt;
-
+&lt;div class=&quot;my page&quot;&gt;
+    &lt;h3&gt;Use models, Luke!&lt;/h3&gt;
+    &lt;div id=&quot;title&quot;&gt;{{ model.title }}&lt;/div&gt;
+    &lt;div id=&quot;description&quot;&gt;{{ model.description }}&lt;/div&gt;
+&lt;/div&gt;
 </pre>
 
 <p>Upon change of model, the <strong>render()</strong> module method will be called, and ALL its content will be updated automatically. In orded to redraw only a part of the module, the container holding the template must get the <strong>data-template</strong> attribute (for examples ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#templates">&quot;Templates&quot;</a>).</p>
@@ -1294,20 +1289,18 @@ When scrolled content changes size, a set-up <strong>data-template</strong> attr
 <p>Creating a model instance:</p>
 
 <pre class="prettyprint linenums">
-    RAD.model(&#39;message&#39;, Backbone.Model.extend({
-            defaults: {
-title: &quot;-&quot;,
-description: &quot;-&quot;
-            }
-    }), true);
+RAD.model(&#39;message&#39;, Backbone.Model.extend({
+        defaults: {
+            title: &quot;-&quot;,
+            description: &quot;-&quot;
+        }
+}), true);
 </pre>
 
 <p>Changing data in the model:</p>
 
 <pre class="prettyprint linenums">
-
-    RAD.model(&#39;message&#39;).set({title: &#39;new note&#39;, description: &#39;lorem ipsum dolor&#39;});
-
+RAD.model(&#39;message&#39;).set({title: &#39;new note&#39;, description: &#39;lorem ipsum dolor&#39;});
 </pre>
 
 <h2 id="Service">Service</h2>
@@ -1319,13 +1312,13 @@ description: &quot;-&quot;
 <p>Services are declared similarly to modules and are also instantiated upon receiving the first message.</p>
 
 <pre class="prettyprint linenums">
-    RAD.service(&quot;service.my_service&quot;, RAD.Blanks.Service.extend({
-        onReceiveMsg: function (channel, data) {
-            &quot;use strict&quot;;
-            var backway = data.split(&quot;&quot;).reverse().join(&quot;&quot;);
-            this.publish(&#39;view.widget2&#39;, backway);
-        }
-    }));
+RAD.service(&quot;service.my_service&quot;, RAD.Blanks.Service.extend({
+    onReceiveMsg: function (channel, data) {
+        &quot;use strict&quot;;
+        var backway = data.split(&quot;&quot;).reverse().join(&quot;&quot;);
+        this.publish(&#39;view.widget2&#39;, backway);
+    }
+}));
 </pre>
 
 <h3 id="Service-Callbacks">Callbacks</h3>
@@ -1362,7 +1355,7 @@ onReceiveMsg: function(msg, data){ };
 <p>The framework allows to use the <strong>&#39;namespace&#39;</strong> template for structured storage of proper constructors, such as <strong>models</strong>, <strong>views</strong>, <strong>services</strong> etc., or inheriting the existing ones.</p>
 
 <pre class="prettyprint linenums">
-    RAD.namespace(destination, [obj]);
+RAD.namespace(destination, [obj]);
 </pre>
 
 <ul>
@@ -1375,25 +1368,25 @@ onReceiveMsg: function(msg, data){ };
 </ul>
 
 <pre class="prettyprint linenums">
-    //Creating object authServer in namespace RAD.network.nodes
-    RAD.namespace(&#39;network.nodes.authServer&#39;, {name: &#39;AuthServer&#39;, baseUrl: &#39;http://192.168.1.1/&#39;});
+//Creating object authServer in namespace RAD.network.nodes
+RAD.namespace(&#39;network.nodes.authServer&#39;, {name: &#39;AuthServer&#39;, baseUrl: &#39;http://192.168.1.1/&#39;});
 
-    //Will create in namespace RAD.utils a method getRndInt
-    RAD.namespace(&#39;RAD.utils.getRndInt&#39;, function (min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    });
+//Will create in namespace RAD.utils a method getRndInt
+RAD.namespace(&#39;RAD.utils.getRndInt&#39;, function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+});
 
-    RAD.namespace(&#39;RAD.models.toDoList&#39;, Backbone.Collection.extend({
-        comparator: function (task) {
-          return task.get(&quot;name&quot;);
-        }
-    }));
+RAD.namespace(&#39;RAD.models.toDoList&#39;, Backbone.Collection.extend({
+    comparator: function (task) {
+        return task.get(&quot;name&quot;);
+    }
+}));
 
-    //Example of inheriting view from RAD.Blanks.ScrollableView and its following declaration.
-    RAD.namespace(&#39;RAD.views.ListView&#39;, RAD.Blanks.ScrollableView.extend({
-        model: new RAD.models.toDoList
-    }));
-    RAD.view(&#39;view.todo_list&#39;, RAD.views.ListView);
+//Example of inheriting view from RAD.Blanks.ScrollableView and its following declaration.
+RAD.namespace(&#39;RAD.views.ListView&#39;, RAD.Blanks.ScrollableView.extend({
+    model: new RAD.models.toDoList
+}));
+RAD.view(&#39;view.todo_list&#39;, RAD.views.ListView);
 </pre>
 
 <p>Notice: if Backbone.View (instead of RAD.Blanks.View) serves as prototype during view inheritance, then view-inheritor will not have the <strong>RAD.Blanks.View</strong> <a href="file:///C:/Users/Миша/Downloads/site/index.html#callbacks">callback-methods</a>.</p>
@@ -1464,17 +1457,17 @@ As a result there will be strong coherence and a link to the module that is alre
 <p><strong>Q</strong>: Will animation of child modules work, if set this way?</p>
 <pre class="prettyprint linenums">
 RAD.views.ParentWidget = RAD.Blanks.View.extend({
-    url: &#39;source/views/parent_widget/parent_widget.html&#39;,
+    url:&#39;source/views/parent_widget/parent_widget.html&#39;,
     children: [
         {
-			container_id: &#39;.content&#39;,
-			content: &quot;view.inner_first_widget&quot;,
-			animation: &#39;slide&#39;
+            container_id: &#39;.content&#39;,
+            content: &quot;view.inner_first_widget&quot;,
+            animation: &#39;slide&#39;
 		},
-		{
-			container_id: &#39;.top&#39;,
-			content: &quot;view.inner_third_widget&quot;,
-			animation: &#39;fade&#39;
+        {
+            container_id: &#39;.top&#39;,
+            content: &quot;view.inner_third_widget&quot;,
+            animation: &#39;fade&#39;
         }
     ]
 });
