@@ -166,6 +166,7 @@ span.menu-link {
 	border-bottom-color: #162921;
 }
 
+.faq:before,
 .discus:before,
 .contact:before,
 .demo:before,
@@ -183,6 +184,7 @@ span.menu-link {
 .demo:before {background-position: -20px 0; }
 .contact:before {background-position: -40px 0; }
 .discus:before {background-position: -60px 0; }
+.faq:before {background-position: -80px 0; }
 
 .language-bar {
 	float: right;
@@ -326,6 +328,7 @@ span.menu-link {
 	width: 300px;
 	overflow-y: scroll;
 	margin-left: -480px;
+    background: #f9f9f9;
 }
 
 .side-menu ul{
@@ -513,4 +516,16 @@ span.menu-link {
 
 .contact-wrapper {
 	padding:100px 0;
+}
+
+.faq-wrapper {
+    padding: 45px 0;
+}
+
+.faq-q {
+}
+
+.faq-a {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
 }
