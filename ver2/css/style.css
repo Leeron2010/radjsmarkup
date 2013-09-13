@@ -271,6 +271,7 @@ span.menu-link {
 }
 
 .git {
+    margin-left: 10px;
 	color: #242825;
 	box-shadow: 0 -1px 0px #e3e6ce, 0 1px 0px #6c8771;
 	text-shadow: 0 1px 0 #cacbca;
