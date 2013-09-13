@@ -65,7 +65,7 @@ ul {
 	min-height: 100%;
 	/*padding-bottom: 100px;*/
 	box-sizing: border-box;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .span1,
@@ -98,7 +98,7 @@ ul {
 	position: relative;
 	box-sizing: border-box;
 }
-
+.main-wrapper:before,
 .wrapper:before,
 .span:before,
 .cf:before,
@@ -108,6 +108,7 @@ ul {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
+.main-wrapper:before,
 .wrapper:after,
 .span:after,
 .cf:after {
@@ -223,6 +224,17 @@ span.menu-link {
 	left: 27px;
 	width: 280px;
 	height: 496px;
+}
+.iphone-screen.warning{
+    background: #ffffff;
+    padding: 10px;
+
+    text-align: center;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 2;
 }
 
 .tryRad {
@@ -528,4 +540,44 @@ span.menu-link {
 .faq-a {
     margin-bottom: 30px;
     border-bottom: 1px solid #ccc;
+}
+
+@media (max-width: 960px) {
+    .wrapper {
+        width: 94%;
+    }
+
+    .banner {
+        width: 100%;
+        background: none;
+        margin-top: 65px;
+    }
+    .tryRad {
+        display: none;
+    }
+    .span5,
+    .span6{
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .banner-button {
+        margin-top: 20px;
+    }
+    .logo-banner{
+        background-position: 50%;
+    }
+    .phones {
+        margin: 0 auto;
+    }
+
+    .side-menu {
+        display: none;
+    }
+    .docmentation-content{
+        margin-left: 0;
+    }
+    .contact-wrapper {
+        padding: 0;
+    }
 }
