@@ -525,3 +525,7 @@ span.menu-link {
 .contact-wrapper {
 	padding:100px 0;
 }
+
+.content.wrapper > *{
+    margin-left: 10px;
+}

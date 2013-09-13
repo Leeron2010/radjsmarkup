@@ -217,7 +217,7 @@ subscribe(channel, fn, context);
 
 <p>Module is automatically subscribed to messages which start with &quot;view.&quot; and its ID. For example, a created module, registered as <strong>&quot;view.myModule&quot;</strong>, will be automatically subscribed to the &quot;view.myModule&quot; channel, as well as to &quot;view.myModule.doSomeAction&quot;.</p>
 
-<p>Such messages can be processed in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#onReceiveMsg">onReceiveMsg</a> callback.</p>
+<p>Such messages can be processed in the <a href="#view-Callbacks-onReceiveMsg">onReceiveMsg</a> callback.</p>
 
 <h4 id="Core-Methods-of-the-core-publish">publish</h4>
 <pre class="prettyprint linenums">
@@ -246,14 +246,14 @@ channels()
 <pre class="prettyprint linenums">
 register(viewID/serviceID, fabric)
 </pre>
-<p>Registers a module in the core. The module is named <strong>viewID/serviceID</strong> and has the <strong>fabric</strong> constructor. If the module is registered automatically, this method is not necessary (ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#view">declaration of the module</a>).</p>
+<p>Registers a module in the core. The module is named <strong>viewID/serviceID</strong> and has the <strong>fabric</strong> constructor. If the module is registered automatically, this method is not necessary (ref. <a href="#view">declaration of the module</a>).</p>
 <p>Hereby a module instance is not created.</p>
 
 <h4 id="Core-Methods-of-the-core-registerAll">registerAll</h4>
 <pre class="prettyprint linenums">
 registerAll(arrayOfViews)
 </pre>
-<p>Calls <a href="file:///C:/Users/Миша/Downloads/site/index.html#register">register</a> for each module listed in <strong>arrayOfViews</strong>. Example of array:</p>
+<p>Calls register for each module listed in <strong>arrayOfViews</strong>. Example of array:</p>
 <pre class="prettyprint linenums">
 views = [
     {&quot;view.start_page&quot;: view.StartPage},
@@ -268,13 +268,13 @@ startViewOrService(viewID, [extras])
 </pre>
 <p>Instantiates module named <strong>viewID</strong>.</p>
 
-<p>Uses the <strong>extras</strong> object in callback of the <a href="file:///C:/Users/Миша/Downloads/site/index.html#onNewExtras">onNewExtras</a> module.</p>
+<p>Uses the <strong>extras</strong> object in callback of the <a href="#view-Callbacks-onNewExtras">onNewExtras</a> module.</p>
 
 <h4 id="Core-Methods-of-the-core-startPlugin">startPlugin</h4>
 <pre class="prettyprint linenums">
 startPlugin(pluginID)
 </pre>
-<p>Instantiates a plugin named <strong>pluginID</strong>, from the list of registered plugins of the <a href="file:///C:/Users/Миша/Downloads/site/index.html#plugins_list">plugins</a> core.</p>
+<p>Instantiates a plugin named <strong>pluginID</strong>, from the list of registered plugins of the <a href="#Core-Plugins-of-the-core">plugins</a> core.</p>
 
 <h4 id="Core-Methods-of-the-core-stop">stop</h4>
 <pre class="prettyprint linenums">
@@ -294,7 +294,7 @@ startAll()
 getView(viewID, [extras])
 </pre>
 
-<p>Returns the <strong>viewID</strong> module instance, transfers the <strong>extras</strong> object to it (ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#onNewExtras">onNewExtras</a>). If the instance does not exist, <strong>getView</strong><strong> </strong>instantiates it.</p>
+<p>Returns the <strong>viewID</strong> module instance, transfers the <strong>extras</strong> object to it (ref. <a href="#view-Callbacks-onNewExtras">onNewExtras</a>). If the instance does not exist, <strong>getView</strong><strong> </strong>instantiates it.</p>
 
 <h4 id="Core-Methods-of-the-core-getStartedView">getStartedView</h4>
 <pre class="prettyprint linenums">
@@ -316,7 +316,7 @@ initialize(application, options)
 getService(serviceID, [extras])
 </pre>
 
-<p>Identical to the <a href="file:///C:/Users/Миша/Downloads/site/index.html#getView">getView</a> method.</p>
+<p>Identical to the <a href="#Core-Methods-of-the-core-getView">getView</a> method.</p>
 
 <h2 id="Core-Options-of-the-core">Options of the core</h2>
 
@@ -351,7 +351,7 @@ plugins: [
 
 </pre>
 
-<p>Array of connected plugins; of which currently are implemented router, layout manager, and crossbrowser events for touchscreen devices (&quot;tap&quot;, &quot;swipe&quot; etc.). For further details ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#plugins">plugins</a>.</p>
+<p>Array of connected plugins; of which currently are implemented router, layout manager, and crossbrowser events for touchscreen devices (&quot;tap&quot;, &quot;swipe&quot; etc.). For further details ref. <a href="#Core-Plugins-of-the-core">plugins</a>.</p>
 
 <p>Notice: the <strong>&quot;plugin.navigator&quot;, &quot;plugin.fastclick&quot;, &quot;plugin.router&quot;</strong> plugins are registered, and there is no need in declaring them.</p>
 
@@ -364,8 +364,8 @@ defaultBackstack: false,
 defaultBackstack: true,
 </pre>
 
-<p>Default backstack for <strong>all</strong> transactions. When <strong>false</strong> is indicated, history of changes in screen content (layout change of view) will not be saved. To enter a transaction to the history, the <strong>backstack: true</strong> option should be utilized, while using <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a>.<br />
-For further details ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#router_backstack">Backstack</a>.</p>
+<p>Default backstack for <strong>all</strong> transactions. When <strong>false</strong> is indicated, history of changes in screen content (layout change of view) will not be saved. To enter a transaction to the history, the <strong>backstack: true</strong> option should be utilized, while using <a href="#Core-Navigation">navigation</a>.<br />
+For further details ref. <a href="#Core-Router-backstack">Backstack</a>.</p>
 
 <h3 id="Core-Options-of-the-core-backstackType">backstackType</h3>
 
@@ -380,7 +380,7 @@ backstackType: &#39;custom&#39;
 
 <p>Backstack type for all transactions. If the value of this option is undefined, backstack type will be determined automatically (&#39;<strong>native</strong>&#39; or &#39;<strong>hashbang</strong>&#39;, depending on the browser).</p>
 
-<p>For further details about backstack types ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#router_backstack">Backstack</a>.</p>
+<p>For further details about backstack types ref. <a href="#Core-Router-backstack">Backstack</a>.</p>
 
 <h3 id="Core-Options-of-the-core-defaultAnimation">defaultAnimation</h3>
 
@@ -388,7 +388,7 @@ backstackType: &#39;custom&#39;
 defaultAnimation: &#39;slide&#39;,
 </pre>
 
-<p>Default animation of module interchange. It can gain such values as <strong>&#39;slide&#39;</strong>, <strong>&#39;fade&#39;</strong> and <strong>&#39;none&#39;</strong> (instant substitution). Further details in <a href="file:///C:/Users/Миша/Downloads/site/index.html#animation">module animation</a>.</p>
+<p>Default animation of module interchange. It can gain such values as <strong>&#39;slide&#39;</strong>, <strong>&#39;fade&#39;</strong> and <strong>&#39;none&#39;</strong> (instant substitution). Further details in <a href="#view-Animation">module animation</a>.</p>
 
 <h3 id="Core-Options-of-the-core-animationTimeout">animationTimeout</h3>
 
@@ -442,7 +442,7 @@ Parameters of <strong>options</strong>:</p>
 	<p><strong>container_id</strong> - selector of container element for displaying the module;</p>
 	</li>
 	<li>
-	<p><strong>animation</strong> - <a href="file:///C:/Users/Миша/Downloads/site/index.html#animation">animation</a> that is used by change of view in a selected container;</p>
+	<p><strong>animation</strong> - <a href="#view-Animation">animation</a> that is used by change of view in a selected container;</p>
 	</li>
 	<li>
 	<p><strong>backstack</strong> - saves history of module position changes (<strong>true</strong> or <strong>false</strong>);</p>
@@ -454,7 +454,7 @@ Parameters of <strong>options</strong>:</p>
 	<p><strong>context</strong> - implementation context for <strong>callback</strong>;</p>
 	</li>
 	<li>
-	<p><strong>extras</strong> - ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#onNewExtras">onNewExtras</a>.</p>
+	<p><strong>extras</strong> - ref. <a href="#view-Callbacks-onNewExtras">onNewExtras</a>.</p>
 	</li>
 </ul>
 
@@ -473,7 +473,7 @@ this.publish(&#39;navigation.back&#39;, options);
 this.publish(&#39;navigation.dialog.show&#39;, options);
 </pre>
 
-<p>Similar to <strong>navigation.show</strong> but shows the module as a modal window. Can be closed with <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_dialog_close">dialog.close</a>.</p>
+<p>Similar to <strong>navigation.show</strong> but shows the module as a modal window. Can be closed with <a href="#Core-Navigation-showdialogclose">dialog.close</a>.</p>
 
 <h4 id="Core-Navigation-showdialogclose">dialog.close</h4>
 <pre class="prettyprint linenums">
@@ -572,7 +572,7 @@ There are 3 backstack types, implemented in the plugin (<strong>backstackType</s
 	</li>
 </ul>
 
-<p>If <strong>defaultBackstack</strong> in <strong>Core</strong> settings has the value <strong>false</strong>, then it is enough to indicate <strong>backstack: true</strong> in <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_show">views change quer</a><a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_show">y</a> to use backstack; thus the next layout of views will remain the same.</p>
+<p>If <strong>defaultBackstack</strong> in <strong>Core</strong> settings has the value <strong>false</strong>, then it is enough to indicate <strong>backstack: true</strong> in <a href="#Core-Navigation-show">views change query</a> to use backstack; thus the next layout of views will remain the same.</p>
 
 <p>A shift back in the stack is executed:</p>
 
@@ -683,7 +683,7 @@ RAD.views.StartPage = RAD.Blanks.View.extend({
 })
 </pre>
 
-<p>Notice: for such declaration you must use the <a href="file:///C:/Users/Миша/Downloads/site/index.html#register">register</a> view, so that the module is available to the core. It is recommended to use the following way of module declaration:</p>
+<p>Notice: for such declaration you must use the <a href="#Core-Methods-of-the-core-register">register</a> view, so that the module is available to the core. It is recommended to use the following way of module declaration:</p>
 
 <pre class="prettyprint linenums">
     RAD.view(&quot;view.start_page&quot;, RAD.Blanks.View.extend({
@@ -700,21 +700,21 @@ RAD.views.StartPage = RAD.Blanks.View.extend({
 this.subscribe(channel, function, context);
 </pre>
 
-<p>Subscribes chosen module instance to chosen channel; represents direct link to the <a href="file:///C:/Users/Миша/Downloads/site/index.html#subscribe">subscribe</a> method of the core.</p>
+<p>Subscribes chosen module instance to chosen channel; represents direct link to the <a href="#Core-Methods-of-the-core-subscribe">subscribe</a> method of the core.</p>
 
 <h4 id="view-unsubscribe">unsubscribe</h4>
 <pre class="prettyprint linenums">
 this.unsubscribe([channel,] context);
 </pre>
 
-<p>Unsubscribes chosen module instance from chosen channel; represents direct link to the <a href="file:///C:/Users/Миша/Downloads/site/index.html#unsubscribe">unsubscribe</a> method of the core.</p>
+<p>Unsubscribes chosen module instance from chosen channel; represents direct link to the <a href="#Core-Methods-of-the-core-unsubscribe">unsubscribe</a> method of the core.</p>
 
 <h4 id="view-publish">publish</h4>
 <pre class="prettyprint linenums">
 this.publish(channel, data);
 </pre>
 
-<p>Publishes a message that contains <strong>data</strong> to an indicated <strong>channel;</strong> represents direct link to the <a href="file:///C:/Users/Миша/Downloads/site/index.html#publish">publish</a> method of the core.</p>
+<p>Publishes a message that contains <strong>data</strong> to an indicated <strong>channel;</strong> represents direct link to the <a href="#Core-Methods-of-the-core-publish">publish</a> method of the core.</p>
 
 <h4 id="view-s">$</h4>
 <pre class="prettyprint linenums">
@@ -741,28 +741,28 @@ this.finish();
 this.getChildren();
 </pre>
 
-<p>Brings back the array of child modules, which are indicated during a declaration in <a href="file:///C:/Users/Миша/Downloads/site/index.html#children">children</a>, or which are currently located in this view.</p>
+<p>Brings back the array of child modules, which are indicated during a declaration in <a href="#view-options-of-View-children">children</a>, or which are currently located in this view.</p>
 
 <h4 id="view-bindModel">bindModel</h4>
 <pre class="prettyprint linenums">
 this.bindModel(model);
 </pre>
 
-<p>Sets a <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a> for the module. Hereby <a href="file:///C:/Users/Миша/Downloads/site/index.html#render">render()</a> will be called to redraw the module. The module will be automatically subscribed to model events.</p>
+<p>Sets a <a href="#Model">model</a> for the module. Hereby <a href="#view-render">render()</a> will be called to redraw the module. The module will be automatically subscribed to model events.</p>
 
 <h4 id="view-changeModel">changeModel</h4>
 <pre class="prettyprint linenums">
 this.changeModel(model);
 </pre>
 
-<p>Changes the module <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a> into the one rendered in <strong>model</strong>. Here <a href="file:///C:/Users/Миша/Downloads/site/index.html#render">render()</a> will be called to redraw the module.</p>
+<p>Changes the module <a href="#Model">model</a> into the one rendered in <strong>model</strong>. Here <a href="#view-render">render()</a> will be called to redraw the module.</p>
 
 <h4 id="view-unbindModel">unbindModel</h4>
 <pre class="prettyprint linenums">
 this.unbindModel(forceRender);
 </pre>
 
-<p>Eliminates the module <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a>. If this parameter takes value <strong>true</strong>, then <a href="file:///C:/Users/Миша/Downloads/site/index.html#render">render()</a> will be called to redraw the module.</p>
+<p>Eliminates the module <a href="#Model">model</a>. If this parameter takes value <strong>true</strong>, then <a href="#view-render">render()</a> will be called to redraw the module.</p>
 
 <p>Notice: the call of this method may cause an error if presence of the model is not checked in the template. It is recommended to use only if there are no other ways to solve the task.</p>
 
@@ -836,7 +836,7 @@ onDestroy: function () {}
 onInitialize: function(){ };
 </pre>
 
-<p>Executed by the first callback at the end of constructor during a view instantiation. It is the last moment to directly determine a <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a> for the module. Further should be used such view methods as <strong>bindModel</strong> and <strong>unbindModel</strong>.</p>
+<p>Executed by the first callback at the end of constructor during a view instantiation. It is the last moment to directly determine a <a href="#Model">model</a> for the module. Further should be used such view methods as <strong>bindModel</strong> and <strong>unbindModel</strong>.</p>
 
 <h4 id="view-Callbacks-onStartRender">onStartRender</h4>
 <pre class="prettyprint linenums">
@@ -875,21 +875,21 @@ onNewExtras: function(extras){
 onStartAttach: function(channel, options){ };
 </pre>
 
-<p>Executed <strong>before</strong> displaying the module and <strong>before</strong> the beginning of animation (even if it does not exist). Takes the channel of the message and data from the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> plugin as parameters.</p>
+<p>Executed <strong>before</strong> displaying the module and <strong>before</strong> the beginning of animation (even if it does not exist). Takes the channel of the message and data from the <a href="#Core-Navigation">navigation</a> plugin as parameters.</p>
 
 <h4 id="view-Callbacks-onEndAttach">onEndAttach</h4>
 <pre class="prettyprint linenums">
 onEndAttach: function(channel, options){ };
 </pre>
 
-<p>Executed <strong>after</strong> the display of module is over, or <strong>after</strong> the animation is over (even if it does not exist). Takes the channel of the message and data from the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> plugin as parameters.</p>
+<p>Executed <strong>after</strong> the display of module is over, or <strong>after</strong> the animation is over (even if it does not exist). Takes the channel of the message and data from the <a href="#Core-Navigation">navigation</a> plugin as parameters.</p>
 
 <h4 id="view-Callbacks-onEndDetach">onEndDetach</h4>
 <pre class="prettyprint linenums">
 onEndDetach: function(channel, options){ };
 </pre>
 
-<p>Executed after the final disconnection of the module from current DOM. Takes the channel of the message and data from the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> plugin as parameters.</p>
+<p>Executed after the final disconnection of the module from current DOM. Takes the channel of the message and data from the <a href="#Core-Navigation">navigation</a> plugin as parameters.</p>
 
 <h4 id="view-Callbacks-onDestroy">onDestroy</h4>
 <pre class="prettyprint linenums">
@@ -908,7 +908,7 @@ onReceiveMsg: function(msg, data){ };
 <p>Parameters:<br />
 <strong>msg</strong> - message channel, line;</p>
 
-<p><strong>data</strong> - object of transmitted data (ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#publish">publish</a>).</p>
+<p><strong>data</strong> - object of transmitted data (ref. <a href="#Core-Methods-of-the-core-publish">publish</a>).</p>
 
 <p>Services are subscribed in the same way - on messages starting with <strong>&quot;service.&quot; + &quot;module_name&quot;</strong>.</p>
 
@@ -922,7 +922,7 @@ onNewExtras: function (extras) {
 },
 </pre>
 
-<p>It is not exactly a callback method. Each module has a deferred object <strong>loader</strong>, which can be given a function that will be executed after loading the HTML-rendering of the module. In case if HTML or HTML-template are loaded beforehand, the function will be executed at once. This method can be used when it is needed to insert the data transmitted through <a href="file:///C:/Users/Миша/Downloads/site/index.html#onNewExtras">extras</a> into ready HTML.</p>
+<p>It is not exactly a callback method. Each module has a deferred object <strong>loader</strong>, which can be given a function that will be executed after loading the HTML-rendering of the module. In case if HTML or HTML-template are loaded beforehand, the function will be executed at once. This method can be used when it is needed to insert the data transmitted through <a href="#view-Callbacks-onNewExtras">extras</a> into ready HTML.</p>
 
 <h3 id="view-options-of-View">Options of View</h3>
 
@@ -991,7 +991,7 @@ onInitialize: function () {
 },
 </pre>
 
-<p>Determines data model for the module. Further about models ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a>. View automatically subscribes to model events.</p>
+<p>Determines data model for the module. Further about models ref. <a href="#Model">model</a>. View automatically subscribes to model events.</p>
 
 <h4 id="view-options-of-View-custom">custom options</h4>
 <pre class="prettyprint linenums">
@@ -1064,7 +1064,7 @@ showMyCustomWidget: false
 
 <h2 id="view-Templates">Templates</h2>
 
-<p>Templates are useful in rendering extensive and complex parts of HMTL-markup from JSON-data. The <a href="http://underscorejs.org/#template" target="_blank">Underscore.js</a> method from the library is used for templating. This method compiles templates to functions, which can be called for rendering a template. Path to HTML-template is indicated as a <a href="file:///C:/Users/Миша/Downloads/site/index.html#url">url</a> option by declaring the <a href="file:///C:/Users/Миша/Downloads/site/index.html#view">View</a> module. During the rendering of HTML-representation of the module, the <a href="file:///C:/Users/Миша/Downloads/site/index.html#view_model">view.model</a> of this module, which is transformed into JSON-object, is transmitted to template engine function.</p>
+<p>Templates are useful in rendering extensive and complex parts of HMTL-markup from JSON-data. The <a href="http://underscorejs.org/#template" target="_blank">Underscore.js</a> method from the library is used for templating. This method compiles templates to functions, which can be called for rendering a template. Path to HTML-template is indicated as a <a href="#view-options-of-View-url">url</a> option by declaring the <a href="#view">View</a> module. During the rendering of HTML-representation of the module, the <a href="#view-options-of-View-model">view.model</a> of this module, which is transformed into JSON-object, is transmitted to template engine function.</p>
 
 <p>Example of markup with templates:</p>
 
@@ -1106,11 +1106,11 @@ showMyCustomWidget: false
 	<p><strong>{{{ ... }}}</strong> - for screening special symbols (HTML-escaped);</p>
 	</li>
 	<li>
-	<p><strong>model</strong> - <a href="file:///C:/Users/Миша/Downloads/site/index.html#view_model">view.model</a>, transformed into JSON-object.</p>
+	<p><strong>model</strong> - <a href="#view-options-of-View-model">view.model</a>, transformed into JSON-object.</p>
 	</li>
 </ul>
 
-<p>The <strong>model</strong> object, which is transferred to the template, lacks the <a href="http://backbonejs.org/#Model" target="_blank">Backbone.Model</a> and <a href="http://backbonejs.org/#Collection" target="_blank">Backbone.Collection</a> options and methods. If it is needed to directly access <a href="file:///C:/Users/Миша/Downloads/site/index.html#view_model">view.model</a> or other options and methods, one can use direct link named <strong>this</strong>, which leads to current view inside the template.</p>
+<p>The <strong>model</strong> object, which is transferred to the template, lacks the <a href="http://backbonejs.org/#Model" target="_blank">Backbone.Model</a> and <a href="http://backbonejs.org/#Collection" target="_blank">Backbone.Collection</a> options and methods. If it is needed to directly access <a href="#view-options-of-View-model">view.model</a> or other options and methods, one can use direct link named <strong>this</strong>, which leads to current view inside the template.</p>
 
 <p>For building HTML from a large data array, it is convenient to use <a href="http://backbonejs.ru/#Collection-Underscore-Methods" target="_blank">methods</a> of the Underscore library, such as <strong>each()</strong>, <strong>sortBy()</strong>, <strong>filter()</strong> etc.</p>
 
@@ -1169,7 +1169,7 @@ RAD.view(&quot;view.persons_list&quot;, RAD.Blanks.View.extend({
 
 <h2 id="Toast">Toast</h2>
 
-<p>Module for notifications, which closes automatically after a certain period of time (in 3 seconds by default). Ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_toast_show">navigation.toast.show</a>.</p>
+<p>Module for notifications, which closes automatically after a certain period of time (in 3 seconds by default). Ref. <a href="#Core-Navigation-showtoastshow">navigation.toast.show</a>.</p>
 
 <pre class="prettyprint linenums">
 RAD.view(&quot;view.CompleteToast&quot;, RAD.Blanks.Toast.extend({
@@ -1180,11 +1180,11 @@ RAD.view(&quot;view.CompleteToast&quot;, RAD.Blanks.Toast.extend({
 }));
 </pre>
 
-<p>Notice: the <strong>toast</strong> module element is placed in <strong>body</strong>, ignoring <strong>container_id</strong> in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> options.</p>
+<p>Notice: the <strong>toast</strong> module element is placed in <strong>body</strong>, ignoring <strong>container_id</strong> in the <a href="#Core-Navigation">navigation</a> options.</p>
 
 <h2 id="Popup">Popup</h2>
 
-<p>The module realizes a self-positioning popup. Ways of positioning are determined in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_popup_show">navigation.popup.show</a> options.</p>
+<p>The module realizes a self-positioning popup. Ways of positioning are determined in the <a href="#Core-Navigation-showpopupshow">navigation.popup.show</a> options.</p>
 
 <pre class="prettyprint linenums">
 RAD.view(&quot;view.PopupOverview&quot;, RAD.Blanks.Popup.extend({
@@ -1208,11 +1208,11 @@ RAD.view(&quot;view.PopupOverview&quot;, RAD.Blanks.Popup.extend({
 });
 </pre>
 
-<p>Notice: the <strong>popup</strong> module element is placed in <strong>body</strong>, ignoring <strong>container_id</strong> in the <a href="file:///C:/Users/Миша/Downloads/site/index.html#navigation_plugin">navigation</a> options.</p>
+<p>Notice: the <strong>popup</strong> module element is placed in <strong>body</strong>, ignoring <strong>container_id</strong> in the <a href="#Core-Navigation">navigation</a> options.</p>
 
 <h2 id="Scrollable-view">Scrollable view</h2>
 
-<p>Module with scrolling content, uses improved version of <a href="http://cubiq.org/iscroll-4">iScroll-lite</a>.</p>
+<p>Module with scrolling content, uses improved version of <a href="http://cubiq.org/iscroll-4" target="_blank">iScroll-lite</a>.</p>
 
 <pre class="prettyprint linenums">
 RAD.view(&quot;view.start_page&quot;, RAD.Blanks.View.extend({
@@ -1280,7 +1280,7 @@ onInitialize: function () {
 &lt;/div&gt;
 </pre>
 
-<p>Upon change of model, the <strong>render()</strong> module method will be called, and ALL its content will be updated automatically. In orded to redraw only a part of the module, the container holding the template must get the <strong>data-template</strong> attribute (for examples ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#templates">&quot;Templates&quot;</a>).</p>
+<p>Upon change of model, the <strong>render()</strong> module method will be called, and ALL its content will be updated automatically. In orded to redraw only a part of the module, the container holding the template must get the <strong>data-template</strong> attribute (for examples ref. <a href="#view-Templates">&quot;Templates&quot;</a>).</p>
 
 <h3 id="Model-of-application-level">Model of application level</h3>
 
@@ -1305,7 +1305,7 @@ RAD.model(&#39;message&#39;).set({title: &#39;new note&#39;, description: &#39;l
 
 <h2 id="Service">Service</h2>
 
-<p>Services have no visual representation, and can be used to process the internal logic of the application. Services have several callback-methods, similar to <strong>view</strong>, also can have <a href="file:///C:/Users/Миша/Downloads/site/index.html#custom_properties">user-defined attributes and methods</a>.</p>
+<p>Services have no visual representation, and can be used to process the internal logic of the application. Services have several callback-methods, similar to <strong>view</strong>, also can have user-defined attributes and methods.</p>
 
 <h3 id="Service-Declaration">Declaration</h3>
 
@@ -1323,14 +1323,14 @@ RAD.service(&quot;service.my_service&quot;, RAD.Blanks.Service.extend({
 
 <h3 id="Service-Callbacks">Callbacks</h3>
 
-<p>Service callbacks are similar to <a href="file:///C:/Users/Миша/Downloads/site/index.html#callbacks">view callbacks</a>, but not all of them are applicable due to absence of visual representation.</p>
+<p>Service callbacks are similar to <a href="#view-Callbacks">view callbacks</a>, but not all of them are applicable due to absence of visual representation.</p>
 
 <h4 id="Service-Callbacks-onInitialize">onInitialize</h4>
 <pre class="prettyprint linenums">
 onInitialize: function(){ };
 </pre>
 
-<p>The first of callbacks to be executed at the end of constructor during instantiation of service. The final moment when a <a href="file:///C:/Users/Миша/Downloads/site/index.html#model">model</a> can be directly specified for the module. Later on must be used such view methods as <strong>bindModel</strong> and <strong>unbindModel</strong>.</p>
+<p>The first of callbacks to be executed at the end of constructor during instantiation of service.</p>
 
 <h4 id="Service-Callbacks-onDestroy">onDestroy</h4>
 <pre class="prettyprint linenums">
@@ -1344,11 +1344,11 @@ onDestroy: function(){ };
 onReceiveMsg: function(msg, data){ };
 </pre>
 
-<p>Created service is automatically subscribed to messages starting with &quot;service.&quot; and its name. Similar to <a href="file:///C:/Users/Миша/Downloads/site/index.html#onReceiveMsg">module.onReceiveMsg</a>.</p>
+<p>Created service is automatically subscribed to messages starting with &quot;service.&quot; and its name. Similar to <a href="#view-Callbacks-onReceiveMsg">module.onReceiveMsg</a>.</p>
 
 <p>Parameters:<strong>msg</strong> - message channel, a line;</p>
 
-<p><strong>data</strong> - object of transmitted data (ref. <a href="file:///C:/Users/Миша/Downloads/site/index.html#publish">publish</a>).</p>
+<p><strong>data</strong> - object of transmitted data (ref. <a href="#view-publish">publish</a>).</p>
 
 <h2 id="Namespace">Namespace</h2>
 
@@ -1389,7 +1389,7 @@ RAD.namespace(&#39;RAD.views.ListView&#39;, RAD.Blanks.ScrollableView.extend({
 RAD.view(&#39;view.todo_list&#39;, RAD.views.ListView);
 </pre>
 
-<p>Notice: if Backbone.View (instead of RAD.Blanks.View) serves as prototype during view inheritance, then view-inheritor will not have the <strong>RAD.Blanks.View</strong> <a href="file:///C:/Users/Миша/Downloads/site/index.html#callbacks">callback-methods</a>.</p>
+<p>Notice: if Backbone.View (instead of RAD.Blanks.View) serves as prototype during view inheritance, then view-inheritor will not have the <strong>RAD.Blanks.View</strong> <a href="#view-Callbacks">callback-methods</a>.</p>
 
 <p>The framework provides ready <strong>namespaces</strong>:</p>
 
@@ -1448,11 +1448,11 @@ As a result there will be strong coherence and a link to the module that is alre
 <p><strong>A</strong>: Additional data transferred to view during publishing a message through navigator. </p>
 
 <p><strong>Q</strong>: To which messages are modules subscribed during registration? </p>
-<p><strong>A</strong>:  To events, names of which start with <strong>&quot;view.&quot; + module name</strong>. Upon publishing such a message, <a href="#">onReceiveMsg</a> of this module is called.</p>
+<p><strong>A</strong>:  To events, names of which start with <strong>&quot;view.&quot; + module name</strong>. Upon publishing such a message, <a href="#view-Callbacks-onReceiveMsg">onReceiveMsg</a> of this module is called.</p>
 
 <p><strong>Q</strong>: What is <strong>backstack</strong>? How does it work and what options must be set for its correct work? </p>
 <p><strong>A</strong>: It is a component of the <strong>router</strong> plugin, which allows to dynamically memorize layout of views on the screen for a particular session, using browser&#39;s <em>history API</em> or internal realization; thus it allows to return to previous positions of modules.</p>
-<p>To use backstack, it is enough to indicate the parameter <strong>backstack: true</strong> in view change query. For further details ref. <a href="#">backstack</a>.</p>
+<p>To use backstack, it is enough to indicate the parameter <strong>backstack: true</strong> in view change query. For further details ref. <a href="#Core-Router-backstack">backstack</a>.</p>
 
 <p><strong>Q</strong>: Will animation of child modules work, if set this way?</p>
 <pre class="prettyprint linenums">
