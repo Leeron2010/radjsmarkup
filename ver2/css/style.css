@@ -22,11 +22,11 @@
 
 @font-face {
     font-family: 'roboto_slabregular';
-    src: url('../fonts/roboto_slabregular/RobotoSlab-Regular-webfont.eot');
-    src: url('../fonts/roboto_slabregular/RobotoSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/roboto_slabregular/RobotoSlab-Regular-webfont.woff') format('woff'),
-    url('../fonts/roboto_slabregular/RobotoSlab-Regular-webfont.ttf') format('truetype'),
-    url('../fonts/roboto_slabregular/RobotoSlab-Regular-webfont.svg#roboto_slabregular') format('svg');
+    src: url('../fonts/robotoslab_regular/RobotoSlab-Regular-webfont.eot');
+    src: url('../fonts/robotoslab_regular/RobotoSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/robotoslab_regular/RobotoSlab-Regular-webfont.woff') format('woff'),
+    url('../fonts/robotoslab_regular/RobotoSlab-Regular-webfont.ttf') format('truetype'),
+    url('../fonts/robotoslab_regular/RobotoSlab-Regular-webfont.svg#roboto_slabregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -67,13 +67,13 @@ p {
 
 h2 {
     margin: 40px 0 15px 0;
-    font: 24px/30px 'roboto_slabbold', 'Arial';
+    font: 24px/30px 'roboto_slabregular', 'Arial';
     -webkit-font-smoothing: antialiased;
 }
 
 h3 {
     margin: 25px 0 15px 0;
-    font: 20px/25px 'roboto_slabbold', 'Arial';
+    font: 20px/25px 'roboto_slabregular', 'Arial';
     -webkit-font-smoothing: antialiased;
 }
 
@@ -295,7 +295,7 @@ span.menu-link {
 }
 
 .bunner-text {
-    font: 24px/30px 'aleobold';
+    font: 24px/30px 'roboto_slabregular';
     -webkit-font-smoothing: antialiased;
     color: #2f4441;
 }
@@ -357,19 +357,19 @@ span.menu-link {
 
 .docmentation-content h2 {
     margin: 25px 0 10px 0;
-    font: 20px/25px 'aleobold', 'Arial';
+    font: 20px/25px 'roboto_slabregular', 'Arial';
     -webkit-font-smoothing: antialiased;
 }
 
 .docmentation-content h3 {
     margin: 20px 0 10px 0;
-    font: 18px/23px 'aleobold', 'Arial';
+    font: 18px/23px 'roboto_slabregular', 'Arial';
     -webkit-font-smoothing: antialiased;
 }
 
 .docmentation-content h4 {
     margin: 10px 0;
-    font: 16px/20px 'aleobold', 'Arial';
+    font: 16px/20px 'roboto_slabregular', 'Arial';
     -webkit-font-smoothing: antialiased;
 }
 
@@ -578,7 +578,7 @@ span.menu-link {
 }
 
 .demo-list {
-    font: 18px/24px 'aleoregular' 'Arial';
+    font: 18px/24px 'roboto_slabregular' 'Arial';
 
 }
 

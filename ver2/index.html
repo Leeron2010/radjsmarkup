@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RAD-js project</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<script>
+	(function (self) {
+		var language = self.navigator.userLanguage || self.navigator.language;
+			if (language === 'ru') {
+					self.location.replace('ru/index.html');
+			} else {
+					self.location.replace('en/index.html');
+			}
+	}) (window);
+	</script>
+
+</body>
+</html>

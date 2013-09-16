@@ -11,10 +11,10 @@
 
 <div class="header">
 	<div class="wrapper">
-<!-- 		<div class="language-bar">
-	<span>En</span>
-	<a href="#">Ru</a>
-</div> -->
+<div class="language-bar">
+	<a href="../en/documentation.html">En</a>
+	<span>Ru</span>
+</div>
 
 		<a href="index.html" class="logo-link"></a>
 		<span class="menu-link documentation">Documentation</span>
@@ -234,7 +234,7 @@ unsubscribe([channel,] context)
     <h4 id="core-method-channels">channels</h4>
 
 <pre class="prettyprint linenums">
-    channels()
+channels()
 </pre>
 
     <p>Возвращает существующие каналы сообщений.</p>
@@ -692,9 +692,9 @@ RAD.views.StartPage = RAD.Blanks.View.extend({
     <p>Обратите внимание, что при таком объявлении необходимо использовать регистрацию view <a href="file:///Users/michail/site/index.html#register">register</a>, чтобы модуль был доступен ядру. Рекомендуется использовать способ объявления модулей, представленный ниже.</p>
 
 <pre class="prettyprint linenums">
-    RAD.view(&quot;view.start_page&quot;, RAD.Blanks.View.extend({
-        url: &#39;source/views/start_page.html&#39;
-    }));
+RAD.view(&quot;view.start_page&quot;, RAD.Blanks.View.extend({
+    url: &#39;source/views/start_page.html&#39;
+}));
 </pre>
 
     <h3 id="view-methods">Methods</h3>
@@ -900,9 +900,8 @@ onStartAttach: function(channel, options){ };
     <h4 id="view-callbacks-onEndAttach">onEndAttach</h4>
 
 <pre class="prettyprint linenums">
-    onEndAttach: function(channel, options){ };
-
-                    </pre>
+onEndAttach: function(channel, options){ };
+</pre>
 
     <p>Выполняется <strong>после</strong> окончания отображения модуля и <strong>после</strong> окончания анимации (даже если ее нет). В качестве параметров принимает канал, по которому пришло сообщение, а также данные от плагина <a href="file:///Users/michail/site/index.html#navigation_plugin">navigation</a>.</p>
 
@@ -925,7 +924,7 @@ onDestroy: function(){ };
     <h4 id="view-callbacks-onReceiveMsg">onReceiveMsg</h4>
 
 <pre class="prettyprint linenums">
-    onReceiveMsg: function(msg, data){ };
+onReceiveMsg: function(msg, data){ };
 </pre>
 
     <p>Модуль при создании автоматически подписывается на сообщения, начинающиеся с &quot;view.&quot; и его имени, например, модуль myModule подпишется как на сообщения &quot;view.myModule&quot;, так и на &quot;view.myModule.doSomeAction&quot;.<br />
@@ -1449,175 +1448,6 @@ RAD.view(&#39;view.todo_list&#39;, RAD.views.ListView);
             <p><strong>RAD.utils</strong> - для полезных методов-утилит.</p>
         </li>
     </ul>
-
-    <h2 id="">FAQ</h2>
-
-    <p>Часто задаваемые вопросы.</p>
-
-    <ul>
-        <li>
-            <p>Как узнать, какие view видны на экране?</p>
-
-	<pre class="prettyprint linenums">
-    querySelectorAll(&laquo;[view]&raquo;);
-                                </pre>
-        </li>
-        <li>
-            <p>Как получить ссылку на HTML-элемент-контейнер, в котором находится view?</p>
-
-	<pre class="prettyprint linenums">
-    querySelector(&laquo;[view=&#39;viewID&#39;]&raquo;);
-                                </pre>
-        </li>
-        <li>
-            <p>Как получить список всех view, экземпляры которых созданы?</p>
-
-	<pre class="prettyprint linenums">
-    RAD.core.getStartedViews();
-                                </pre>
-
-            <p>К счастью (или к сожалению), у нас пока не было не одного реально необходимого случая для вызова данного метода.</p>
-
-            
-        </li>
-        <li>
-            <p>Получение экземпляра любого модуля приложения.</p>
-
-            <p>В любой части приложения возможно получить непосредственную ссылку на любой зарегистрированный модуль приложения (view или сервис) через прямую ссылку на ядро:</p>
-
-	<pre class="prettyprint linenums">
-    RAD.core.getView(viewID, extras);
-                                
-    RAD.core.getService(viewID);
-                                </pre>
-
-            <p>Учтите, что архитектура приложения на <strong>RAD.js</strong> рассчитана на слабую связанность модулей и динамическое создание/уничтожение частей приложения, поэтому использовать данный механизм не рекомендуется.<br />
-                Связано это с тем, что данные методы вернут вам ссылку на экземпляр уже существующего модуля с указанным ID, или же создадут новый. Если вы сохраните эту ссылку, например, в атрибуте вашего view, какая-нибудь другая часть вашего приложения (опять же, через методы ядра) может удалить экземпляр модуля, а потом создать его уже с другими данными или моделью.<br />
-                Итогом будет наличие сильной связи, наличие ссылки на модуль, который уже уничтожен и нигде больше не используется.   В качестве рекомендации можно предложить использовать методы ядра только в объекте приложения. В этом случае вся работа по созданию и уничтожению модулей будет сосредоточена в одном месте, и найти логическую ошибку будет намного легче.</p>
-
-            
-        </li>
-        <li>
-            <p>Модули являются Backbone.View?</p>
-
-            <p>Нет, но они созданы на основе Backbone.View и имеют почти те же задачи, основная из которых - отображение модуля на странице</p>
-
-            
-        </li>
-        <li>
-            <p>Что такое канал (<strong>channel</strong>)? У каждого модуля свой channel? Как происходит <strong>subscribe</strong> и <strong>publish</strong> в определенный channel? В канал публикуется просто некое сообщение, и модуль, который слушает канал в ожидании этого сообщения, должен на него среагировать?</p>
-
-            <p>Канал является совокупностью публикатора, модуля подписчика и медиатора. Сообщениями, которыми обмениваются эти компоненты, являются события (&ldquo;команды&rdquo;, &ldquo;намерения&rdquo;).</p>
-
-            
-        </li>
-        <li>
-            <p>Что такое <strong>extras?</strong></p>
-
-            <p>Дополнительные данные, которые передаются во view при публикации сообщения через navigator.</p>
-
-            
-        </li>
-        <li>
-            <p>На какие сообщения подписываются модули при регистрации?</p>
-
-            <p>На события, имя которых начинается с <strong>&quot;view.&quot; + имя модуля</strong>. При публикации такого сообщения вызывается <a href="file:///Users/michail/site/index.html#onReceiveMsg">onReceiveMsg</a> этого модуля.</p>
-
-            
-        </li>
-        <li>
-            <p>Что такое <strong>backstack</strong>? Как именно работает и какие свойства нужно задать для его правильной работы?</p>
-
-            <p>Это компонент плагина <strong>router</strong>, позволяющий динамически запоминать расположение (т.е. layout) views на экране для конкретной сессии, используя <em>history API</em> браузера либо внутреннюю реализацию - и таким образом возвращаться к предыдущим расположениям модулей.<br />
-                <br />
-                Для использования бэкстека достаточно указать параметр <strong>backstack: true</strong> в запросе на смену views. Более подробная информация в разделе <a href="file:///Users/michail/site/index.html#router_backstack">backstack</a>.</p>
-
-            
-        </li>
-        <li>
-            <p>Будет ли работать анимация дочерних модулей, если задать её таким образом? Например:</p>
-
-	<pre class="prettyprint linenums">
-    RAD.views.ParentWidget = RAD.Blanks.View.extend({
-        url: &#39;source/views/parent_widget/parent_widget.html&#39;,
-        children: [
-            {
-                container_id: &#39;.content&#39;,
-                content: &quot;view.inner_first_widget&quot;,
-                animation: &#39;slide&#39;
-            },
-            {
-                container_id: &#39;.top&#39;,
-                content: &quot;view.inner_third_widget&quot;,
-                animation: &#39;fade&#39;
-            }
-        ]
-    });
-                                </pre>
-
-            <p>Да, но использовать не рекомендуется - будет визуально некрасиво.</p>
-
-            
-        </li>
-        <li>
-            <p>Что происходит с дочерними модулями (&#39;&#39;children&#39;&#39;) во время рендеринга родительского модуля?</p>
-
-            <p>Во время самого первого рендеринга родительского модуля происходит следующее:</p>
-
-            <ul>
-                <li>
-                    <p>Выполняется коллбэк <strong>onStartRender()</strong> (если определен);</p>
-                </li>
-                <li>
-                    <p>Происходит рендер модуля;</p>
-                </li>
-                <li>
-                    <p>Происходит присоединение (attach) дочерних модулей;</p>
-                </li>
-                <li>
-                    <p>Выполняется коллбэк <strong>onEndRender()</strong> (если определен).</p>
-                </li>
-            </ul>
-
-            <p><br />
-                Во время повторного рендеринга в порядок действий добавляется предварительное отсоединение дочерних модулей:</p>
-
-            <ul>
-                <li>
-                    <p>Выполняется коллбэк <strong>onStartRender()</strong> (если определен);</p>
-                </li>
-                <li>
-                    <p>Происходит отсоединение (detach) дочерних модулей;</p>
-                </li>
-                <li>
-                    <p>Происходит рендер модуля;</p>
-                </li>
-                <li>
-                    <p>Происходит присоединение (attach) дочерних модулей;</p>
-                </li>
-                <li>
-                    <p>Выполняется коллбэк <strong>onEndRender()</strong> (если определен).</p>
-                </li>
-            </ul>
-
-            <p>Таким образом, заново рендерится только родительский модуль, а &#39;&#39;children&#39;&#39; - нет.</p>
-
-            
-        </li>
-        <li>
-            <p>Можно ли &quot;прикрепить&quot; iScroll к какому либо дочернему HTML-элементу модуля при отображении этого модуля?</p>
-            <p>Да, контейнеру для iScroll необходимо указать класс &quot;<strong>scroll-view</strong>&quot;.</p>
-        </li>
-        <li>
-            <p>Какие существуют события iScroll?</p>
-            <p>См. события в документации iScroll4.</p>
-        </li>
-    </ul>
-
-    
-
-    
-
 	</div>
 </div>
 <script src="../prettify/prettify.js"></script>
