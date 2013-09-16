@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RAD-js project</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+<div class="header">
+	<div class="wrapper">
+<!-- 		<div class="language-bar">
+	<span>En</span>
+	<a href="#">Ru</a>
+</div> -->
+
+		<span class="fake-logo-link"></span>
+		<a href="documentation.html" class="menu-link documentation">Documentation</a>
+		<!-- <a href="demo.html" class="menu-link demo">Demo</a> -->
+        <a href="faq.html" class="menu-link faq">FAQ</a>
+	  	<a href="contact.html" class="menu-link contact">Contact</a>
+	  	<!-- <a href="#" class="menu-link discus">Discus</a> -->
+	</div>
+</div>
+<div class="main-wrapper">
+	<div class="banner">
+		<div class="wrapper span">
+			<div class="span6">
+				<div class="phones">
+					<iframe src="index-demo/index.html" frameborder="0" class="iphone-screen"></iframe>
+                    <!--[if lte IE 9]>
+                    <div class="iphone-screen warning">Sorry, your browser is not supported</div>
+                    <![endif]-->
+					<div class="tryRad"></div>
+				</div>
+			</div>
+			<div class="span5 offset1">
+				<h1 class="logo-banner">
+					RAD JS framework
+				</h1>
+				<p class="bunner-text">
+                     Фреймворк для быстрого построения мобильных приложений. Оптимизирован для iOS, Android; также поддерживаются Chrome, Firefox, Opera, Safari, IE 10, Windows Phone 8.
+				</p>
+				<div class="cf">
+					<a href="https://github.com/mobidevpublisher/RAD.JS/archive/master.zip" class="banner-button download" target="_blank" >Download</a>
+					<a href="https://github.com/mobidevpublisher/RAD.JS" class="banner-button git" target="_blank" >Git</a>
+				</div>
+
+			</div>
+		</div>	
+	</div>
+	<div class="content wrapper">
+        <h2>Чем является RAD.js:</h2>
+        <p>Это фреймворк системного уровня. Он позволяет разрабатывать single-page-приложение, как классическое многостраничное, и берет на себя задачи системного уровня - шину сообщений, создание и уничтожение экземпляров частей приложения, транзакции между views и т.д.</p>
+
+        <h2>Чем не является RAD.js:</h2>
+        <ul>
+            <li>
+                <p>MV* фреймворком. MV* в нем реализована на базе BackboneJS.</p>
+            </li>
+            <li>
+                <p>Фремворком уровня приложения. Приложением может выступать любой JavaScript-объект. Фреймворк не диктует условия, как должен быть построен объект приложения.</p>
+            </li>
+            <li>
+                <p>Layout-движком. Layout-движок реализован как плагин navigation к ядру фреймворка.</p>
+            </li>
+            <li>
+                <p>UI-фреймворком. Нет смысла писать очередной UI-фреймворк, так как от проекта к проекту в реальной жизни паттерны UI и оформление приложения меняются. В качестве расширения к базовой View, реализованы ScrollableView, PopupView и ToastView, то есть те, которые имеют расширенное и часто встречающееся поведение в разных проектах. Вы сами спокойно можете писать новые View, которые часто встречаются в Ваших проектах, например ListView, и т.д.</p>
+            </li>
+        </ul>
+
+        <h2>Достоинства:</h2>
+        <ul>
+            <li>
+                <p>Оптимизирован для PhoneGap и мобильных браузеров;</p>
+            </li>
+            <li>
+                <p>Возможность динамически управлять экземплярами модулей приложения (создавать, уничтожать), как на уровне приложения через функциональность ядра, так и на уровне view;</p>
+            </li>
+            <li>
+                <p>Возможность составить приложение из слабо связанных модулей: моделей, views, сервисов (часть приложения без визуального представления) и объекта приложения;</p>
+            </li>
+            <li>
+                <p>Древовидная структура сообщений;</p>
+            </li>
+            <li>
+                <p>Debug-режим ядра и сообщений;</p>
+            </li>
+            <li>
+                <p>Гибкая слабосвязанная архитектура - практически любой сторонний код может быть обернут в модуль несколькими строчками кода. Падение одного из модулей не ведет к падению всего приложения;</p>
+            </li>
+            <li>
+                <p>Возможность отслеживания жизненого цикла view и сервисов. Наличие callback методов на все события жизненого цикла;</p>
+            </li>
+            <li>
+                <p>Шаблонизация. Шаблоном выступает отдельный HTML-файл, который может быть наверстан отдельно;</p>
+            </li>
+            <li>
+                <p>Частичная шаблонизация view. Возможность указать части шаблона view, которые будут / не будут меняться (rerender) при изменении модели;</p>
+            </li>
+            <li>
+                <p>Объектом приложения может выступать любой объект JavaScript;</p>
+            </li>
+            <li>
+                <p>Возможность расширения функциональности ядра за счет плагинов;</p>
+            </li>
+            <li>
+                <p>Сложные вложенные views и декларируемые анимации перехода между ними;</p>
+            </li>
+            <li>
+                <p>Возможности наследованная views, сервисов и моделей;</p>
+            </li>
+            <li>
+                <p>Модальные и немодальные самопозиционируемые окна;</p>
+            </li>
+            <li>
+                <p>Динамическая маршрутизация. Достаточно указать параметр backstack: true, и транзакция между views (новое расположение views на экране) будет занесена в history браузера.</p>
+            </li>
+            <li>
+                <p>Повторное использование модулей в других проектах;</p>
+            </li>
+            <li>
+                <p>Возможность модульного тестирования внешними фреймворками.</p>
+            </li>
+        </ul>
+	</div>
+</div>
+ <div class="footer"></div>
+
+</body>
+</html>
